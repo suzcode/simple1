@@ -7,5 +7,5 @@ steps:
   args: ["run", "build-only"]
 # copy build output to the GCS bucket
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ["gsutil", "cp", "-r", "build/*", "gs://gcsbucketdefrr"]
+  args: ["gcloud", "storage", "cp", "-r", "build/*", "gs://gcsbucketdefrr"]
 timeout: "1600s"
