@@ -8,5 +8,5 @@ steps:
   args: ["run", "build-only"]
 # copy build output to the GCS bucket
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  args: ["gsutil", "cp", "-r", "build-only/*", "gs://gcsbucketdefrr"]
+  args: ["gsutil", "-q", "stat", "build/*"]
 timeout: "1600s"
