@@ -6,7 +6,7 @@ steps:
 - name: node:20.5.1
   entrypoint: npm
   args: ["run", "build-only"]
-# copy build output to the GCS bucket
+# copy build output to the GCS buck-ets
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  args: ["gsutil", "cp", "-r", "build/**", "gs://gcsbucketdefrr/"]
+  args: ["gsutil", "ls"]
 timeout: "1600s"
