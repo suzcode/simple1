@@ -3,6 +3,13 @@ steps:
   entrypoint: npm
   args: ['install']
 
+# Debugging step to print current directory and list files
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: bash
+  args:
+    - '-c'
+    - 'pwd && ls -l'
+
 # build the frontend
 - name: node:14
   entrypoint: npm
