@@ -2,10 +2,19 @@ steps:
 - name: node:20.5.1
   entrypoint: npm
   args: ['install']
+  
 # build the frontend
 - name: node:20.5.1
   entrypoint: npm
   args: ['run', 'build-only']
+
+# List files in the 'build' directory (for debugging)
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: bash
+  args: 
+    - '-c'
+    - 'ls -R build/'
+
 # copy build output to the GCS buck-ets
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   args: ['gsutil', 'cp', '-r', 'build/*', 'gs://gcsbucketdefrr/']
