@@ -8,7 +8,7 @@
 <script>
 import axios from 'axios';
 
-const url = "http://34.118.228.202/microservice1";
+const url = "http://34.31.236.147/microservice1";
 
 export default {
   name: 'MyComponent',
