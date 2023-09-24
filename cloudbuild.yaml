@@ -1,12 +1,12 @@
 steps:
-- name: node:14
+- name: node
   entrypoint: npm
   args: ['install']
 
-- name: node14
+- name: node
   entrypoint: npm
   args: ['install', 'vue-router@4']
-  
+
   # Debugging step to print current directory and list files
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: bash
@@ -15,7 +15,7 @@ steps:
     - 'pwd && ls -l'
 
 # build the frontend
-- name: node:14
+- name: node
   entrypoint: npm
   args: ['run', 'build-only']
 
