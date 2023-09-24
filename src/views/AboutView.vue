@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page updated 17sep2023 </h1>
+    <h1>This is an about page updated 24sep2023 </h1>
     <button @click="fetchData">Ftech Data</button>
   </div>
 </template>
