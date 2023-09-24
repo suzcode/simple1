@@ -7,6 +7,10 @@ steps:
   entrypoint: npm
   args: ['install', 'vue-router@4']
 
+- name: node
+  entrypoint: npm
+  args: ['install', 'axios']
+
   # Debugging step to print current directory and list files
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: bash
