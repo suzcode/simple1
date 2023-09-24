@@ -2,6 +2,7 @@
   <div class="about">
     <h1>This is an about page updated 24sep2023 at 9.18pm </h1>
     <button @click="fetchData">Ftech Data</button>
+    <p>{{ responseData }}</p>
   </div>
 </template>
 
