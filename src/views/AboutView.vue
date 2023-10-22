@@ -10,10 +10,6 @@
 import axios from 'axios';
 
 const url = "http://34.31.236.147/microservice1";
-const apiKey = "defrr-api-key";
-const headers = {
-        'API-Key': apiKey,
-      };
 
 export default {
   name: 'MyComponent',
@@ -25,7 +21,7 @@ export default {
   methods: {
     fetchData() {
       axios
-        .get(url, { headers })
+        .get(url)
         .then((response) => {
           this.responseData = response.data;
         })
