@@ -21,13 +21,17 @@ export default {
   methods: {
     fetchData() {
       axios
-        .get(url)
+        .get(url, {timeout: 10000})
         .then((response) => {
           this.responseData = response.data;
         })
         .catch((error) => {
+        if (axios.isCancel(error)) {
+          console.error('Request canceled:', error.message);
+        } else {
           console.error('Error:', error);
-        });
+        }
+      });
     },
   }
 };
