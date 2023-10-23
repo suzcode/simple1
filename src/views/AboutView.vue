@@ -24,16 +24,12 @@ export default {
         .get(url, {timeout: 10000})
         .then((response) => {
           this.responseData = response.data;
-          console.log('response.data', response.data);
-          console.log('response', response);
         })
         .catch((error) => {
         if (axios.isCancel(error)) {
           console.error('Request canceled:', error.message);
-          console.error(error.status);
         } else {
           console.error('Error:', error);
-          console.error(error.status);
         }
       });
     },
