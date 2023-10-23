@@ -28,8 +28,10 @@ export default {
         .catch((error) => {
         if (axios.isCancel(error)) {
           console.error('Request canceled:', error.message);
+          console.error(error.status);
         } else {
           console.error('Error:', error);
+          console.error(error.status);
         }
       });
     },
