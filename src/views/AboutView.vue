@@ -23,6 +23,8 @@ export default {
       axios
         .get(url, {timeout: 10000})
         .then((response) => {
+          print(response);
+          print(response.data);
           this.responseData = response.data;
         })
         .catch((error) => {
