@@ -29,9 +29,9 @@ export default {
         })
         .catch((error) => {
         if (axios.isCancel(error)) {
-          console.error('Request canceled:', error.message);
+          console.error('Request canceled:', error);
         } else {
-          console.error('Error:', error.message);
+          console.error('Error:', error);
         }
       });
     },
