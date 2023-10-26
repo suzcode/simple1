@@ -31,7 +31,7 @@ export default {
         if (axios.isCancel(error)) {
           console.error('Request canceled:', error.message);
         } else {
-          console.error('Error:', error.response.data);
+          console.error('Error:', error.message);
         }
       });
     },
