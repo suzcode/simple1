@@ -25,7 +25,7 @@ export default {
         .then((response) => {
           print(response);
           print(response.data);
-          this.responseData = response;
+          this.responseData = response.data;
         })
         .catch((error) => {
         if (axios.isCancel(error)) {
