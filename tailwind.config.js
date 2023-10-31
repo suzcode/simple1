@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./public/index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  content: ["./dist/index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
