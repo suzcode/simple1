@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from '../pages/HomeView.vue'
+import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,7 +13,7 @@ const router = createRouter({
       path: "/about",
       name: "About",
       component: () =>
-        import(/*webpackChunkName:"editabletable"*/ "@/pages/AboutView.vue"),
+        import(/*webpackChunkName:"editabletable"*/ "@/views/AboutView.vue"),
     },
     // {
     //   path: "/customerdata",
