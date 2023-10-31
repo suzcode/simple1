@@ -24,7 +24,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <script setup lang="ts">
 import './assets/tailwind.css';
-import '../dist/assets/styles.css';
+import '../public/assets/styles.css';
 import NavBar from "@/components/NavBar.vue";
 </script>
 
