@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import axios from 'axios';
 
 const url = "http://34.31.236.147/microservice1";
