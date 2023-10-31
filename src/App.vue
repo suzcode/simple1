@@ -1,10 +1,7 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
+  <NavBar />
+  <router-view />
+  <!-- <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -14,19 +11,30 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
-    </div>
+    </div> -->
   </header>
 
   <RouterView />
 </template>
 
-<style scoped>
+<!-- <script setup lang="ts">
+import { RouterLink, RouterView } from 'vue-router'
+import HelloWorld from './components/HelloWorld.vue'
+</script> -->
+
+<script setup lang="ts">
+import './assets/tailwind.css';
+import '../dist/assets/styles.css';
+import NavBar from "@/components/NavBar.vue";
+</script>
+
+<!-- <style scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;
-}
+} -->
 
-.logo {
+<!-- .logo {
   display: block;
   margin: 0 auto 2rem;
 }
@@ -82,4 +90,4 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
-</style>
+</style> -->
