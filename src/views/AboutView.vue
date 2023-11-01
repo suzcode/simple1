@@ -10,6 +10,7 @@
 import axios from 'axios';
 import { ref } from "vue";
 
+// url for kubernetes backend
 const url = "http://34.31.236.147/microservice1";
 
 var responseData = ref(null);
@@ -28,6 +29,7 @@ function fetchData() {
     } else {
       console.error('Error:', error);
     }
+    return responseData
   });
 }
 </script>
