@@ -39,14 +39,14 @@ const router = createRouter({
     //   component: () =>
     //     import(/*webpackChunkName:"editabletable"*/ "@/pages/FilterView.vue"),
     // },
-    // {
-    //   path: "/addcustomer",
-    //   name: "AddCustomer",
-    //   component: () =>
-    //     import(
-    //       /*webpackChunkName:"editabletable"*/ "@/pages/addCustomerDetails.vue"
-    //     ),
-    // },
+    {
+      path: "/addcustomer",
+      name: "AddCustomer",
+      component: () =>
+        import(
+          /*webpackChunkName:"editabletable"*/ "@/views/AddCustomerDetails.vue"
+        ),
+    },
   ]
 })
 
