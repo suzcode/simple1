@@ -3,6 +3,7 @@
     <h1>This is an about page updated 2Nov2023 at 4am </h1>
     <button @click="fetchData">Ftech Data</button>
     <p>Response data: {{ responseData }}</p>
+    <p>Response data: {{ responseData.data }}</p>
   </div>
 </template>
 
