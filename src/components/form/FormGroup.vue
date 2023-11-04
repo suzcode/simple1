@@ -12,7 +12,7 @@
   </template>
   
   <script setup lang="ts" (props, { emit })>
-  import { defineAsyncComponent, defineProps, defineEmits } from "vue";
+  import { defineAsyncComponent, defineEmits } from "vue";
   import Input from "./InputComponent.vue";
   // const Input = defineAsyncComponent(() => import("./InputComponent.vue"));
   const Label = defineAsyncComponent(() => import("./LabelComponent.vue"));
