@@ -4,8 +4,8 @@
     </label>
   </template>
   
-  <style scoped>
+  <!-- <style scoped>
   .label {
     @apply text-lg text-gray-700 font-semibold;
   }
-  </style>
+  </style> -->

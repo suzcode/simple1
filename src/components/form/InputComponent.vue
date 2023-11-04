@@ -22,8 +22,8 @@
   // }
   </script>
   
-  <style scoped>
+  <!-- <style scoped>
   .input {
     @apply border border-gray-200 p-2 rounded-md w-full;
   }
-  </style>
+  </style> -->

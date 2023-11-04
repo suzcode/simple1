@@ -34,8 +34,8 @@
   }
   </script>
   
-  <style scoped>
+  <!-- <style scoped>
   .form-group {
     @apply flex flex-col space-y-4;
   }
-  </style>
+  </style> -->
