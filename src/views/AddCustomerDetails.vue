@@ -154,8 +154,8 @@
   }
   </script>
   
-  <style scoped>
+  <!-- <style scoped>
   .button {
     @apply bg-purple-500 text-gray-50 px-9 py-2 rounded;
   }
-  </style>
+  </style> -->
