@@ -50,9 +50,9 @@ var show = ref(false);
                 >About Us</router-link
               >
               <router-link
-                to="/customerdata"
+                to="/addcustomer"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                >View all contracts</router-link
+                >Add customer</router-link
               >
               <!-- <router-link
                 to="/editabletable"
