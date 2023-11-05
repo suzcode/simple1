@@ -62,10 +62,19 @@ function onSubmit(e) {
   console.log("data is as follows", userAge);
   // const options = { headers: { "content-type": "application/json" } };
   //response = setAge(data, options);
-  response = setAge(age);
-  console.log('response is', response);
+  //response = setAge(age);
+  axios
+    .post(url, age)
+    .then((res) => {
+      console.log("OK", res);
+      responseData = res.data;
+    })
+    .catch((error) => {
+      console.log("ERROR", error);
+    });
+  console.log('response is', responseData);
   //getMessage();
-  return response;
+  return responseData;
 }
   
   
