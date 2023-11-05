@@ -31,25 +31,12 @@ const url = "http://34.31.236.147/microservice1";
 
 var responseData = ref(null);
 var userAge = ref(null);
+var response = ref(null);
 
 // initial resp variable
 
 //------------------------------------------------------------------
-// When the submit button is clicked this calls the setCustomer and getMessage functions
-function onSubmit(e) {
-  console.log(e);
-  e.preventDefault();
-  console.log(userAge);
-  const data = JSON.stringify(userAge.value);
-  console.log("data is as follows", data);
-  const options = { headers: { "content-type": "application/json" } };
-  setAge(data, options);
-  //getMessage();
-  return data;
-}
-  
-  
-// This function posts the selected customer name to the python backend
+// This function posts the selected age to the python backend
 function setAge(data, options) {
   axios
     .post(url, data, options)
@@ -62,6 +49,24 @@ function setAge(data, options) {
     });
   return responseData;
 }
+
+
+
+// When the submit button is clicked this calls the setCustomer and getMessage functions
+function onSubmit(e) {
+  console.log(e);
+  e.preventDefault();
+  console.log(userAge);
+  const data = JSON.stringify(userAge.value);
+  console.log("data is as follows", data);
+  const options = { headers: { "content-type": "application/json" } };
+  response = setAge(data, options);
+  //getMessage();
+  return response;
+}
+  
+  
+
   //----------------------------------------------------------------------
 
 
