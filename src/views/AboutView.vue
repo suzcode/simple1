@@ -71,10 +71,9 @@ function onSubmit(e) {
     })
     .catch((error) => {
       console.log("ERROR", error);
+    console.log('response is ', responseData);
+    return responseData
     });
-    console.log('response is', responseData);
-    //getMessage();
-    return responseData;
 }
   
   
