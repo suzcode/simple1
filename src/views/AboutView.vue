@@ -37,9 +37,9 @@ var response = ref(null);
 
 //------------------------------------------------------------------
 // This function posts the selected age to the python backend
-function setAge(data, options) {
+function setAge(data) {
   axios
-    .post(url, data, options)
+    .post(url, data)
     .then((res) => {
       console.log("OK", res);
       responseData.value = res.data;
@@ -60,8 +60,9 @@ function onSubmit(e) {
   const data = JSON.stringify(userAge.value);
   console.log('raw data is as follows', userAge.value)
   console.log("data is as follows", data);
-  const options = { headers: { "content-type": "application/json" } };
-  response = setAge(data, options);
+  // const options = { headers: { "content-type": "application/json" } };
+  //response = setAge(data, options);
+  response = setAge(data);
   //getMessage();
   return response;
 }
