@@ -1,7 +1,23 @@
 <template>
   <div class="about">
     <h1>This is an about page updated 2Nov2023 at 4am </h1>
-    <button @click="fetchData">Ftech Data</button>
+    <br>
+    <form @submit="onSubmit" method="POST">
+      <input
+        name="userAge"
+        v-model="userAge"
+        type="text"
+        placeholder="Enter the age"
+      />
+      <button class="btn btn-primary">Submit</button><br /><br />
+    </form>
+
+    <!-- Might need to add back in -->
+
+    <!-- <button @click="fetchData">Ftech Data</button>
+    <br> -->
+    <!--end of section to add back in-->
+
     <p>Response data: {{ responseData }}</p>
   </div>
 </template>
@@ -14,24 +30,60 @@ import { ref } from "vue";
 const url = "http://34.31.236.147/microservice1";
 
 var responseData = ref(null);
+var userAge = ref(null);
 
 // initial resp variable
 
-function fetchData() {
+//------------------------------------------------------------------
+// When the submit button is clicked this calls the setCustomer and getMessage functions
+function onSubmit(e) {
+  console.log(e);
+  e.preventDefault();
+  console.log(userAge);
+  const data = JSON.stringify(userAge.value);
+  console.log("data is as follows", data);
+  const options = { headers: { "content-type": "application/json" } };
+  setAge(data, options);
+  //getMessage();
+  return data;
+}
+  
+  
+// This function posts the selected customer name to the python backend
+function setAge(data, options) {
   axios
-    .get(url, {timeout: 10000})
-    .then((response) => {
-      responseData = response.data;
+    .post(url, data, options)
+    .then((res) => {
+      console.log("OK", res);
+      responseData = res.data;
     })
     .catch((error) => {
-    if (axios.isCancel(error)) {
-      console.error('Request canceled:', error);
-    } else {
-      console.error('Error:', error);
-    }
-    return responseData
-  });
+      console.log("ERROR", error);
+    });
+  return responseData;
 }
+  //----------------------------------------------------------------------
+
+
+//--------------------------------------------------------
+//may need to revert to this
+//--------------------------------------------------------
+
+// function fetchData() {
+//   axios
+//     .get(url, {timeout: 10000})
+//     .then((response) => {
+//       responseData = response.data;
+//     })
+//     .catch((error) => {
+//     if (axios.isCancel(error)) {
+//       console.error('Request canceled:', error);
+//     } else {
+//       console.error('Error:', error);
+//     }
+//     return responseData
+//   });
+// }
 </script>
 
 <!-- <style>
