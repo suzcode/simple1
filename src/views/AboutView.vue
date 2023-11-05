@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page updated 2Nov2023 at 4am </h1>
+    <h1>This is an about page updated 6Nov2023 at 4am </h1>
     <br>
     <form @submit="onSubmit" method="POST">
       <input
@@ -58,11 +58,12 @@ function onSubmit(e) {
   e.preventDefault();
   console.log(userAge);
   const data = JSON.stringify(userAge.value);
-  console.log('raw data is as follows', userAge.value)
+  console.log('raw data is as follows', userAge.value);
   console.log("data is as follows", data);
   // const options = { headers: { "content-type": "application/json" } };
   //response = setAge(data, options);
   response = setAge(data);
+  console.log('response is', response);
   //getMessage();
   return response;
 }
