@@ -42,7 +42,7 @@ function setAge(data, options) {
     .post(url, data, options)
     .then((res) => {
       console.log("OK", res);
-      responseData = res.data;
+      responseData.value = res.data;
     })
     .catch((error) => {
       console.log("ERROR", error);
