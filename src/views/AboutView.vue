@@ -58,6 +58,7 @@ function onSubmit(e) {
   e.preventDefault();
   console.log(userAge);
   const data = JSON.stringify(userAge.value);
+  console.log('raw data is as follows', userAge.value)
   console.log("data is as follows", data);
   const options = { headers: { "content-type": "application/json" } };
   response = setAge(data, options);
