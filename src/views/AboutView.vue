@@ -64,7 +64,7 @@ function onSubmit(e) {
   const options = { headers: { "content-type": "application/json" } };
   //response = setAge(data, options);
   //response = setAge(age);
-  await axios
+  axios
     .post(url, age, options)
     .then((res) => {
       console.log("OK", res);
