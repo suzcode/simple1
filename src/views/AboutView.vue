@@ -61,11 +61,11 @@ function onSubmit(e) {
   console.log('raw data is as follows', userAge.value);
   console.log("data is as follows", userAge);
   console.log('JSON value of age variable:', age);
-  // const options = { headers: { "content-type": "application/json" } };
+  const options = { headers: { "content-type": "application/json" } };
   //response = setAge(data, options);
   //response = setAge(age);
   await axios
-    .post(url, age)
+    .post(url, age, options)
     .then((res) => {
       console.log("OK", res);
       responseData = res.data;
