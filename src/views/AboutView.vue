@@ -61,7 +61,7 @@ function onSubmit(e) {
   age_dict['ageval'] = userAge.value;
   console.log('raw data is as follows', age_dict);
   console.log("data is as follows", age_dict['ageval']);
-  age_dict_json = JSON.stringify(age_dict);
+  const age_dict_json = JSON.stringify(age_dict);
   //const options = { headers: { "content-type": "application/json" } };
   //response = setAge(data, options);
   //response = setAge(age);
