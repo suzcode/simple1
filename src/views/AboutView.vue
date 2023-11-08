@@ -57,15 +57,17 @@ function onSubmit(e) {
   console.log(e);
   e.preventDefault();
   console.log(userAge);
-  const age = JSON.stringify(userAge.value);
-  console.log('raw data is as follows', userAge.value);
-  console.log("data is as follows", userAge);
-  console.log('JSON value of age variable:', age);
+  const age_dict = {}
+  age_dict['ageval'] = userAge.value;
+  console.log('raw data is as follows', age_dict);
+  console.log("data is as follows", age_dict['ageval']);
+  age_dict_json = JSON.stringify(age_dict);
   //const options = { headers: { "content-type": "application/json" } };
   //response = setAge(data, options);
   //response = setAge(age);
+  // test
   axios
-    .post(url, age)
+    .post(url, age_dict_json)
     .then((res) => {
       console.log("OK", res);
       responseData = res.data;
