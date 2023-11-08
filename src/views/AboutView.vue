@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page updated 6Nov2023 at 4am </h1>
+    <h1>This is an about page updated 9Nov2023 at 4am </h1>
     <br>
     <form @submit="onSubmit" method="POST">
       <input
@@ -65,7 +65,7 @@ function onSubmit(e) {
   //const options = { headers: { "content-type": "application/json" } };
   //response = setAge(data, options);
   //response = setAge(age);
-  // test
+  // test 1
   axios
     .post(url, age_dict_json)
     .then((res) => {
