@@ -58,9 +58,9 @@ function onSubmit(e) {
   e.preventDefault();
   console.log(userAge);
   const age_dict = {}
-  age_dict['ageval'] = userAge.value;
+  age_dict = userAge.value;
   console.log('raw data is as follows', age_dict);
-  console.log("data is as follows", age_dict['ageval']);
+  // console.log("data is as follows", age_dict['ageval']);
   const age_dict_json = JSON.stringify(age_dict);
   console.log('age_dict_json', age_dict_json);
   //const options = { headers: { "content-type": "application/json" } };
