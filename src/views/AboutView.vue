@@ -30,7 +30,7 @@ import { ref } from "vue";
 const url = "http://34.31.236.147/microservice1";
 
 var responseData = ref(null);
-var userAge = ref(null);
+var userAge = ref<any>(null);
 var response = ref(null);
 
 // initial resp variable
