@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page updated 26Nov2023 at 12.10pm </h1>
+    <h1>This is an about page updated 26Nov2023 at 12.12pm </h1>
     <br>
     <form @submit="onSubmit" method="POST">
       <input
