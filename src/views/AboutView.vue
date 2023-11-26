@@ -45,8 +45,11 @@ function onSubmit(e) {
     })
     .catch((error) => {
       console.log("ERROR", error);
-    console.log('response is ', responseData);
-    return responseData
+      if (error.response) {
+        console.log("Server responded with a non-2xx status", error.response.data);
+      }
+      console.log('response is ', responseData);
+      return responseData
     });
 }
 
