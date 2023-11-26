@@ -33,7 +33,7 @@ function onSubmit(e) {
   e.preventDefault();
   console.log(userAge);
   let age_dict = {}
-  age_dict = userAge.value;
+  age_dict['ageval'] = userAge.value;
   console.log('raw data is as follows', age_dict);
   const age_dict_json = JSON.stringify(age_dict);
   console.log('age_dict_json', age_dict_json);
