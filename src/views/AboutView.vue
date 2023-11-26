@@ -42,6 +42,7 @@ function onSubmit(e) {
     .then((res) => {
       console.log("OK", res);
       responseData = res.data;
+      return responseData;
     })
     .catch((error) => {
       console.log("ERROR", error);
@@ -49,7 +50,7 @@ function onSubmit(e) {
         console.log("Server responded with a non-2xx status", error.response.data);
       }
       console.log('response is ', responseData);
-      return responseData
+      throw error;  // Re-throw the error to propagate it to the calling code
     });
 }
 
