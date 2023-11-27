@@ -40,8 +40,8 @@ function onSubmit(e) {
   axios
     .post(url, age_dict_json)
     .then((res) => {
-      console.log("OK", res);
-      responseData = res.data;
+      console.log("OK", res.config.data);
+      responseData = res.config.data;
       return responseData;
     })
     .catch((error) => {
