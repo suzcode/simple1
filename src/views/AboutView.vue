@@ -38,7 +38,11 @@ function onSubmit(e) {
   const age_dict_json = JSON.stringify(age_dict);
   console.log('age_dict_json', age_dict_json);
   axios
-    .post(url, age_dict_json)
+    .post(url, age_dict_json, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
     .then((res) => {
       console.log("OK", res.config.data);
       responseData = res.config.data;
