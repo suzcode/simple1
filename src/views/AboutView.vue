@@ -43,9 +43,9 @@ function onSubmit(e) {
         'Content-Type': 'application/json',
       },
     })
-    .then((res) => {
-      console.log("OK", res.config.data);
-      responseData = res.config.data;
+    .then((response) => {
+      console.log("OK", response.data);
+      responseData = response.data;
       return responseData;
     })
     .catch((error) => {
