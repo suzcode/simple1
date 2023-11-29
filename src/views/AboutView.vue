@@ -27,7 +27,7 @@ var responseData = ref(null);
 var userAge = ref<any>(null);
 var response = ref(null);
 
-// When the submit button is clicked this adds the age selected and queries the backend firestore database
+// When the submit button is clicked this adds the age selected and queries the backend database
 function onSubmit(e) {
   console.log(e);
   e.preventDefault();
