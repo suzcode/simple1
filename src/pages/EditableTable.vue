@@ -152,7 +152,7 @@
     peopleKey.value += 1;
   };
   
-  const response = ref(null);
+  // const response = ref(null);
   
   // Gets a list of the customers for the drop down selector box
   // onBeforeMount(async () => {
