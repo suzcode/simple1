@@ -21,12 +21,12 @@ const router = createRouter({
     //   component: () =>
     //     import(/*webpackChunkName:"customerdata"*/ "@/pages/CustomerData.vue"),
     // },
-    // {
-    //   path: "/editabletable",
-    //   name: "EditableTable",
-    //   component: () =>
-    //     import(/*webpackChunkName:"editabletable"*/ "@/pages/EditableTable.vue"),
-    // },
+    {
+      path: "/editabletable",
+      name: "EditableTable",
+      component: () =>
+        import(/*webpackChunkName:"editabletable"*/ "@/pages/EditableTable.vue"),
+    },
     // {
     //   path: "/toggleview",
     //   name: "ToggleView",
