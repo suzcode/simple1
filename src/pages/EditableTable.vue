@@ -10,7 +10,7 @@
       <peopleCom :key="peopleKey">People1: {{ people1 }}</peopleCom>
       <details :key="componentKey">Details: {{ details }}</details>
     </pre> -->
-      <div class="container">
+      <!-- <div class="container">
         <template v-if="response.data !== null">
           Customers:
           <select v-model="selectedCustomer" class="form-control">
@@ -33,7 +33,7 @@
             />
             <button class="btn btn-primary">Submit</button><br /><br />
           </form>
-        </template>
+        </template> -->
         <Table>
           <template #thead>
             <TableHead>id</TableHead>
