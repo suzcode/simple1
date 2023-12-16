@@ -1,20 +1,20 @@
-template>
-    <td class="px-6 py-4 whitespace-nowrap" @click="handleClick">
-      <div :class="{ hidden: showInput }">
-        <slot />
-      </div>
-  
-      <input
-        type="text"
-        ref="inputElement"
-        @blur="handleBlur"
-        @keypress.enter="handleBlur"
-        v-model="inputValue"
-        class="border border-gray focus:ring focus:outline-none focus:ring-gray-500"
-        :class="`${showInput ? 'block' : 'hidden'}`"
-      />
-    </td>
-  </template>
+<template>
+  <td class="px-6 py-4 whitespace-nowrap" @click="handleClick">
+    <div :class="{ hidden: showInput }">
+      <slot />
+    </div>
+
+    <input
+      type="text"
+      ref="inputElement"
+      @blur="handleBlur"
+      @keypress.enter="handleBlur"
+      v-model="inputValue"
+      class="border border-gray focus:ring focus:outline-none focus:ring-gray-500"
+      :class="`${showInput ? 'block' : 'hidden'}`"
+    />
+  </td>
+</template>
   
   <script setup lang="ts">
   import { ref, watch, defineProps, defineEmits } from "vue";
