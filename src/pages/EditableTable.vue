@@ -164,15 +164,15 @@
   const selectedCustomer = ref(null);
   
   // When the submit button is clicked this calls the setCustomer and getMessage functions
-  function onSubmit(e) {
-    console.log(e);
-    e.preventDefault();
-    const data = JSON.stringify(selectedCustomer.value);
-    console.log("data is as follows", data);
-    const options = { headers: { "content-type": "application/json" } };
-    setCustomer(data, options);
+  // function onSubmit(e) {
+  //   console.log(e);
+  //   e.preventDefault();
+  //   const data = JSON.stringify(selectedCustomer.value);
+  //   console.log("data is as follows", data);
+  //   const options = { headers: { "content-type": "application/json" } };
+  //   setCustomer(data, options);
     //getMessage();
-  }
+  // }
   
   // This function posts the selected customer name to the python backend
   // function setCustomer(data, options) {
