@@ -63,8 +63,8 @@
         </Table>
         <form @submit.prevent.stop="onSubmit" method="POST">
           <input
-            name="people1"
-            v-model="people1"
+            name="userAge"
+            v-model="userAge"
             type="Object"
             placeholder="This is the updated cells"
             visable="false"
