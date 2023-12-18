@@ -54,7 +54,7 @@
           <!-- Displays table and if the item field is updated it calls the handlePersonUpdate method -->
           <template #tbody>
             <PersonRow
-              v-for="(item, index) in details"
+              v-for="(item, index) in details.value"
               :key="index"
               :person="item"
               @personupdated="handlePersonUpdate"
