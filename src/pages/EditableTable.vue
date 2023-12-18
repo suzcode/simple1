@@ -194,7 +194,6 @@
   
   var people1 = ref([]);
   
-  //
   function handlePersonUpdate(payload: EmittedValue): void {
     console.log("payload", payload);
     console.log("people", people);
@@ -325,14 +324,14 @@
 
   // This function posts the updated cells to the python backend
   function sendUpdates(data1, options1) {
-    axios
-      .post("http://localhost:5000/updatedCells", data1, options1)
-      .then((res1) => {
-        console.log("OK", res1);
-      })
-      .catch((error1) => {
-        console.log("ERROR", error1);
-      });
+    // axios
+    //   .post("http://localhost:5000/updatedCells", data1, options1)
+    //   .then((res1) => {
+    //     console.log("OK", res1);
+    //   })
+    //   .catch((error1) => {
+    //     console.log("ERROR", error1);
+    //   });
   }
   
   </script>
