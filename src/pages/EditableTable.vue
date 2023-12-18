@@ -61,7 +61,7 @@
             />
           </template>
         </Table>
-        <form @submit.prevent.stop="onSubmitChangedCells" method="POST">
+        <form @submit.prevent.stop="onSubmit" method="POST">
           <input
             name="people1"
             v-model="people1"
