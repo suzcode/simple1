@@ -201,19 +201,19 @@
     console.log("payloand.id", payload.id);
     console.log("payloand.key", payload.key);
     console.log("payloand.val", Number(payload.val));
-    //const people = people.value.map((item) => {
-    //const container = {};
-    //if (item.id == payload.id) {
-    //  item[payload.key] = Number(payload.val);
-    //}
-    //return {
-    //  item,
-    //  container,
-    //  people,
-    //};
-    //});
-    // console.log("item", item);
-    //console.log("people1", people1);
+    const people = people.value.map((item) => {
+    const container = {};
+    if (item.id == payload.id) {
+     item[payload.key] = Number(payload.val);
+    }
+    return {
+     item,
+     container,
+     people,
+    };
+    });
+    console.log("item", item);
+    console.log("people1", people1);
     peoplePush(payload);
     console.log("people1", people1);
     people.value = people.value.map((item, index) => {
