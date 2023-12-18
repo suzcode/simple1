@@ -216,14 +216,14 @@
     //console.log("people1", people1);
     peoplePush(payload);
     console.log("people1", people1);
-    //people.value = people.value.map((item, index) => {
-    //  if (item.id == payload.id) {
-    //    item[payload.key] = Number(payload.value);
-    //  }
-    //  console.log("People", people);
-    //  console.log("ITEM", item);
-    //  return item;
-    //});
+    people.value = people.value.map((item, index) => {
+     if (item.id == payload.id) {
+       item[payload.key] = Number(payload.value);
+     }
+     console.log("People", people);
+     console.log("ITEM", item);
+     return item;
+    });
   }
   
   var exists = false;
