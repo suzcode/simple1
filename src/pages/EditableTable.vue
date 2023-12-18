@@ -268,7 +268,7 @@
     const data1 = JSON.stringify(sendObject);
     console.log("data is as follows", data1);
     const options1 = { headers: { "content-type": "application/json" } };
-    sendUpdates(data1, options1);
+    // sendUpdates(data1, options1);
     successMessage = "UPDATED";
     console.log(successMessage);
     // restart(JSON.stringify(successMessage), options1);
