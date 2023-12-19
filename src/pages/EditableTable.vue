@@ -2,14 +2,14 @@
     <div>
       <br />
       <br />
-      <!-- <pre>
+      <pre>
       <h1>{{ successMessage }}</h1>
       Item: {{ item }}
-      Selected customer: {{ selectedCustomer }}
-      Returned customer is: {{ custName }}
+      <!-- Selected customer: {{ selectedCustomer }}
+      Returned customer is: {{ custName }} -->
       <peopleCom :key="peopleKey">People1: {{ people1 }}</peopleCom>
       <details :key="componentKey">Details: {{ details }}</details>
-    </pre> -->
+    </pre>
       <!-- <div class="container">
         <template v-if="response.data !== null">
           Customers:
