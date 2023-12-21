@@ -9,7 +9,6 @@
       Returned customer is: {{ custName }} -->
       <peopleCom :key="peopleKey">People1: {{ people1 }}</peopleCom>
       <details :key="componentKey">Details: {{ details }}</details>
-      <detailsv :key="detailsvKey">DetailsV: {{ details.value }}</detailsv>
     </pre>
       <!-- <div class="container">
         <template v-if="response.data !== null">
