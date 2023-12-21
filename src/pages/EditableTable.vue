@@ -8,7 +8,7 @@
       <!-- Selected customer: {{ selectedCustomer }}
       Returned customer is: {{ custName }} -->
       <peopleCom :key="peopleKey">People1: {{ people1 }}</peopleCom>
-      <details :key="componentKey">Details: {{ details }}</details>
+      <details :key="componentKey">Details: {{ details.value }}</details>
     </pre>
       <!-- <div class="container">
         <template v-if="response.data !== null">
