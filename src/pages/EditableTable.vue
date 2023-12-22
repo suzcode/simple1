@@ -10,7 +10,7 @@
       <peopleCom :key="peopleKey">People1: {{ people1 }}</peopleCom>
       <details :key="componentKey">Details: {{ details.value }}</details>
     </pre>
-      <!-- <div class="container">
+      <div class="container">
         <template v-if="response.data !== null">
           Customers:
           <select v-model="selectedCustomer" class="form-control">
@@ -33,7 +33,7 @@
             />
             <button class="btn btn-primary">Submit</button><br /><br />
           </form>
-        </template> -->
+        </template>
         <Table>
           <template #thead>
             <TableHead>id</TableHead>
@@ -152,14 +152,14 @@
     peopleKey.value += 1;
   };
   
-  // const response = ref(null);
+
   
   // Gets a list of the customers for the drop down selector box
-  // onBeforeMount(async () => {
-  //   response.value = await axios.get("http://127.0.0.1:5000/customers");
-  //   console.log(response.value);
-  //   return response;
-  // });
+  onBeforeMount(async () => {
+     response.value = await axios.get("http://127.0.0.1:5000/customers");
+     console.log(response.value);
+     return response;
+   });
   
   const selectedCustomer = ref(null);
   
@@ -279,12 +279,20 @@
   // import { ref } from "vue";
 
   // url for kubernetes backend
+  const url_cust = "http://34.31.236.147/customers";
   const url = "http://34.31.236.147/microservice1";
 
   var responseData = ref(null);
   var userAge = ref<any>(null);
   var response = ref(null);
   var details = ref(null);
+
+   // Gets a list of the customers for the drop down selector box
+   onBeforeMount(async () => {
+     response.value = await axios.get(url_cust);
+     console.log(response.value);
+     return response;
+   });
 
   // When the submit button is clicked this adds the age selected and queries the backend database
   function onSubmit(e) {
