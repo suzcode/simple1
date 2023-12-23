@@ -54,7 +54,7 @@
         <!-- Displays table and if the item field is updated it calls the handlePersonUpdate method -->
         <template #tbody>
           <PersonRow
-            v-for="(item, index) in details.value"
+            v-for="(item, index) in details.data"
             :key="index"
             :person="item"
             @personupdated="handlePersonUpdate"
@@ -71,7 +71,7 @@
         />
         <button class="btn btn-primary">Submit</button><br /><br />
       </form>
-      {{ successMessage }}
+      <!-- {{ successMessage }} -->
     </div>
   </div>
 </template>
