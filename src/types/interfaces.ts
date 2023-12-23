@@ -1,4 +1,4 @@
-xport interface Person {
+export interface Person {
     id: string | number;
     jan: string | number;
     feb: string | number;

@@ -3,11 +3,11 @@
       <br />
       <br />
       <pre>
-      <h1>{{ successMessage }}</h1>
+      <!-- <h1>{{ successMessage }}</h1> -->
       Item: {{ item }}
       <!-- Selected customer: {{ selectedCustomer }}
       Returned customer is: {{ custName }} -->
-      <peopleCom :key="peopleKey">People1: {{ people1 }}</peopleCom>
+      <!-- <peopleCom :key="peopleKey">People1: {{ people1 }}</peopleCom> -->
       <details :key="componentKey">Details: {{ details.value }}</details>
     </pre>
       <div class="container">
