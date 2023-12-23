@@ -154,11 +154,19 @@ const forceRerender = () => {
 
 const selectedCustomer = ref(null);
 var people1 = ref([]);
-
+// url for kubernetes backend
+const url_cust = "http://34.31.236.147/customers";
+const url = "http://34.31.236.147/microservice1";
+var exists = false;
+var successMessage = ref(null);
+var responseData = ref(null);
+var userAge = ref<any>(null);
+var response = ref(null);
+var details = ref(null);
 
 // Gets a list of the customers for the drop down selector box
 onBeforeMount(async () => {
-    response.value = await axios.get("http://127.0.0.1:5000/customers");
+    response.value = await axios.get(url_cust);
     console.log(response.data);
     return response;
   });
@@ -223,8 +231,6 @@ function handlePersonUpdate(payload: EmittedValue): void {
   });
 }
 
-var exists = false;
-
 function peoplePush(payload) {
   console.log(payload.id);
   console.log(payload.key);
@@ -248,8 +254,6 @@ function peoplePush(payload) {
   });
 }
 
-var successMessage = ref(null);
-
 function onSubmitChangedCells(e) {
   var sendObject = {};
   console.log(e);
@@ -271,26 +275,6 @@ function onSubmitChangedCells(e) {
   // restart(JSON.stringify(successMessage), options1);
   return cellUpdates;
 }
-
-// <script setup lang="ts">
-// import axios from 'axios';
-// import { ref } from "vue";
-
-// url for kubernetes backend
-const url_cust = "http://34.31.236.147/customers";
-const url = "http://34.31.236.147/microservice1";
-
-var responseData = ref(null);
-var userAge = ref<any>(null);
-var response = ref(null);
-var details = ref(null);
-
-  // Gets a list of the customers for the drop down selector box
-  onBeforeMount(async () => {
-    response.value = await axios.get(url_cust);
-    console.log(response.value);
-    return response;
-  });
 
 // When the submit button is clicked this adds the age selected and queries the backend database
 function onSubmit(e) {
@@ -323,10 +307,6 @@ function onSubmit(e) {
       throw error;  // Re-throw the error to propagate it to the calling code
     });
 }
-
-
-
-
 
 // This function posts the updated cells to the python backend
 function sendUpdates(data1, options1) {
