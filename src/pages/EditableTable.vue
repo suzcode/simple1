@@ -4,7 +4,7 @@
     <br />
     <pre>
     <!-- <h1>{{ successMessage }}</h1> -->
-    Item: {{ item }}
+    Response: {{ response }}
     <!-- Selected customer: {{ selectedCustomer }}
     Returned customer is: {{ custName }} -->
     <!-- <peopleCom :key="peopleKey">People1: {{ people1 }}</peopleCom> -->
