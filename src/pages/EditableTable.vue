@@ -1,80 +1,80 @@
 <template>
-    <div>
-      <br />
-      <br />
-      <pre>
-      <!-- <h1>{{ successMessage }}</h1> -->
-      Item: {{ item }}
-      <!-- Selected customer: {{ selectedCustomer }}
-      Returned customer is: {{ custName }} -->
-      <!-- <peopleCom :key="peopleKey">People1: {{ people1 }}</peopleCom> -->
-      <details :key="componentKey">Details: {{ details.value }}</details>
+  <div>
+    <br />
+    <br />
+    <pre>
+    <!-- <h1>{{ successMessage }}</h1> -->
+    Item: {{ item }}
+    <!-- Selected customer: {{ selectedCustomer }}
+    Returned customer is: {{ custName }} -->
+    <!-- <peopleCom :key="peopleKey">People1: {{ people1 }}</peopleCom> -->
+    <details :key="componentKey">Details: {{ details.value }}</details>
     </pre>
-      <div class="container">
-        <template v-if="response.data !== null">
-          Customers:
-          <select v-model="selectedCustomer" class="form-control">
-            <option selected disabled value="">Choose</option>
-            <option
-              v-for="customer in response.data"
-              :key="customer.id"
-              :selectedCustomer="selectedCustomer"
-            >
-              {{ customer }}
-            </option>
-          </select>
-          <form @submit.prevent.stop="onSubmit" method="POST">
-            <input
-              name="selectedCustomer"
-              v-model="selectedCustomer"
-              type="text"
-              placeholder="Enter name"
-              visable="false"
-            />
-            <button class="btn btn-primary">Submit</button><br /><br />
-          </form>
-        </template>
-        <Table>
-          <template #thead>
-            <TableHead>id</TableHead>
-            <TableHead>Jan</TableHead>
-            <TableHead>Feb</TableHead>
-            <TableHead>Mar</TableHead>
-            <TableHead>Apr</TableHead>
-            <TableHead>May</TableHead>
-            <TableHead>Jun</TableHead>
-            <TableHead>Jul</TableHead>
-            <TableHead>Aug</TableHead>
-            <TableHead>Sep</TableHead>
-            <TableHead>Oct</TableHead>
-            <TableHead>Nov</TableHead>
-            <TableHead>Dec</TableHead>
-          </template>
-  
-          <!-- Displays table and if the item field is updated it calls the handlePersonUpdate method -->
-          <template #tbody>
-            <PersonRow
-              v-for="(item, index) in details.value"
-              :key="index"
-              :person="item"
-              @personupdated="handlePersonUpdate"
-            />
-          </template>
-        </Table>
+    <div class="container">
+      <template v-if="response.data !== null">
+        Customers:
+        <select v-model="selectedCustomer" class="form-control">
+          <option selected disabled value="">Choose</option>
+          <option
+            v-for="customer in response.data"
+            :key="customer.id"
+            :selectedCustomer="selectedCustomer"
+          >
+            {{ customer }}
+          </option>
+        </select>
         <form @submit.prevent.stop="onSubmit" method="POST">
           <input
-            name="userAge"
-            v-model="userAge"
-            type="Object"
-            placeholder="This is the updated cells"
+            name="selectedCustomer"
+            v-model="selectedCustomer"
+            type="text"
+            placeholder="Enter name"
             visable="false"
           />
           <button class="btn btn-primary">Submit</button><br /><br />
         </form>
-        {{ successMessage }}
-      <!-- </div> -->
+      </template>
+      <Table>
+        <template #thead>
+          <TableHead>id</TableHead>
+          <TableHead>Jan</TableHead>
+          <TableHead>Feb</TableHead>
+          <TableHead>Mar</TableHead>
+          <TableHead>Apr</TableHead>
+          <TableHead>May</TableHead>
+          <TableHead>Jun</TableHead>
+          <TableHead>Jul</TableHead>
+          <TableHead>Aug</TableHead>
+          <TableHead>Sep</TableHead>
+          <TableHead>Oct</TableHead>
+          <TableHead>Nov</TableHead>
+          <TableHead>Dec</TableHead>
+        </template>
+
+        <!-- Displays table and if the item field is updated it calls the handlePersonUpdate method -->
+        <template #tbody>
+          <PersonRow
+            v-for="(item, index) in details.value"
+            :key="index"
+            :person="item"
+            @personupdated="handlePersonUpdate"
+          />
+        </template>
+      </Table>
+      <form @submit.prevent.stop="onSubmit" method="POST">
+        <input
+          name="userAge"
+          v-model="userAge"
+          type="Object"
+          placeholder="This is the updated cells"
+          visable="false"
+        />
+        <button class="btn btn-primary">Submit</button><br /><br />
+      </form>
+      {{ successMessage }}
     </div>
-  </template>
+  </div>
+</template>
   
   <script lang="ts" setup>
   import { defineAsyncComponent, onBeforeMount, ref } from "vue";
