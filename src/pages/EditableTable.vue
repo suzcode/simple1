@@ -11,12 +11,12 @@
     <!-- <details :key="componentKey">Details: {{ details.value }}</details> -->
     </pre>
     <div class="container">
-      <template v-if="response.value !== null">
+      <template v-if="response !== null">
         Customers:
         <select v-model="selectedCustomer" class="form-control">
           <option selected disabled value="">Choose</option>
           <option
-            v-for="customer in response.value"
+            v-for="customer in response"
             :key="customer.id"
             :selectedCustomer="selectedCustomer"
           >
