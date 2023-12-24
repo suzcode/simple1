@@ -17,8 +17,7 @@
           <option selected disabled value="">Choose</option>
           <option
             v-for="customer in response.data"
-            :key="customer.id"
-            :selectedCustomer="selectedCustomer"
+            :key="customer"
           >
             <!-- {{ customer }} -->
           </option>
@@ -29,7 +28,7 @@
             v-model="selectedCustomer"
             type="text"
             placeholder="Enter name"
-            visable="false"
+            :visible="false"
           />
           <button class="btn btn-primary">Submit</button><br /><br />
         </form>
