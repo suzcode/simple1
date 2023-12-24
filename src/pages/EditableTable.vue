@@ -5,6 +5,8 @@
     <pre>
     <!-- <h1>{{ successMessage }}</h1> -->
     Response 2.46pm: {{ response.data }}
+    Details.data: {{ details.data}}
+    Details.value:  {{ details.value }}
     <!-- Selected customer: {{ selectedCustomer }}
     Returned customer is: {{ custName }} -->
     <!-- <peopleCom :key="peopleKey">People1: {{ people1 }}</peopleCom> -->
