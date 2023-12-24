@@ -19,7 +19,7 @@
             v-for="customer in response.data"
             :key="customer"
           >
-            <!-- {{ customer }} -->
+            {{ customer }}
           </option>
         </select>
         <form @submit.prevent.stop="onSubmit" method="POST">
@@ -151,7 +151,7 @@ const forceRerender = () => {
   peopleKey.value += 1;
 };
 
-const selectedCustomer = ref(null);
+var selectedCustomer = ref(null);
 var people1 = ref([]);
 // url for kubernetes backend
 const url_cust = "http://34.31.236.147/customers";
