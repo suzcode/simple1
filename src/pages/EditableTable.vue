@@ -34,7 +34,7 @@
         </form>
       </template>
       
-      <template v-if="details.value !== null">
+      <template v-if="details.data !== null">
         Details: {{ details }}
       </template>
       <Table>
