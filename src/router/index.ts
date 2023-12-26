@@ -47,6 +47,14 @@ const router = createRouter({
           /*webpackChunkName:"editabletable"*/ "@/views/AddCustomerDetails.vue"
         ),
     },
+    {
+      path: "/contractedit",
+      name: "ContractEdit",
+      component: () =>
+        import(
+          /*webpackChunkName:"editabletable"*/ "@/pages/EditContract.vue"
+        ),
+    },
   ]
 })
 
