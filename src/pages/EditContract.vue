@@ -33,7 +33,7 @@
     e.preventDefault();
     console.log(contractRef);
     let contract_dict = {}
-    contract_dict['contractRef'] = contractRef.value;
+    contract_dict['ref'] = contractRef.value;
     console.log('raw data is as follows', contract_dict);
     const contract_dict_json = JSON.stringify(contract_dict);
     console.log('contract_dict_json', contract_dict_json);
