@@ -10,7 +10,7 @@
     <!-- <peopleCom :key="peopleKey">People1: {{ people1 }}</peopleCom> -->
     <!-- <details :key="componentKey">Details: {{ details.value }}</details> -->
     </pre>
-    <!-- <div class="container">
+    <div class="container">
       <template v-if="response.data !== null">
         Customers:
         <select v-model="selectedCustomer" class="form-control">
@@ -34,7 +34,7 @@
         </form>
       </template> -->
       
-      <!-- <Table>
+      <Table>
         <template #thead>
           <TableHead>id</TableHead>
           <TableHead>Jan</TableHead>
@@ -49,10 +49,10 @@
           <TableHead>Oct</TableHead>
           <TableHead>Nov</TableHead>
           <TableHead>Dec</TableHead>
-        </template> -->
+        </template>
 
         <!-- Displays table and if the item field is updated it calls the handlePersonUpdate method -->
-        <!-- <template #tbody>
+        <template #tbody>
           <PersonRow
             v-for="(item, index) in details.Billing"
             :key="index"
@@ -70,9 +70,9 @@
           visable="false"
         />
         <button class="btn btn-primary">Submit</button><br /><br />
-      </form> -->
+      </form>
       <!-- {{ successMessage }} -->
-    <!-- </div> -->
+    </div>
   </div>
 </template>
   
