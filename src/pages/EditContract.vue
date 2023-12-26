@@ -38,7 +38,7 @@
     const contract_dict_json = JSON.stringify(contract_dict);
     console.log('contract_dict_json', contract_dict_json);
     axios
-      .post(url, age_dict_json, {
+      .post(url, contract_dict_json, {
         headers: {
           'Content-Type': 'application/json',
         },
