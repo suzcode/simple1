@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is the Edit contract details page </h1>
+    <h1>This is the filter by year page </h1>
     <br>
     <form @submit="onSubmit" method="POST">
       <input

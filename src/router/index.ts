@@ -48,11 +48,11 @@ const router = createRouter({
         ),
     },
     {
-      path: "/contractedit",
-      name: "ContractEdit",
+      path: "/yearfilter",
+      name: "YearFilter",
       component: () =>
         import(
-          /*webpackChunkName:"editabletable"*/ "@/pages/EditContract.vue"
+          /*webpackChunkName:"editabletable"*/ "@/pages/YearFilter.vue"
         ),
     },
   ]
