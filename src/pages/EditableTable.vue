@@ -32,7 +32,7 @@
           />
           <button class="btn btn-primary">Submit</button><br /><br />
         </form>
-      </template> -->
+      </template>
       
       <Table>
         <template #thead>
