@@ -27,7 +27,7 @@
             name="selectedCustomer"
             v-model="selectedCustomer"
             type="text"
-            placeholder="Enter name"
+            placeholder="Select customer name"
             :visible="false"
           />
           <button class="btn btn-primary">Submit</button><br /><br />
@@ -160,6 +160,7 @@ const url = "http://34.31.236.147/microservice1";
 var exists = false;
 var successMessage = ref(null);
 var responseData = ref(null);
+var selectedCustomer = ref<any>(null);
 var userAge = ref<any>(null);
 var response = ref(null);
 var details = ref(null);
@@ -280,14 +281,14 @@ function onSubmitChangedCells(e) {
 function onSubmit(e) {
   console.log(e);
   e.preventDefault();
-  console.log(userAge);
-  let age_dict = {}
-  age_dict['ageval'] = userAge.value;
-  console.log('raw data is as follows', age_dict);
-  const age_dict_json = JSON.stringify(age_dict);
-  console.log('age_dict_json', age_dict_json);
+  console.log(selectedCustomer);
+  let customerSelected_dict = {}
+  customerSelected_dict['cust'] = selectedCustomer.value;
+  console.log('raw data is as follows', customerSelected_dict);
+  const customer_dict_json = JSON.stringify(customerSelected_dict);
+  console.log('customer_dict_json', customer_dict_json);
   axios
-    .post(url, age_dict_json, {
+    .post(url, customer_dict_json, {
       headers: {
         'Content-Type': 'application/json',
       },
