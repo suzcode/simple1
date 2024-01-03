@@ -107,7 +107,7 @@ var people = ref<Person[]>([
 ]);
 
 // url for kubernetes backend
-const url = "http://34.31.236.147/contract";
+const url = "http://34.31.236.147/yearFilter";
 
 // initialize variables
 var responseData = ref(null);

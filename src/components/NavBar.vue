@@ -60,9 +60,9 @@ var show = ref(false);
                 >Edit Billing Table</router-link
               >
               <router-link
-                to="/contractedit"
+                to="/yearfilter"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                >Edit Contract Details</router-link
+                >Filter by year</router-link
               >
               <!-- <router-link
                 to="/toggleview"
