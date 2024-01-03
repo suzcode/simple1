@@ -133,7 +133,7 @@ function onSubmit(e) {
     })
     .then((response) => {
       console.log("OK", response.data);
-      responseData = response.data;
+      responseData.value = response.data;
       return responseData;
     })
     .catch((error) => {
