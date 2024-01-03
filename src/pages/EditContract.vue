@@ -7,7 +7,7 @@
         name="contractRef"
         v-model="contractRef"
         type="text"
-        placeholder="Enter the contract number"
+        placeholder="Enter the year"
       />
       <button class="btn btn-primary">Submit</button><br /><br />
     </form>
