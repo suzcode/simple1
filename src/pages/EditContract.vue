@@ -34,7 +34,7 @@
   <!-- Displays table and if the item field is updated it calls the handlePersonUpdate method -->
   <template #tbody>
     <PersonRow
-      v-for="(item, index) in responseData"
+      v-for="(item, index) in responseData.Billing"
       :key="index"
       :person="item"
     />
