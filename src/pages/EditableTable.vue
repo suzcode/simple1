@@ -1,15 +1,6 @@
 <template>
   <div>
-    <br />
-    <br />
-    <pre>
-    <!-- <h1>{{ successMessage }}</h1> -->
-    Response 2.46pm: {{ response.data }}
-    <!-- Selected customer: {{ selectedCustomer }}
-    Returned customer is: {{ custName }} -->
-    <!-- <peopleCom :key="peopleKey">People1: {{ people1 }}</peopleCom> -->
-    <!-- <details :key="componentKey">Details: {{ details.value }}</details> -->
-    </pre>
+    <h1>This is the editable table page</h1>
     <div class="container">
       <template v-if="response.data !== null">
         Customers:
@@ -32,6 +23,7 @@
           />
           <button class="btn btn-primary">Submit</button><br /><br />
         </form>
+        <p>Response data: {{ details }}</p>
       </template>
       
       <Table>
