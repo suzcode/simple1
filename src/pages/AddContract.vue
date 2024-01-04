@@ -14,7 +14,7 @@
         type="text"
       />
       <FormGroup
-        v-model="id"
+        v-model="contractid"
         label="Contract ID"
         placeholder="Enter Contract ID"
         type="text"
@@ -77,12 +77,12 @@ const url = "http://34.31.236.147/addcontract";
 
 function submitForm() {
 contract1 = {
-    customerId: customerId.value,
-    customerName: customerName.value,
-    id: id.value,
+    contract_id: id.value  
+    customer_id: customerId.value,
+    customer_name: customerName.value,
     start: start.value,
-    startsubs: startSubs.value,
-    percentinc: percentInc.value,
+    start_subs: startSubs.value,
+    percent_inc: percentInc.value,
     end: end.value,
     term: termMonths.value,
 };
