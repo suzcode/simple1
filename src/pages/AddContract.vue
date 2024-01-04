@@ -77,7 +77,7 @@ const url = "http://34.31.236.147/addcontract";
 
 function submitForm() {
 contract1 = {
-    contract_id: id.value  
+    contract_id: id.value,  
     customer_id: customerId.value,
     customer_name: customerName.value,
     start: start.value,
