@@ -80,16 +80,17 @@
   const emit = defineEmits(["submit"]);
   
   function submitForm() {
-    console.log(
-      "submit",
-      customerId,
-      customerName,
-      id,
-      start,
-      startSubs,
-      percentInc,
-      end
-    );
+    contract1 = {
+      customerId: customerId.value,
+      customerName: customerName.value,
+      id: id.value,
+      start: start.value,
+      startsubs: startSubs.value,
+      percentinc: percentInc.value,
+      end: end.value,
+      term: termMonths.value,
+    };
+    console.log("contract1", contract1);
   }
   
   const customerId = ref(null);
