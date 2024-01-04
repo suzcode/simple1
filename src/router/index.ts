@@ -48,6 +48,14 @@ const router = createRouter({
         ),
     },
     {
+      path: "/addcontract",
+      name: "AddContract",
+      component: () =>
+        import(
+          /*webpackChunkName:"editabletable"*/ "@/pages/AddContract.vue"
+        ),
+    },
+    {
       path: "/yearfilter",
       name: "YearFilter",
       component: () =>
