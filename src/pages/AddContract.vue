@@ -28,6 +28,14 @@
         pattern="\d{4}-\d{2}-\d{2}"
       />
       <FormGroup
+        v-model="end"
+        label="End Date"
+        placeholder="Enter contract end date"
+        type="date"
+        required
+        pattern="\d{4}-\d{2}-\d{2}"
+      />
+      <FormGroup
         v-model="startSubs"
         label="Starting subscription"
         placeholder="Enter Starting Subscription"
@@ -39,19 +47,13 @@
         placeholder="Enter annual percent increase"
         type="text"
       />
-      <FormGroup
-        v-model="end"
-        label="End Date"
-        placeholder="Enter contract end date"
-        type="date"
-      />
       <!-- <FormGroup
         v-model="contract.termMonths"
         label="Term months"
         placeholder="Enter contract term (months)"
         type="text"
       /> -->
-      <form @submit.prevent.stop="onSubmitnewContract" method="POST">
+      <form @submit.prevent.stop="submitForm" method="POST">
         <input
           name="contract1"
           v-model="contract1"
