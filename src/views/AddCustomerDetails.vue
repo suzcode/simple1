@@ -63,6 +63,7 @@
       </form>
     </form>
     <p>Term months: {{ termMonths }}</p>
+    <p>Contract details: {{ contract1 }}</p>
   </template>
   
   <script setup lang="ts" (props, { emit })>
@@ -122,7 +123,7 @@
     var sendObject = {};
     console.log(e);
     e.preventDefault();
-    const contract1 = {
+    contract1 = {
       customerId: customerId.value,
       customerName: customerName.value,
       id: id.value,
@@ -150,7 +151,7 @@
   
   // This function posts the selected customer name to the python backend
   function sendNewContract(data1, options1) {
-    axios.post("http://localhost:5000/newContract", data1, options1);
+    axios.post("http://34.31.236.147/newcontract", data1, options1);
   }
   </script>
   
