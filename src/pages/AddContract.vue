@@ -109,7 +109,7 @@ function onSubmitnewContract(e) {
   var new_contract_json = ref(null);
   console.log(e);
   e.preventDefault();
-  contract1 = {
+  const contract1 = {
       contract_id: id.value,  
       customer_id: customerId.value,
       customer_name: customerName.value,
