@@ -136,13 +136,13 @@ function onSubmitnewContract(e) {
 }
 
 // This function posts the selected customer name to the python backend
-function sendNewContract(new_contract_json) {
-axios
-.post(url, new_contract_json, {
-    headers: {
-    'Content-Type': 'application/json',
-    },
-});
+function sendNewContract(contract_json) {
+  axios
+  .post(url, contract_json, {
+      headers: {
+      'Content-Type': 'application/json',
+      },
+  });
 }
 </script>
 
