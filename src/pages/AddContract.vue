@@ -138,12 +138,26 @@ function onSubmitnewContract(e) {
 // This function posts the selected customer name to the python backend
 function sendNewContract(contract_json) {
   axios
-  .post(url, contract_json, {
+    .post(url, contract_json, {
       headers: {
-      'Content-Type': 'application/json',
+        'Content-Type': 'application/json',
       },
-  });
+    })
+    .then((response) => {
+      console.log("OK", response.data);
+      responseData.value = response.data;
+      return responseData;
+    })
+    .catch((error) => {
+      console.log("ERROR", error);
+      if (error.response) {
+        console.log("Server responded with a non-2xx status", error.response.data);
+      }
+      console.log('response is ', responseData);
+      throw error;  // Re-throw the error to propagate it to the calling code
+    });
 }
+
 </script>
 
 <!-- <style scoped>
