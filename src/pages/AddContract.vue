@@ -156,19 +156,6 @@ axios
     headers: {
     'Content-Type': 'application/json',
     },
-})
-.then((response) => {
-    console.log("OK", response.data);
-    responseData.value = response.data;
-    return responseData;
-})
-.catch((error) => {
-    console.log("ERROR", error);
-    if (error.response) {
-    console.log("Server responded with a non-2xx status", error.response.data);
-    }
-    console.log('response is ', responseData);
-    throw error;  // Re-throw the error to propagate it to the calling code
 });
 }
 </script>
