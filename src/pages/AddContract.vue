@@ -125,7 +125,8 @@ function onSubmitnewContract(e) {
   // };
   successMessage = "NOT UPDATED YET";
   console.log("SuccessMessage", successMessage);
-  new_contract['entries'] = contract1.value; 
+  new_contract['entries'] = contract1.value;
+  console.log("new contract", new_contract);
   new_contract_json = JSON.stringify(new_contract);
   console.log("data is as follows", new_contract_json);
   sendNewContract(new_contract_json);
