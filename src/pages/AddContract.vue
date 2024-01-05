@@ -120,7 +120,7 @@ function onSubmitnewContract(e) {
       term: termMonths.value,
   };
   console.log("contract1", contract1);
-  print(JSON.stringify(contract1));
+  console.log("contract1 JSON", JSON.stringify(contract1));
   successMessage = "NOT UPDATED YET";
   console.log("SuccessMessage", successMessage);
   new_contract["entries"] = contract1;
