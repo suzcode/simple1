@@ -14,7 +14,7 @@
         type="text"
       />
       <FormGroup
-        v-model="contractid"
+        v-model="contractId"
         label="Contract ID"
         placeholder="Enter Contract ID"
         type="text"
@@ -77,7 +77,7 @@ const url = "http://34.31.236.147/addcontract";
 
 var customerId = ref(null);
 var customerName = ref(null);
-var id = ref(null);
+var contractId = ref(null);
 var start = ref("2017-01-01");
 var startSubs = ref(null);
 var percentInc = ref(null);
@@ -110,7 +110,7 @@ function onSubmitnewContract(e) {
   console.log(e);
   e.preventDefault();
   contract1 = {
-      contract_id: id.value,  
+      contract_id: contractId.value,  
       customer_id: customerId.value,
       customer_name: customerName.value,
       start: start.value,
