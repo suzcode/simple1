@@ -75,78 +75,64 @@ const emit = defineEmits(["submit"]);
 // url for kubernetes backend
 const url = "http://34.31.236.147/addcontract";
 
-function submitForm() {
-contract1 = {
-    contract_id: id.value,  
-    customer_id: customerId.value,
-    customer_name: customerName.value,
-    start: start.value,
-    start_subs: startSubs.value,
-    percent_inc: percentInc.value,
-    end: end.value,
-    term: termMonths.value,
-};
-console.log("contract1", contract1);
-}
-
-const customerId = ref(null);
-const customerName = ref(null);
-const id = ref(null);
-const start = ref("2017-01-01");
-const startSubs = ref(null);
-const percentInc = ref(null);
-const end = ref("2024/01/01");
+var customerId = ref(null);
+var customerName = ref(null);
+var id = ref(null);
+var start = ref("2017-01-01");
+var startSubs = ref(null);
+var percentInc = ref(null);
+var end = ref("2024/01/01");
 
 const termMonths = computed(() => {
-const startValue = new Date(start.value);
-const endValue = new Date(end.value);
-const startMonth = startValue.getMonth();
-const endMonth = endValue.getMonth();
-const monthDiff = endMonth - startMonth;
-console.log("Month diff", monthDiff);
-const startYear = startValue.getYear();
-const endYear = endValue.getYear();
-const yearDiff = endYear - startYear;
-console.log("Year diff", yearDiff);
-const startDays = startValue.getDate();
-const endDays = endValue.getDate();
-const dayDiff = endDays - startDays;
-return monthDiff + yearDiff * 12;
+  const startValue = new Date(start.value);
+  const endValue = new Date(end.value);
+  const startMonth = startValue.getMonth();
+  const endMonth = endValue.getMonth();
+  const monthDiff = endMonth - startMonth;
+  console.log("Month diff", monthDiff);
+  const startYear = startValue.getYear();
+  const endYear = endValue.getYear();
+  const yearDiff = endYear - startYear;
+  console.log("Year diff", yearDiff);
+  const startDays = startValue.getDate();
+  const endDays = endValue.getDate();
+  const dayDiff = endDays - startDays;
+  return monthDiff + yearDiff * 12;
 });
 
 var contract1 = ref<any>(null);
-var new_contract_json = ref(null);
 var successMessage = ref(null);
 
 function onSubmitnewContract(e) {
-var sendObject = {};
-console.log(e);
-e.preventDefault();
-contract1 = {
-    contract_id: id.value,  
-    customer_id: customerId.value,
-    customer_name: customerName.value,
-    start: start.value,
-    start_subs: startSubs.value,
-    percent_inc: percentInc.value,
-    end: end.value,
-    term: termMonths.value,
-};
-console.log("contract1", contract1);
-// sendObject = {
-//   contract1,
-// };
-successMessage = "NOT UPDATED YET";
-console.log("SuccessMessage", successMessage);
-let new_contract = {}
-new_contract['entries'] = contract1.value 
-new_contract_json = JSON.stringify(new_contract);
-console.log("data is as follows", new_contract_json);
-sendNewContract(new_contract_json);
-successMessage = "UPDATED";
-console.log(successMessage);
-// restart(JSON.stringify(successMessage), options1);
-return new_contract_json;
+  var sendObject = {};
+  var new_contract = {};
+  var new_contract_json = ref(null);
+  console.log(e);
+  e.preventDefault();
+  contract1 = {
+      contract_id: id.value,  
+      customer_id: customerId.value,
+      customer_name: customerName.value,
+      start: start.value,
+      start_subs: startSubs.value,
+      percent_inc: percentInc.value,
+      end: end.value,
+      term: termMonths.value,
+  };
+  console.log("contract1", contract1);
+  // sendObject = {
+  //   contract1,
+  // };
+  successMessage = "NOT UPDATED YET";
+  console.log("SuccessMessage", successMessage);
+  new_contract['entries'] = contract1.value 
+  new_contract_json = JSON.stringify(new_contract);
+  console.log("data is as follows", new_contract_json);
+  sendNewContract(new_contract_json);
+  successMessage = "UPDATED";
+  console.log(successMessage);
+  // restart(JSON.stringify(successMessage), options1);
+  return new_contract_json;
 }
 
 // This function posts the selected customer name to the python backend
