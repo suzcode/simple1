@@ -132,7 +132,7 @@ const endYear = computed(() => {
 });
 
 const term_Months = computed((startDay, startMonth, startYear, endDay, endMonth, endYear) => {
-  const dayDiff = endDays - startDays;
+  const dayDiff = endDay - startDay;
   console.log("Day diff", dayDiff);
   const monthDiff = endMonth - startMonth;
   console.log("Month diff", monthDiff);
