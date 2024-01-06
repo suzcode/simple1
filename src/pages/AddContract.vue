@@ -83,20 +83,61 @@ var startSubs = ref(null);
 var percentInc = ref(null);
 var end = ref("2024/01/01");
 
-const termMonths = computed(() => {
-  const startValue = new Date(start.value);
-  const endValue = new Date(end.value);
-  const startMonth = startValue.getMonth();
-  const endMonth = endValue.getMonth();
+// const termMonths = computed(() => {
+//   const startValue = new Date(start.value);
+//   const endValue = new Date(end.value);
+//   const startMonth = startValue.getMonth();
+//   const endMonth = endValue.getMonth();
+//   const monthDiff = endMonth - startMonth;
+//   console.log("Month diff", monthDiff);
+//   const startYear = startValue.getYear();
+//   const endYear = endValue.getYear();
+//   const yearDiff = endYear - startYear;
+//   console.log("Year diff", yearDiff);
+//   const startDays = startValue.getDate();
+//   const endDays = endValue.getDate();
+//   const dayDiff = endDays - startDays;
+//   return monthDiff + yearDiff * 12;
+// });
+
+const startDay = computed(() => {
+  start_ref = new Date(start.value);
+  start_day_in_month = start_ref.getDate();
+  return start_day_in_month;
+});
+const startMonth = computed(() => {
+  start_ref = new Date(start.value);
+  start_month_in_year = start_ref.getMonth();
+  return start_month_in_year;
+});
+const startYear = computed(() => {
+  start_ref = new Date(start.value);
+  start_yr = start_ref.getYear();
+  return start_yr;
+});
+const endDay = computed(() => {
+  end_ref = new Date(end.value);
+  end_day_in_month = end_ref.getDate();
+  return end_day_in_month;
+});
+const endMonth = computed(() => {
+  end_ref = new Date(end.value);
+  end_month_in_year = end_ref.getMonth();
+  return end_month_in_year;
+});
+const endYear = computed(() => {
+  end_ref = new Date(end.value);
+  end_yr = end_ref.getYear();
+  return end_yr;
+});
+
+const term_Months = computed((startDay, startMonth, startYear, endDay, endMonth, endYear) => {
+  const dayDiff = endDays - startDays;
+  console.log("Day diff", dayDiff);
   const monthDiff = endMonth - startMonth;
   console.log("Month diff", monthDiff);
-  const startYear = startValue.getYear();
-  const endYear = endValue.getYear();
   const yearDiff = endYear - startYear;
   console.log("Year diff", yearDiff);
-  const startDays = startValue.getDate();
-  const endDays = endValue.getDate();
-  const dayDiff = endDays - startDays;
   return monthDiff + yearDiff * 12;
 });
 
@@ -113,12 +154,17 @@ function onSubmitnewContract(e) {
       contract_id: contractId.value,  
       customer_id: customerId.value,
       customer_name: customerName.value,
-      start: start.value,
+      start_day: startDay.value,
+      start_month: startMonth.value,
+      start_year: startYear.value,
+      end_day: endDay.value,
+      end_month: endMonth.value,
+      end_year: endYear.value, 
       start_subs: startSubs.value,
       percent_inc: percentInc.value,
-      end: end.value,
-      term: termMonths.value,
+      term_months: term_Months.value(startDay.value, startMonth.value, startYear.value, endDay.value, endMonth.value, endYear.value),
   };
+
   console.log("contract1", contract1);
   console.log("contract1 JSON", JSON.stringify(contract1));
   successMessage = "NOT UPDATED YET";
