@@ -45,7 +45,7 @@
         v-model="percentInc"
         label="Percent increase"
         placeholder="Enter annual percent increase"
-        type="text"
+        type="number"
       />
       <form @submit.prevent.stop="onSubmitnewContract" method="POST">
         <input
