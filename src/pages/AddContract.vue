@@ -84,23 +84,6 @@ var responseData = ref(null);
 var percentInc = ref(null);
 var end = ref("2024/01/01");
 
-// const termMonths = computed(() => {
-//   const startValue = new Date(start.value);
-//   const endValue = new Date(end.value);
-//   const startMonth = startValue.getMonth();
-//   const endMonth = endValue.getMonth();
-//   const monthDiff = endMonth - startMonth;
-//   console.log("Month diff", monthDiff);
-//   const startYear = startValue.getYear();
-//   const endYear = endValue.getYear();
-//   const yearDiff = endYear - startYear;
-//   console.log("Year diff", yearDiff);
-//   const startDays = startValue.getDate();
-//   const endDays = endValue.getDate();
-//   const dayDiff = endDays - startDays;
-//   return monthDiff + yearDiff * 12;
-// });
-
 const startDay = computed(() => {
   const start_ref = new Date(start.value);
   const start_day_in_month = start_ref.getDate();
