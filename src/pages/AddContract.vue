@@ -101,33 +101,33 @@ var end = ref("2024/01/01");
 // });
 
 const startDay = computed(() => {
-  start_ref = new Date(start.value);
-  start_day_in_month = start_ref.getDate();
+  const start_ref = new Date(start.value);
+  const start_day_in_month = start_ref.getDate();
   return start_day_in_month;
 });
 const startMonth = computed(() => {
-  start_ref = new Date(start.value);
-  start_month_in_year = start_ref.getMonth();
+  const start_ref = new Date(start.value);
+  const start_month_in_year = start_ref.getMonth();
   return start_month_in_year;
 });
 const startYear = computed(() => {
-  start_ref = new Date(start.value);
-  start_yr = start_ref.getYear();
+  const start_ref = new Date(start.value);
+  const start_yr = start_ref.getYear();
   return start_yr;
 });
 const endDay = computed(() => {
-  end_ref = new Date(end.value);
-  end_day_in_month = end_ref.getDate();
+  const end_ref = new Date(end.value);
+  const end_day_in_month = end_ref.getDate();
   return end_day_in_month;
 });
 const endMonth = computed(() => {
-  end_ref = new Date(end.value);
-  end_month_in_year = end_ref.getMonth();
+  const end_ref = new Date(end.value);
+  const end_month_in_year = end_ref.getMonth();
   return end_month_in_year;
 });
 const endYear = computed(() => {
-  end_ref = new Date(end.value);
-  end_yr = end_ref.getYear();
+  const end_ref = new Date(end.value);
+  const end_yr = end_ref.getYear();
   return end_yr;
 });
 
