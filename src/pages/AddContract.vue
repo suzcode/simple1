@@ -39,7 +39,7 @@
         v-model="startSubs"
         label="Starting subscription"
         placeholder="Enter Starting Subscription"
-        type="text"
+        type="number"
       />
       <FormGroup
         v-model="percentInc"
@@ -108,7 +108,7 @@ const startDay = computed(() => {
 });
 const startMonth = computed(() => {
   const start_ref = new Date(start.value);
-  const start_month_in_year = start_ref.getMonth();
+  const start_month_in_year = start_ref.getMonth() + 1;
   return start_month_in_year;
 });
 const startYear = computed(() => {
@@ -123,7 +123,7 @@ const endDay = computed(() => {
 });
 const endMonth = computed(() => {
   const end_ref = new Date(end.value);
-  const end_month_in_year = end_ref.getMonth();
+  const end_month_in_year = end_ref.getMonth() + 1;
   return end_month_in_year;
 });
 const endYear = computed(() => {
