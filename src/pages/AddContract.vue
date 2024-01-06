@@ -80,6 +80,7 @@ var customerName = ref(null);
 var contractId = ref(null);
 var start = ref("2017-01-01");
 var startSubs = ref(null);
+var responseData = ref(null);
 var percentInc = ref(null);
 var end = ref("2024/01/01");
 
