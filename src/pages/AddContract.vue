@@ -131,7 +131,7 @@ const endYear = computed(() => {
   return end_yr;
 });
 
-const term_Months = computed((startDay, startMonth, startYear, endDay, endMonth, endYear) => {
+function term_Months(startDay, startMonth, startYear, endDay, endMonth, endYear) {
   const dayDiff = endDay - startDay;
   console.log("Day diff", dayDiff);
   const monthDiff = endMonth - startMonth;
@@ -139,7 +139,7 @@ const term_Months = computed((startDay, startMonth, startYear, endDay, endMonth,
   const yearDiff = endYear - startYear;
   console.log("Year diff", yearDiff);
   return monthDiff + yearDiff * 12;
-});
+};
 
 var contract1 = ref<any>(null);
 var successMessage = ref(null);
@@ -162,7 +162,7 @@ function onSubmitnewContract(e) {
       end_year: endYear.value, 
       start_subs: startSubs.value,
       percent_inc: percentInc.value,
-      term_months: term_Months(startDay.value, startMonth.value, startYear.value, endDay.value, endMonth.value, endYear.value),
+      term_months: term_Months(start_day, start_month, start_year, end_day, end_month, end_year),
   };
 
   console.log("contract1", contract1);
