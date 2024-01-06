@@ -162,7 +162,7 @@ function onSubmitnewContract(e) {
       end_year: endYear.value, 
       start_subs: startSubs.value,
       percent_inc: percentInc.value,
-      term_months: term_Months.value(startDay.value, startMonth.value, startYear.value, endDay.value, endMonth.value, endYear.value),
+      term_months: term_Months(startDay.value, startMonth.value, startYear.value, endDay.value, endMonth.value, endYear.value),
   };
 
   console.log("contract1", contract1);
