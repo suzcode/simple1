@@ -83,7 +83,7 @@ var start = ref("2017-01-01");
 var startSubs = ref(null);
 var responseData = ref(null);
 var percentInc = ref(null);
-var end = ref("2024/01/01");
+var end = ref("2024-01-01");
 
 const startDay = computed(() => {
   const start_ref = new Date(start.value);
