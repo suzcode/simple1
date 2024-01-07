@@ -53,10 +53,10 @@
           />
         </template>
       </Table>
-      <form @submit.prevent.stop="onSubmit" method="POST">
+      <form @submit.prevent.stop="onSubmitChangedCells" method="POST">
         <input
-          name="userAge"
-          v-model="userAge"
+          name="cellUpdates"
+          v-model="cellUpdates"
           type="Object"
           placeholder="This is the updated cells"
           visable="false"
@@ -251,7 +251,6 @@ function onSubmitChangedCells(e) {
   var sendObject = {};
   console.log(e);
   e.preventDefault();
-
   const cellUpdates = people1.value;
   sendObject = {
     selectedCustomer: selectedCustomer.value,
