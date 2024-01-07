@@ -36,17 +36,18 @@
       | "dec"
       | "customer_id"
       | "contract_id"
-      | "start_year"
       | "start_day"
+      | "start_month"
+      | "start_year"
       | "start_subs"
       | "percent_inc"
-      | "end_year"
-      | "end_month"
       | "end_day"
-      | "term_mths";
+      | "end_month"
+      | "end_year"
+      | "term_months";
   }>();
   const inputElement = ref<HTMLInputElement>();
-  const inputValue = ref<number>(props.cellvalue);
+  var inputValue = ref<number>(props.cellvalue);
   const showInput = ref<boolean>(false);
   watch(
     () => props.cellvalue,
@@ -55,6 +56,7 @@
     }
   );
   const emit = defineEmits<{ (e: "changed", value: EmittedValue): void }>();
+  
   function handleClick(): void {
     console.log("CLIC");
     showInput.value = true;
@@ -64,6 +66,7 @@
     }, 200);
     console.log(inputElement.value);
   }
+  
   function handleBlur(): void {
     showInput.value = false;
     console.log(inputValue.value);
