@@ -129,6 +129,11 @@ const term_Months = computed(() => {
 var contract1 = ref<any>(null);
 var successMessage = ref(null);
 
+ // Convert startSubs and percentInc to numbers
+const startSubsValue = parseFloat(startSubs.value);
+const percentIncValue = parseFloat(percentInc.value);
+
+
 function onSubmitnewContract(e) {
   var sendObject = {};
   var new_contract = {};
@@ -145,8 +150,8 @@ function onSubmitnewContract(e) {
       end_day: endDay.value,
       end_month: endMonth.value,
       end_year: endYear.value, 
-      start_subs: startSubs.value,
-      percent_inc: percentInc.value,
+      start_subs: startSubsValue,
+      percent_inc: percentIncValue,
       term_months: term_Months.value,
   };
 
