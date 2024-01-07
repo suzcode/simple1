@@ -46,16 +46,16 @@
       | "end_year"
       | "term_months";
   }>();
-  const inputElement = ref<HTMLInputElement>();
+  var inputElement = ref<HTMLInputElement>();
   var inputValue = ref<number>(props.cellvalue);
-  const showInput = ref<boolean>(false);
+  var showInput = ref<boolean>(false);
   watch(
     () => props.cellvalue,
     (newValue: number) => {
       inputValue.value = newValue;
     }
   );
-  const emit = defineEmits<{ (e: "changed", value: EmittedValue): void }>();
+  var emit = defineEmits<{ (e: "changed", value: EmittedValue): void }>();
   
   function handleClick(): void {
     console.log("CLIC");
