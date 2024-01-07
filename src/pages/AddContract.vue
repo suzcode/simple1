@@ -58,7 +58,8 @@
         <button class="button">Submit</button><br /><br />
       </form>
     </form>
-    <p>Term months: {{ termMonths.value }}</p>
+    
+    <!-- <p>Term months: {{ termMonths }}</p> -->
 </template>
   
 <script setup lang="ts" (props, { emit })>
