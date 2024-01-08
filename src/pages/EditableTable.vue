@@ -2,12 +2,12 @@
   <div>
     <h1>This is the editable table page</h1>
     <div class="container">
-      <template v-if="response.data !== null">
+      <template v-if="customerListResponse.data !== null">
         Customers:
         <select v-model="selectedCustomer" class="form-control">
           <option selected disabled value="">Choose</option>
           <option
-            v-for="customer in response.data"
+            v-for="customer in customerListResponse.data"
             :key="customer"
           >
             {{ customer }}
@@ -144,7 +144,7 @@ const forceRerender = () => {
   peopleKey.value += 1;
 };
 
-var selectedCustomer = ref(null);
+// var selectedCustomer = ref(null);
 var people1 = ref([]);
 // url for kubernetes backend
 const url_cust = "http://34.31.236.147/customers";
@@ -153,15 +153,15 @@ var exists = false;
 var successMessage = ref(null);
 var responseData = ref(null);
 var selectedCustomer = ref<any>(null);
-var userAge = ref<any>(null);
-var response = ref(null);
+var cellUpdates = ref<any>(null);
+var customerListResponse = ref(null);
 var details = ref(null);
 
 // Gets a list of the customers for the drop down selector box
 onBeforeMount(async () => {
-    response.value = await axios.get(url_cust);
-    console.log(response.data);
-    return response;
+    customerListResponse.value = await axios.get(url_cust);
+    console.log(customerListResponse.data);
+    return customerListResponse;
   });
 
 // When the submit button is clicked this calls the setCustomer and getMessage functions
