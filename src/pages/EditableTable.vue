@@ -217,6 +217,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
   people.value = people.value.map((item, index) => {
      if (item.id == payload.id) {
        item[payload.key] = Number(payload.value);
+       console.log("match", item[payload.key]);
      }
      console.log("People", people);
      console.log("ITEM", item);
