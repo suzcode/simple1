@@ -221,9 +221,9 @@ function handlePersonUpdate(payload: EmittedValue): void {
      }
      console.log("People", people);
      console.log("ITEM", item);
+     peoplePush(payload);
      return item;
    });
-  peoplePush(payload);
 }
 
 function peoplePush(payload) {
