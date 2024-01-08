@@ -195,7 +195,6 @@ onBeforeMount(async () => {
 
 function handlePersonUpdate(payload: EmittedValue): void {
   console.log("payload", payload);
-  console.log("people", people);
   console.log("payloand.id", payload.id);
   console.log("payloand.key", payload.key);
   console.log("payloand.val", Number(payload.val));
@@ -210,6 +209,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
     people,
   };
   });
+  console.log("people", people);
   console.log("item", item);
   console.log("people1", people1);
   peoplePush(payload);
