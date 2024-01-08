@@ -223,6 +223,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
      console.log("ITEM", item);
      return item;
    });
+  peoplePush(payload);
 }
 
 function peoplePush(payload) {
