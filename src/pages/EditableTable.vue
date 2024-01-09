@@ -149,6 +149,7 @@ var people1 = ref([]);
 // url for kubernetes backend
 const url_cust = "http://34.31.236.147/customers";
 const url = "http://34.31.236.147/microservice1";
+const url_updates = "http://34.31.236.147/contractupdates"
 var exists = false;
 var successMessage = ref(null);
 var responseData = ref(null);
@@ -262,8 +263,18 @@ function onSubmitChangedCells(e) {
   console.log(successMessage);
   const data1 = JSON.stringify(sendObject);
   console.log("data is as follows", data1);
-  const options1 = { headers: { "content-type": "application/json" } };
-  // sendUpdates(data1, options1);
+  axios
+    .post(url_updates, data1, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then((res1) => {
+      console.log("OK", res1);
+    })
+    .catch((error1) => {
+      console.log("ERROR", error1);
+    });
   successMessage = "UPDATED";
   console.log(successMessage);
   // restart(JSON.stringify(successMessage), options1);
@@ -300,18 +311,6 @@ function onSubmit(e) {
       console.log('response is ', response);
       throw error;  // Re-throw the error to propagate it to the calling code
     });
-}
-
-// This function posts the updated cells to the python backend
-function sendUpdates(data1, options1) {
-  // axios
-  //   .post("http://localhost:5000/updatedCells", data1, options1)
-  //   .then((res1) => {
-  //     console.log("OK", res1);
-  //   })
-  //   .catch((error1) => {
-  //     console.log("ERROR", error1);
-  //   });
 }
 
 </script>
