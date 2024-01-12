@@ -1,4 +1,9 @@
 <template>
+  <pre>
+    Cellupdates: {{ cellUpdates }}
+    {{ cellUpdates.value }}
+    {{ people1.value }}
+  </pre>
   <div>
     <h1>This is the editable table page</h1>
     <div class="container">
@@ -63,9 +68,6 @@
         />
         <button class="btn btn-primary">Submit</button><br /><br />
       </form>
-      <p>Cellupdates: {{ cellUpdates }}</p>
-      <p>{{ cellUpdates.value }}</p>
-      <p>{{ people1.value }}</p>
     </div>
   </div>
 </template>
