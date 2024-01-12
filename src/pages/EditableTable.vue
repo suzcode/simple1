@@ -63,7 +63,8 @@
         />
         <button class="btn btn-primary">Submit</button><br /><br />
       </form>
-      {{ people1.value }}
+      <p>Cellupdates: {{ cellUpdates }}</p>
+      <p>{{ people1.value }}</p>
     </div>
   </div>
 </template>
