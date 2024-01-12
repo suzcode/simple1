@@ -23,7 +23,7 @@
           />
           <button class="btn btn-primary">Submit</button><br /><br />
         </form>
-        <p>Response data: {{ details }}</p>
+        <!-- <p>Response data: {{ details }}</p> -->
       </template>
       
       <Table>
