@@ -64,6 +64,7 @@
         <button class="btn btn-primary">Submit</button><br /><br />
       </form>
       <p>Cellupdates: {{ cellUpdates }}</p>
+      <p>{{ cellUpdates.value }}
       <p>{{ people1.value }}</p>
     </div>
   </div>
