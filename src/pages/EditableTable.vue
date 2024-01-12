@@ -63,7 +63,7 @@
         />
         <button class="btn btn-primary">Submit</button><br /><br />
       </form>
-      <!-- {{ successMessage }} -->
+      {{ people1.value }}
     </div>
   </div>
 </template>
@@ -247,6 +247,7 @@ function peoplePush(payload) {
       people1.value[index] = payload;
       console.log("INDEX", people1.value[index]);
     }
+  return people1
   });
 }
 
