@@ -64,7 +64,7 @@
         <button class="btn btn-primary">Submit</button><br /><br />
       </form>
       <p>Cellupdates: {{ cellUpdates }}</p>
-      <p>{{ cellUpdates.value }}
+      <p>{{ cellUpdates.value }}</p>
       <p>{{ people1.value }}</p>
     </div>
   </div>
