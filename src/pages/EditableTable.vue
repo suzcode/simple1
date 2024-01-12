@@ -1,8 +1,7 @@
 <template>
   <pre>
     Cellupdates: {{ cellUpdates }}
-    {{ cellUpdates.value }}
-    {{ people1.value }}
+    Peopel1 {{ people1 }}
   </pre>
   <div>
     <h1>This is the editable table page</h1>
