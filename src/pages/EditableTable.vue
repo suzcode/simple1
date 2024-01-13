@@ -1,4 +1,7 @@
 <template>
+  <pre>
+    {{ details }}
+  </pre>
   <div>
     <h1>This is the editable table page updated 13 Jan 2024</h1>
     <div class="container">
