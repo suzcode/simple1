@@ -10,7 +10,7 @@
             v-for="customer in customerListResponse.data"
             :key="customer"
           >
-            <!-- {{ customer }} -->
+            {{ customer }}
           </option>
         </select>
         <form @submit.prevent.stop="onSubmit" method="POST">
