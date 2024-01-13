@@ -211,7 +211,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
   console.log("payloand.id", payload.id);
   console.log("payloand.key", payload.key);
   console.log("payloand.val", Number(payload.val));
-  existingPayload = details.cellChanges;
+  existingPayload = details;
   console.log("Pre-existinng Payload", existingPayload);
   // const people = people.value.map((item) => {
   // const container = {};
