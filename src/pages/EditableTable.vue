@@ -2,6 +2,11 @@
   <pre>
     Cellupdates: {{ cellUpdates }}
     Peopel1 {{ people1 }}
+    <ul>
+      <li v-for="item in people1">
+        {{ item.key }} - {{ item.id }} change to {{ item.val }}
+      </li>
+    </ul>
   </pre>
   <div>
     <h1>This is the editable table page</h1>
@@ -68,11 +73,6 @@
         <button class="btn btn-primary">Submit</button><br /><br />
       </form>
     </div>
-    <ul>
-      <li v-for="item in people1">
-        {{ item.key }} - {{ item.id }} change to {{ item.val }}
-      </li>
-    </ul>
   </div>
 </template>
   
