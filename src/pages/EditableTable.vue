@@ -66,11 +66,11 @@
           placeholder="This is the updated cells"
           visable="false"
         />
-        <ul>
+        <!-- <ul>
           <li v-for="item in people1">
             {{ item.key }} - {{ item.id }} change to {{ item.val }}
           </li>
-        </ul>
+        </ul> -->
         <button class="btn btn-primary">Confirm changes</button><br /><br />
       </form>
     </div>
