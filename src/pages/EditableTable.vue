@@ -30,6 +30,11 @@
             placeholder="Select customer name"
             :visible="false"
           />
+          <ul>
+          <li v-for="item in people1">
+            {{ item.key }} - {{ item.id }} change to {{ item.val }}
+          </li>
+          </ul>
           <button class="btn btn-primary">Submit</button><br /><br />
         </form>
         <!-- <p>Response data: {{ details }}</p> -->
