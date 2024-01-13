@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>This is the editable table page</h1>
+    <h1>This is the editable table page updated 13 Jan 2024</h1>
     <div class="container">
       <template v-if="customerListResponse.data !== null">
         Customers:
