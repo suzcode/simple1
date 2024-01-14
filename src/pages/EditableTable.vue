@@ -192,12 +192,12 @@ function handlePersonUpdate(payload: EmittedValue): void {
      }
      console.log("People", people);
      console.log("ITEM", item);
-     peoplePush(payload);
+     peoplePush(payload, existingPayload);
      return item;
    });
 }
 
-function peoplePush(payload) {
+function peoplePush(payload, existingPayload) {
   console.log(payload.id);
   console.log(payload.key);
   console.log(Number(payload.val));
