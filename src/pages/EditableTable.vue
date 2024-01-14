@@ -204,16 +204,13 @@ onBeforeMount(async () => {
 
 // var details = ref(null);
 // var custName = ref(null);
-return {
-  details,
-};
 
 function handlePersonUpdate(payload: EmittedValue): void {
   console.log("payload", payload);
   console.log("payloand.id", payload.id);
   console.log("payloand.key", payload.key);
   console.log("payloand.val", Number(payload.val));
-  const existingPayload = details;
+  const existingPayload = details.value;
   console.log("Pre-existinng Payload", existingPayload);
   const existingV = details.value;
   console.log("Existngv", existingV);
