@@ -1,6 +1,6 @@
 <template>
   <pre>
-    {{ details }}
+    {{ details.cellChanges }}
   </pre>
   <div>
     <h1>This is the editable table page updated 13 Jan 2024</h1>
@@ -316,7 +316,6 @@ function onSubmit(e) {
     })
     .then((response) => {
       console.log("OK", response.data);
-      // responseData = response.data;
       details.value = response.data;
       return details;
     })
