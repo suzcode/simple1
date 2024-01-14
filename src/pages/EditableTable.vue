@@ -1,6 +1,6 @@
 <template>
   <pre>
-    {{ details }}
+    {{ details.cellUpdates }}
   </pre>
   <div>
     <h1>This is the editable table page updated 13 Jan 2024</h1>
@@ -204,7 +204,9 @@ onBeforeMount(async () => {
 
 // var details = ref(null);
 // var custName = ref(null);
-
+return {
+  details,
+};
 
 function handlePersonUpdate(payload: EmittedValue): void {
   console.log("payload", payload);
