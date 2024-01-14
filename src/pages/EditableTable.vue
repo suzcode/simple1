@@ -218,7 +218,9 @@ function peoplePush(payload, existingPayload) {
       console.log("INDEX", people1.value[index]);
     }
   console.log("People1", people1);
+  console.log(type(people1));
   console.log("existingPayload", existingPayload);
+  console.log(type(existingPayload));
   people1.append(existingPayload);
   console.log("People1 with existing", people1);
   return people1;
