@@ -213,6 +213,8 @@ function handlePersonUpdate(payload: EmittedValue): void {
   console.log("payloand.val", Number(payload.val));
   const existingPayload = details;
   console.log("Pre-existinng Payload", existingPayload);
+  const existingV = existingPayload.value;
+  console.log{("Existngv", existingV)};
   // const people = people.value.map((item) => {
   // const container = {};
   // if (item.id == payload.id) {
