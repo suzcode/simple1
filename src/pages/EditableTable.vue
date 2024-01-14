@@ -263,7 +263,8 @@ function peoplePush(payload) {
       people1.value[index] = payload;
       console.log("INDEX", people1.value[index]);
     }
-  return people1
+  console.log("People1", people1);
+  return people1;
   });
 }
 
