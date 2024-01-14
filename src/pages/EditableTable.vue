@@ -169,6 +169,7 @@ var selectedCustomer = ref<any>(null);
 var cellUpdates = ref<any>(null);
 var customerListResponse = ref(null);
 var details = ref(null);
+var existingPayload = ref([]);
 
 // Gets a list of the customers for the drop down selector box
 onBeforeMount(async () => {
@@ -210,26 +211,8 @@ function handlePersonUpdate(payload: EmittedValue): void {
   console.log("payloand.id", payload.id);
   console.log("payloand.key", payload.key);
   console.log("payloand.val", Number(payload.val));
-  const existingPayload = details.value;
+  existingPayload = details.value.cellChanges;
   console.log("Pre-existinng Payload", existingPayload);
-  const existingV = details.value.cellChanges;
-  console.log("Existngv", existingV);
-  // const people = people.value.map((item) => {
-  // const container = {};
-  // if (item.id == payload.id) {
-  //   item[payload.key] = Number(payload.val);
-  // }
-  // return {
-  //   item,
-  //   container,
-  //   people,
-  // };
-  // });
-  // console.log("people", people);
-  // console.log("item", item);
-  // console.log("people1", people1);
-  // peoplePush(payload);
-  // console.log("people1", people1);
   people.value = people.value.map((item, index) => {
      if (item.id == payload.id) {
        item[payload.key] = Number(payload.value);
@@ -272,6 +255,7 @@ function onSubmitChangedCells(e) {
   console.log(e);
   e.preventDefault();
   const cellUpdates = people1.value;
+  cellUpdates.append(existingPayload);
   sendObject = {
     selectedCustomer: selectedCustomer.value,
     cellUpdates,
