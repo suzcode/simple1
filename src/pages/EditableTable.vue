@@ -218,10 +218,12 @@ function peoplePush(payload, existingPayload) {
       console.log("INDEX", people1.value[index]);
     }
   console.log("People1", people1);
-  console.log(type(people1));
   console.log("existingPayload", existingPayload);
-  console.log(type(existingPayload));
-  people1.append(existingPayload);
+  result_dict = {};
+  for i, (people1, existingPayload) in enumerate(zip(people1.values(), existingPayload.values())):
+    result_dict[i] = {**people1, **existingPayload};
+  console.log("result_dict", result_dict);
+  people1 = result_dict
   console.log("People1 with existing", people1);
   return people1;
   });
