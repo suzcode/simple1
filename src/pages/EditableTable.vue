@@ -206,7 +206,7 @@ onBeforeMount(async () => {
 // var custName = ref(null);
 
 
-function handlePersonUpdate(payload: EmittedValue, details): void {
+function handlePersonUpdate(payload: EmittedValue): void {
   console.log("payload", payload);
   console.log("payloand.id", payload.id);
   console.log("payloand.key", payload.key);
