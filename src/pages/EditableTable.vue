@@ -218,6 +218,8 @@ function peoplePush(payload, existingPayload) {
       console.log("INDEX", people1.value[index]);
     }
   console.log("People1", people1);
+  people1.append(existingPayload);
+  console.log("People1 with existing", people1);
   return people1;
   });
 }
@@ -227,6 +229,7 @@ function onSubmitChangedCells(e) {
   console.log(e);
   e.preventDefault();
   const cellUpdates = people1.value;
+  console.log("cellUpdates", cellUpdates)
   cellUpdates.append(existingPayload);
   sendObject = {
     selectedCustomer: selectedCustomer.value,
