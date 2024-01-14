@@ -178,34 +178,6 @@ onBeforeMount(async () => {
     return customerListResponse;
   });
 
-// When the submit button is clicked this calls the setCustomer and getMessage functions
-// function onSubmit(e) {
-//   console.log(e);
-//   e.preventDefault();
-//   const data = JSON.stringify(selectedCustomer.value);
-//   console.log("data is as follows", data);
-//   const options = { headers: { "content-type": "application/json" } };
-//   setCustomer(data, options);
-  //getMessage();
-// }
-
-// This function posts the selected customer name to the python backend
-// function setCustomer(data, options) {
-//   axios
-//     .post("http://localhost:5000/greeting", data, options)
-//     .then((res) => {
-//       console.log("OK", res);
-//       details.value = res.data;
-//     })
-//     .catch((error) => {
-//       console.log("ERROR", error);
-//     });
-//   return details;
-// }
-
-// var details = ref(null);
-// var custName = ref(null);
-
 function handlePersonUpdate(payload: EmittedValue): void {
   console.log("payload", payload);
   console.log("payloand.id", payload.id);
