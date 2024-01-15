@@ -219,7 +219,7 @@ function peoplePush(payload, existingPayload) {
     }
   console.log("People1.value", people1.value);
   console.log("existingPayload", existingPayload);
-  result_dict = {};
+  var result_dict = {};
   Object.values(people1.value).forEach((subObj1, i) => {
     const subObj2 = existingPayload[i];
     result_dict[i] = {...subObj1, ...subObj2};
