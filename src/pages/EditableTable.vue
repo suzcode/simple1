@@ -217,7 +217,7 @@ function peoplePush(payload, existingPayload) {
       people1.value[index] = payload;
       console.log("INDEX", people1.value[index]);
     }
-  console.log("People1", people1);
+  console.log("People1", people1.value);
   console.log("existingPayload", existingPayload);
   result_dict = {};
   Object.values(people1).forEach((subObj1, i) => {
