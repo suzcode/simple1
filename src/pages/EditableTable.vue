@@ -225,7 +225,7 @@ function peoplePush(payload, existingPayload) {
     result_dict[i] = {...subObj1, ...subObj2};
   });
   console.log("result_dict", result_dict);
-  people1 = result_dict
+  people1 = result_dict;
   console.log("People1 with existing", people1);
   return people1;
   });
