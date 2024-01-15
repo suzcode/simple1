@@ -219,11 +219,11 @@ function peoplePush(payload, existingPayload) {
     }
   console.log("People1.value", people1.value);
   console.log("existingPayload", existingPayload);
-  var result_dict = {};
-  Object.values(people1.value).forEach((subObj1, i) => {
-    const subObj2 = existingPayload[i];
-    result_dict[i] = {...subObj1, ...subObj2};
-  });
+  const result_dict = {};
+  for (const key of [...new Set([...Object.keys(people1.value), ...Object.keys(existingPayload)])]) {
+    // Combine sub-objects using spread syntax, defaulting to an empty object if undefined
+    result_dict[key] = { ...people1.value[key], ...existingPayload[key], ...(result_dict[key] || {}) };
+  }
   console.log("result_dict", result_dict);
   people1 = result_dict;
   console.log("People1 with existing", people1);
