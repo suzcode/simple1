@@ -220,8 +220,10 @@ function peoplePush(payload, existingPayload) {
   console.log("People1", people1);
   console.log("existingPayload", existingPayload);
   result_dict = {};
-  for i, (people1, existingPayload) in enumerate(zip(people1.values(), existingPayload.values())):
-    result_dict[i] = {**people1, **existingPayload};
+  Object.values(people1).forEach((subObj1, i) => {
+    const subObj2 = existingPayload[i];
+    result_dict[i] = {...subObj1, ...subObj2};
+  });
   console.log("result_dict", result_dict);
   people1 = result_dict
   console.log("People1 with existing", people1);
