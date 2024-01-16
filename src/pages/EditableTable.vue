@@ -225,17 +225,17 @@ function peoplePush(payload, existingPayload) {
   console.log("existingPayload", existingPayload);
   const exJSON = JSON.stringify(existingPayload);
   console.log("existingPayload stringify", exJSON);
-  const result_list = [];
-  // combine the existingPayload with the people1 which is the current payload
-  for (const index of [...new Set([...people1Value.keys(), ...existingPayload.keys()])]) {
-  result_list[index] = {
-    ...(people1Value[index] || {}),
-    ...(existingPayload[index] || {}),
-    ...(result_list[index] || {})
-  };
+  const resultList = [];
+  // Iterate over the dictionaries in list1 and list2
+  for (let i = 0; i < Math.max(people1Value.length, existingPayload.length); i++) {
+  // Combine dictionaries using spread syntax, defaulting to an empty object if undefined
+  resultList.push({
+    ...(people1Value[i] || {}),
+    ...(existingPayload[i] || {})
+  });
   }
-  console.log("result_list", result_list);
-  people1 = result_list;
+  console.log("resultList", resultList);
+  people1 = resultList;
   console.log("People1 with existing", people1);
   return people1;
   });
