@@ -218,16 +218,17 @@ function peoplePush(payload, existingPayload) {
       console.log("INDEX", people1.value[index]);
     }
   console.log("People1.value", people1.value);
+  const people1Value = people1.value; 
   console.log("existingPayload", existingPayload);
   const result_list = [];
-  for (const index of [...new Set([...people1.value.keys(), ...existingPayload.keys()])]) {
+  for (const index of [...new Set([...people1Value.keys(), ...existingPayload.keys()])]) {
   result_list[index] = {
-    ...(people1.value[index] || {}),
+    ...(people1Value[index] || {}),
     ...(existingPayload[index] || {}),
     ...(result_list[index] || {})
   };
   }
-  console.log("result_dict", result_list);
+  console.log("result_list", result_list);
   people1 = result_list;
   console.log("People1 with existing", people1);
   return people1;
