@@ -202,6 +202,7 @@ function peoplePush(payload, existingPayload) {
   console.log(payload.key);
   console.log(Number(payload.val));
   console.log("NEW");
+  console.log("peop1e1 for value.find", people1);
   exists = !!people1.value.find(
     (item) => item.id === payload.id && item.key === payload.key
   );
