@@ -220,10 +220,10 @@ function peoplePush(payload, existingPayload) {
     }
   console.log("People1.value", people1.value);
   const people1Value = people1.value;
-  const pepJSON = json.stringify(people1Value);
+  const pepJSON = JSON.stringify(people1Value);
   console.log("People1 json", pepJSON);
   console.log("existingPayload", existingPayload);
-  const exJSON = json.stringify(existingPayload);
+  const exJSON = JSON.stringify(existingPayload);
   console.log("existingPayload stringify", exJSON);
   const result_list = [];
   // combine the existingPayload with the people1 which is the current payload
