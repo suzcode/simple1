@@ -218,8 +218,10 @@ function peoplePush(payload, existingPayload) {
       console.log("INDEX", people1.value[index]);
     }
   console.log("People1.value", people1.value);
-  const people1Value = people1.value; 
+  const people1Value = people1.value;
+  typeof people1Value;
   console.log("existingPayload", existingPayload);
+  typeof existingPayload;
   const result_list = [];
   for (const index of [...new Set([...people1Value.keys(), ...existingPayload.keys()])]) {
   result_list[index] = {
