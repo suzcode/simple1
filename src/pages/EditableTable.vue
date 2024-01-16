@@ -219,13 +219,18 @@ function peoplePush(payload, existingPayload) {
     }
   console.log("People1.value", people1.value);
   console.log("existingPayload", existingPayload);
-  const result_dict = {};
-  for (const key of [...new Set([...Object.keys(people1.value), ...Object.keys(existingPayload)])]) {
-    // Combine sub-objects using spread syntax, defaulting to an empty object if undefined
-    result_dict[key] = { ...people1.value[key], ...existingPayload[key], ...(result_dict[key] || {}) };
+  const result_list = [];
+  // Iterate over the union of indices from list1 and list2
+  for (const index of [...new Set([...people1.value.keys(), ...existingPayload.keys()])]) {
+  // Combine objects using spread syntax, defaulting to an empty object if undefined
+  result_list[index] = {
+    ...(people1.value[index] || {}),
+    ...(existingPayloa[index] || {}),
+    ...(result_list[index] || {})
+  };
   }
-  console.log("result_dict", result_dict);
-  people1 = result_dict;
+  console.log("result_dict", result_list);
+  people1 = result_list;
   console.log("People1 with existing", people1);
   return people1;
   });
