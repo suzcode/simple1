@@ -220,9 +220,7 @@ function peoplePush(payload, existingPayload) {
   console.log("People1.value", people1.value);
   console.log("existingPayload", existingPayload);
   const result_list = [];
-  // Iterate over the union of indices from list1 and list2
   for (const index of [...new Set([...people1.value.keys(), ...existingPayload.keys()])]) {
-  // Combine objects using spread syntax, defaulting to an empty object if undefined
   result_list[index] = {
     ...(people1.value[index] || {}),
     ...(existingPayload[index] || {}),
