@@ -225,7 +225,7 @@ function peoplePush(payload, existingPayload) {
   // Combine objects using spread syntax, defaulting to an empty object if undefined
   result_list[index] = {
     ...(people1.value[index] || {}),
-    ...(existingPayloa[index] || {}),
+    ...(existingPayload[index] || {}),
     ...(result_list[index] || {})
   };
   }
