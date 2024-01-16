@@ -223,6 +223,7 @@ function peoplePush(payload, existingPayload) {
   console.log("existingPayload", existingPayload);
   typeof existingPayload;
   const result_list = [];
+  // combine the existingPayload with the people1 which is the current payload
   for (const index of [...new Set([...people1Value.keys(), ...existingPayload.keys()])]) {
   result_list[index] = {
     ...(people1Value[index] || {}),
