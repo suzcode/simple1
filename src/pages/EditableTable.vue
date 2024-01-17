@@ -185,16 +185,28 @@ function handlePersonUpdate(payload: EmittedValue): void {
   console.log("payloand.val", Number(payload.val));
   existingPayload = details.value.cellChanges;
   console.log("Pre-existinng Payload", existingPayload);
-  people.value = people.value.map((item, index) => {
-     if (item.id == payload.id) {
-       item[payload.key] = Number(payload.value);
-       console.log("match", item[payload.key]);
-     }
-     console.log("People", people);
-     console.log("ITEM", item);
-     peoplePush(payload, existingPayload);
-     return item;
-   });
+  console.log("peop1e1 for value.find", people1);
+  if (Array.isArray(people1.value)) {
+    exists = !!people1.value.find(
+    (item) => item.id === payload.id && item.key === payload.key
+    );
+    console.log("EXISTS", exists);
+    if (exists === false) {
+    people1.push(payload);
+    }
+  } else {
+    console.log("people1.value is not an array");
+  }
+  // people.value = people.value.map((item, index) => {
+  //    if (item.id == payload.id) {
+  //      item[payload.key] = Number(payload.value);
+  //      console.log("match", item[payload.key]);
+  //    }
+  //    console.log("People", people);
+  //    console.log("ITEM", item);
+  //    peoplePush(payload, existingPayload);
+  //    return item;
+  //  });
 }
 
 function peoplePush(payload, existingPayload) {
@@ -203,12 +215,16 @@ function peoplePush(payload, existingPayload) {
   console.log(Number(payload.val));
   console.log("NEW");
   console.log("peop1e1 for value.find", people1);
-  exists = !!people1.find(
+  if (Array.isArray(people1.value)) {
+    exists = !!people1.value.find(
     (item) => item.id === payload.id && item.key === payload.key
-  );
-  console.log("EXISTS", exists);
-  if (exists === false) {
+    );
+    console.log("EXISTS", exists);
+    if (exists === false) {
     people1.push(payload);
+    }
+  } else {
+    console.log("people1.value is not an array");
   }
   console.log(people1);
   people1.find((item, index) => {
