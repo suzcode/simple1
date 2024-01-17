@@ -229,9 +229,9 @@ function peoplePush(payload, existingPayload) {
   // Iterate over the dictionaries in list1 and list2
   for (let i = 0; i < Math.max(people1Value.length, existingPayload.length); i++) {
   // Combine dictionaries using spread syntax, defaulting to an empty object if undefined
-  resultList.push({
-    ...(people1Value[i] || {}),
-    ...(existingPayload[i] || {})
+    resultList.push({
+      ...(people1Value[i] || {}),
+      ...(existingPayload[i] || {})
   });
   }
   console.log("resultList", resultList);
