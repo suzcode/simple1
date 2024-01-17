@@ -203,20 +203,20 @@ function peoplePush(payload, existingPayload) {
   console.log(Number(payload.val));
   console.log("NEW");
   console.log("peop1e1 for value.find", people1);
-  exists = !!people1.value.find(
+  exists = !!people1.find(
     (item) => item.id === payload.id && item.key === payload.key
   );
   console.log("EXISTS", exists);
   if (exists === false) {
-    people1.value.push(payload);
+    people1.push(payload);
   }
   console.log(people1);
-  people1.value.find((item, index) => {
+  people1.find((item, index) => {
     if (item.id === payload.id && item.key === payload.key) {
       console.log("EXISTING1");
-      console.log("INDEX", people1.value[index]);
+      console.log("INDEX", people1[index]);
       people1.value[index] = payload;
-      console.log("INDEX", people1.value[index]);
+      console.log("INDEX", people1[index]);
     }
   console.log("People1.value", people1.value);
   const people1Value = people1.value;
