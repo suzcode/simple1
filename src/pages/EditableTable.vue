@@ -191,9 +191,10 @@ function handlePersonUpdate(payload: EmittedValue): void {
     (item) => item.id === payload.id && item.key === payload.key
     );
     console.log("EXISTS", exists);
-    console.log("Item", item);
+    console.log("INDEX", people1[index]);
     if (exists === false) {
-    people1.push(payload);
+      console.log("INDEX", people1[index]);
+      people1.push(payload);
     }
   } else {
     console.log("people1.value is not an array");
@@ -217,9 +218,10 @@ function peoplePush(payload, existingPayload) {
   console.log("peop1e1 for value.find", people1);
   if (Array.isArray(people1.value)) {
     exists = !!people1.value.find(
-    (item) => item.id === payload.id && item.key === payload.key
+    (item, index) => item.id === payload.id && item.key === payload.key
     );
     console.log("EXISTS", exists);
+
     if (exists === false) {
     people1.push(payload);
     }
