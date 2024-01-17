@@ -192,7 +192,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
     );
     console.log("EXISTS", exists);
     if (exists === false) {
-    people1.push(payload);
+    people1.value.push(payload);
     }
   } else {
     console.log("people1.value is not an array");
@@ -203,7 +203,6 @@ function handlePersonUpdate(payload: EmittedValue): void {
   //      console.log("match", item[payload.key]);
   //    }
   //    console.log("People", people);
-  //    console.log("ITEM", item);
   //    peoplePush(payload, existingPayload);
   //    return item;
   //  });
