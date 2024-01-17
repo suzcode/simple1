@@ -191,6 +191,8 @@ function handlePersonUpdate(payload: EmittedValue): void {
     (item) => item.id === payload.id && item.key === payload.key
     );
     console.log("EXISTS", exists);
+    console.log("Index", index);
+    console.log("People1 INDEX", people1[index]);
     if (exists === false) {
     people1.push(payload);
     }
