@@ -205,7 +205,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
       console.log("INDEX", people1.value[index]);
       people1.value[index] = payload;
       console.log("INDEX", people1.value[index]);
-    }
+    },
   }
 }
   // people.value = people.value.map((item, index) => {
@@ -217,7 +217,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
   //    peoplePush(payload, existingPayload);
   //    return item;
   //  });
-}
+
 
 function peoplePush(payload, existingPayload) {
   console.log(payload.id);
