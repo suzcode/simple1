@@ -207,17 +207,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
       console.log("INDEX", people1.value[index]);
     };
   }
-};
-  // people.value = people.value.map((item, index) => {
-  //    if (item.id == payload.id) {
-  //      item[payload.key] = Number(payload.value);
-  //      console.log("match", item[payload.key]);
-  //    }
-  //    console.log("People", people);
-  //    peoplePush(payload, existingPayload);
-  //    return item;
-  //  });
-
+}
 
 function peoplePush(payload, existingPayload) {
   console.log(payload.id);
@@ -248,25 +238,7 @@ function peoplePush(payload, existingPayload) {
       console.log("Updated People1", people1.value[existingItemIndex]);
     }
   console.log("People1.value", people1.value);
-  // const people1Value = people1.value;
-  // const pepJSON = JSON.stringify(people1Value);
-  // console.log("People1 json", pepJSON);
-  // console.log("existingPayload", existingPayload);
-  // const exJSON = JSON.stringify(existingPayload);
-  // console.log("existingPayload stringify", exJSON);
-  // const resultList = [];
-  // for (let i = 0; i < Math.max(people1Value.length, existingPayload.length); i++) {
-  //   resultList.push({
-  //     ...(people1Value[i] || {}),
-  //     ...(existingPayload[i] || {})
-  // });
-  // }
-  // console.log("resultList", resultList);
-  // people1 = resultList;
-  // console.log("People1 with existing", people1);
-  // return people1;
-  });
-}
+  }
 
 function onSubmitChangedCells(e) {
   var sendObject = {};
