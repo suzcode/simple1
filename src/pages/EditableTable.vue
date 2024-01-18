@@ -205,9 +205,9 @@ function handlePersonUpdate(payload: EmittedValue): void {
       console.log("INDEX", people1.value[index]);
       people1.value[index] = payload;
       console.log("INDEX", people1.value[index]);
-    }
+    };
   }
-}
+};
   // people.value = people.value.map((item, index) => {
   //    if (item.id == payload.id) {
   //      item[payload.key] = Number(payload.value);
