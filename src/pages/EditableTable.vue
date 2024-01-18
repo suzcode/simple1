@@ -197,14 +197,16 @@ function handlePersonUpdate(payload: EmittedValue): void {
   } else {
     console.log("people1.value is not an array");
   }
-  people1.find((item, index) => {
-    if (item.id === payload.id && item.key === payload.key) {
+  const existingItemIndex = people1.value.findIndex((item, index) => {
+    return item.id === payload.id && item.key === payload.key;
+   });
+
+  if (existingItemIndex !== -1) {
       console.log("EXISTING1");
-      console.log("INDEX", people1.value[index]);
-      people1.value[index] = payload;
-      console.log("INDEX", people1.value[index]);
+      console.log("INDEX", existingItemIndex);
+      people1.value[existingItemIndex] = payload;
+      console.log("UPDATED ITEM", people1.value[existingItemIndex]);
     };
-  })
 }
 
 function peoplePush(payload, existingPayload) {
