@@ -238,12 +238,14 @@ function peoplePush(payload, existingPayload) {
     console.log("people1.value is not an array");
   }
   console.log(people1);
-  people1.find((item, index) => {
-    if (item.id === payload.id && item.key === payload.key) {
+  const existingItemIndex =people1.value.findIndex((item, index) => {
+    return item.id === payload.id && item.key === payload.key;
+   });
+   if (existingItemIndex !== -1) {
       console.log("EXISTING1");
-      console.log("INDEX", people1[index]);
-      people1.value[index] = payload;
-      console.log("INDEX", people1[index]);
+      console.log("INDEX", existingItemIndex);
+      people1.value[existingItemIndex] = payload;
+      console.log("Updated People1", people1.value[existingItemIndex]);
     }
   console.log("People1.value", people1.value);
   // const people1Value = people1.value;
