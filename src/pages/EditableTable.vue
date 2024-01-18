@@ -202,9 +202,9 @@ function handlePersonUpdate(payload: EmittedValue): void {
   people1.find((item, index) => {
     if (item.id === payload.id && item.key === payload.key) {
       console.log("EXISTING1");
-      console.log("INDEX", people1[index]);
+      console.log("INDEX", people1.value[index]);
       people1.value[index] = payload;
-      console.log("INDEX", people1[index]);
+      console.log("INDEX", people1.value[index]);
     }
   }
 }
