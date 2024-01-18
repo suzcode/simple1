@@ -199,6 +199,15 @@ function handlePersonUpdate(payload: EmittedValue): void {
   } else {
     console.log("people1.value is not an array");
   }
+  people1.find((item, index) => {
+    if (item.id === payload.id && item.key === payload.key) {
+      console.log("EXISTING1");
+      console.log("INDEX", people1[index]);
+      people1.value[index] = payload;
+      console.log("INDEX", people1[index]);
+    }
+  }
+}
   // people.value = people.value.map((item, index) => {
   //    if (item.id == payload.id) {
   //      item[payload.key] = Number(payload.value);
@@ -218,7 +227,7 @@ function peoplePush(payload, existingPayload) {
   console.log("peop1e1 for value.find", people1);
   if (Array.isArray(people1.value)) {
     exists = !!people1.value.find(
-    (item, index) => item.id === payload.id && item.key === payload.key
+    (item) => item.id === payload.id && item.key === payload.key
     );
     console.log("EXISTS", exists);
 
@@ -237,25 +246,23 @@ function peoplePush(payload, existingPayload) {
       console.log("INDEX", people1[index]);
     }
   console.log("People1.value", people1.value);
-  const people1Value = people1.value;
-  const pepJSON = JSON.stringify(people1Value);
-  console.log("People1 json", pepJSON);
-  console.log("existingPayload", existingPayload);
-  const exJSON = JSON.stringify(existingPayload);
-  console.log("existingPayload stringify", exJSON);
-  const resultList = [];
-  // Iterate over the dictionaries in list1 and list2
-  for (let i = 0; i < Math.max(people1Value.length, existingPayload.length); i++) {
-  // Combine dictionaries using spread syntax, defaulting to an empty object if undefined
-    resultList.push({
-      ...(people1Value[i] || {}),
-      ...(existingPayload[i] || {})
-  });
-  }
-  console.log("resultList", resultList);
-  people1 = resultList;
-  console.log("People1 with existing", people1);
-  return people1;
+  // const people1Value = people1.value;
+  // const pepJSON = JSON.stringify(people1Value);
+  // console.log("People1 json", pepJSON);
+  // console.log("existingPayload", existingPayload);
+  // const exJSON = JSON.stringify(existingPayload);
+  // console.log("existingPayload stringify", exJSON);
+  // const resultList = [];
+  // for (let i = 0; i < Math.max(people1Value.length, existingPayload.length); i++) {
+  //   resultList.push({
+  //     ...(people1Value[i] || {}),
+  //     ...(existingPayload[i] || {})
+  // });
+  // }
+  // console.log("resultList", resultList);
+  // people1 = resultList;
+  // console.log("People1 with existing", people1);
+  // return people1;
   });
 }
 
