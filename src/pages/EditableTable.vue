@@ -193,6 +193,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
     console.log("EXISTS", exists);
     if (exists === false) {
       people1.push(payload);
+      console.log("Peopel1 after payload push", people1);
     }
   } else {
     console.log("people1.value is not an array");
