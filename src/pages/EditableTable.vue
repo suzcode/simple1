@@ -206,7 +206,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
       people1.value[index] = payload;
       console.log("INDEX", people1.value[index]);
     };
-  }
+  })
 }
 
 function peoplePush(payload, existingPayload) {
