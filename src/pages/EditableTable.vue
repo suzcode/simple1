@@ -254,8 +254,9 @@ function onSubmitChangedCells(e) {
   console.log(e);
   e.preventDefault();
   const cellUpdates = people1.value;
-  console.log("cellUpdates", cellUpdates)
-  cellUpdates.append(existingPayload);
+  console.log("cellUpdates", cellUpdates);
+  var cellUpdatesJson = JSON.stringify(cellUpdates);
+  cellUpdates.push(existingPayload);
   sendObject = {
     selectedCustomer: selectedCustomer.value,
     cellUpdates,
