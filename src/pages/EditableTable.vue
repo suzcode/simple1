@@ -192,7 +192,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
     );
     console.log("EXISTS", exists);
     if (exists === false) {
-      people1.push(payload);
+      people1.value = payload;
       console.log("Peopel1 after payload push", people1);
     }
   } else {
