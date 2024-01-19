@@ -184,10 +184,12 @@ function handlePersonUpdate(payload: EmittedValue): void {
   console.log("payloand.key", payload.key);
   console.log("payloand.val", Number(payload.val));
   people1.value = details.value.cellChanges;
+  console.log("cellChanges", details.value.cellChanges);
   // console.log("Pre-existinng Payload", existingPayload);
-  console.log("peop1e1 for value.find", people1);
+  console.log("peop1e1", people1);
   var people1Json = JSON.stringify(people1);
   console.log("people1 json", people1Json);
+  console.log("people1.value", people1.value);
   var people1ValJson = JSON.stringify(people1.value);
   console.log("people1 val Json", people1ValJson);
   // check is edited cell exists as an updated cell
