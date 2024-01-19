@@ -215,6 +215,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
       console.log("INDEX", existingItemIndex);
       people1.value[existingItemIndex] = payload;
       console.log("UPDATED ITEM", people1.value[existingItemIndex]);
+      console.log("peop1e after overwrite of exsiting item", people1.value);
     };
 }
 
