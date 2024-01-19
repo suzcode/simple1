@@ -184,7 +184,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
   console.log("payloand.key", payload.key);
   console.log("payloand.val", Number(payload.val));
   people1.value = details.value.cellChanges;
-  console.log("Pre-existinng Payload", existingPayload);
+  // console.log("Pre-existinng Payload", existingPayload);
   console.log("peop1e1 for value.find", people1);
   var people1Json = JSON.stringify(people1);
   console.log("people1 json", people1Json);
@@ -205,19 +205,19 @@ function handlePersonUpdate(payload: EmittedValue): void {
       people1ValJson = JSON.stringify(people1.value);
       console.log("people1 val Json", people1ValJson);
     } else {
+      const existingItemIndex = people1.value.findIndex((item, index) => {
+        return item.id === payload.id && item.key === payload.key;
+      });
       console.log("EXISTING1");
       console.log("INDEX", existingItemIndex);
       people1.value[existingItemIndex] = payload;
       console.log("UPDATED ITEM", people1.value[existingItemIndex]);
       console.log("peop1e after overwrite of exsiting item", people1.value);
     }
-
   } else {
     console.log("people1.value is not an array");
   }
-  const existingItemIndex = people1.value.findIndex((item, index) => {
-    return item.id === payload.id && item.key === payload.key;
-   });
+}
 
   // if (existingItemIndex !== -1) {
   //     console.log("EXISTING1");
