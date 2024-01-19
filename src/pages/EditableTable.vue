@@ -190,11 +190,13 @@ function handlePersonUpdate(payload: EmittedValue): void {
   console.log("people1 json", people1Json);
   var people1ValJson = JSON.stringify(people1.value);
   console.log("people1 val Json", people1ValJson);
+  // check is edited cell exists as an updated cell
   if (Array.isArray(people1.value)) {
     exists = !!people1.value.find(
     (item) => item.id === payload.id && item.key === payload.key
     );
     console.log("EXISTS", exists);
+    // if it doesn't exist add to the variable containing updated cell entries
     if (exists === false) {
       people1.value.push(payload);
       console.log("Peopel1 after payload push", people1.value);
@@ -202,7 +204,14 @@ function handlePersonUpdate(payload: EmittedValue): void {
       console.log("people1 json", people1Json);
       people1ValJson = JSON.stringify(people1.value);
       console.log("people1 val Json", people1ValJson);
+    } else {
+      console.log("EXISTING1");
+      console.log("INDEX", existingItemIndex);
+      people1.value[existingItemIndex] = payload;
+      console.log("UPDATED ITEM", people1.value[existingItemIndex]);
+      console.log("peop1e after overwrite of exsiting item", people1.value);
     }
+
   } else {
     console.log("people1.value is not an array");
   }
@@ -210,13 +219,13 @@ function handlePersonUpdate(payload: EmittedValue): void {
     return item.id === payload.id && item.key === payload.key;
    });
 
-  if (existingItemIndex !== -1) {
-      console.log("EXISTING1");
-      console.log("INDEX", existingItemIndex);
-      people1.value[existingItemIndex] = payload;
-      console.log("UPDATED ITEM", people1.value[existingItemIndex]);
-      console.log("peop1e after overwrite of exsiting item", people1.value);
-    };
+  // if (existingItemIndex !== -1) {
+  //     console.log("EXISTING1");
+  //     console.log("INDEX", existingItemIndex);
+  //     people1.value[existingItemIndex] = payload;
+  //     console.log("UPDATED ITEM", people1.value[existingItemIndex]);
+  //     console.log("peop1e after overwrite of exsiting item", people1.value);
+  //   };
 }
 
 function peoplePush(payload, existingPayload) {
