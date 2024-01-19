@@ -186,9 +186,9 @@ function handlePersonUpdate(payload: EmittedValue): void {
   existingPayload = details.value.cellChanges;
   console.log("Pre-existinng Payload", existingPayload);
   console.log("peop1e1 for value.find", people1);
-  var people1Json = json.stringify(people1);
+  var people1Json = JSON.stringify(people1);
   console.log("people1 json", people1Json);
-  var people1ValJson = json.stringify(people1.value);
+  var people1ValJson = JSON.stringify(people1.value);
   console.log("people1 val Json", people1ValJson);
   if (Array.isArray(people1.value)) {
     exists = !!people1.value.find(
@@ -198,9 +198,9 @@ function handlePersonUpdate(payload: EmittedValue): void {
     if (exists === false) {
       people1.value.push(payload);
       console.log("Peopel1 after payload push", people1.value);
-      people1Json = json.stringify(people1);
-      var people1Json = json.stringify(people1);
-      people1ValJson = json.stringify(people1.value);
+      people1Json = JSON.stringify(people1);
+      console.log("people1 json", people1Json);
+      people1ValJson = JSON.stringify(people1.value);
       console.log("people1 val Json", people1ValJson);
     }
   } else {
