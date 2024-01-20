@@ -7,6 +7,7 @@
         </div>
         <div id="logout" v-if="isSignedIn">
             <button @click="signOut">Logout</button>
+        </div>
     </div>
 </template>
 
