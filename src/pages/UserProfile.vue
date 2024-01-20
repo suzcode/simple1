@@ -17,6 +17,8 @@ const auth = getAuth();
 const user = '';
 const isSignIn = false;
 
+firebase.initializeApp(app);
+
 function handleSignInGoogle() {
     signInWithPopup(auth, provider)
         .then((result) => {
