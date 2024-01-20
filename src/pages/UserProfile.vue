@@ -4,6 +4,7 @@
         <div id="GoogleSignIn" v-if="!isSignedIn">
             <h3>Google Sign In</h3>
             <button @click="handleSignInGoogle">Login</button>
+        </div>
     </div>
 </template>
 
