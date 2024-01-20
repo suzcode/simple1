@@ -15,7 +15,7 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import app from "@/firebase/init.js";
 
-const provider = new GoogleAuthProvider
+const provider = new GoogleAuthProvider();
 const auth = getAuth(app);
 const user = '';
 const isSignIn = false;
