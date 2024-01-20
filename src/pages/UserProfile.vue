@@ -11,13 +11,11 @@
 <script>
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
+const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider
-const auth = getAuth();
-
+const auth = getAuth(app);
 const user = '';
 const isSignIn = false;
-
-firebase.initializeApp(app);
 
 function handleSignInGoogle() {
     signInWithPopup(auth, provider)
