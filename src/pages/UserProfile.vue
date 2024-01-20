@@ -5,6 +5,8 @@
             <h3>Google Sign In</h3>
             <button @click="handleSignInGoogle">Login</button>
         </div>
+        <div id="logout" v-if="isSignedIn">
+            <button @click="signOut">Logout</button>
     </div>
 </template>
 
