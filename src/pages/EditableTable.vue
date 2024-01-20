@@ -185,9 +185,9 @@ function handlePersonUpdate(payload: EmittedValue): void {
   console.log("payloand.val", Number(payload.val));
   var payloadJson = JSON.stringify(payload);
   console.log("payloadJson", payloadJson)
+  // initialise people1 with the cell updates retrieved fromt the database
   people1.value = details.value.cellChanges;
   console.log("cellChanges", details.value.cellChanges);
-  // console.log("Pre-existinng Payload", existingPayload);
   console.log("peop1e1", people1);
   var people1Json = JSON.stringify(people1);
   console.log("people1 json", people1Json);
@@ -209,6 +209,7 @@ function handlePersonUpdate(payload: EmittedValue): void {
       people1ValJson = JSON.stringify(people1.value);
       console.log("people1 val Json", people1ValJson);
     } else {
+      // if it exists determine index position and overwrite value with new value
       const existingItemIndex = people1.value.findIndex((item, index) => {
         return item.id === payload.id && item.key === payload.key;
       });
@@ -222,46 +223,6 @@ function handlePersonUpdate(payload: EmittedValue): void {
     console.log("people1.value is not an array");
   }
 }
-
-  // if (existingItemIndex !== -1) {
-  //     console.log("EXISTING1");
-  //     console.log("INDEX", existingItemIndex);
-  //     people1.value[existingItemIndex] = payload;
-  //     console.log("UPDATED ITEM", people1.value[existingItemIndex]);
-  //     console.log("peop1e after overwrite of exsiting item", people1.value);
-  //   };
-
-
-// function peoplePush(payload, existingPayload) {
-//   console.log(payload.id);
-//   console.log(payload.key);
-//   console.log(Number(payload.val));
-//   console.log("NEW");
-//   console.log("peop1e1 for value.find", people1);
-//   if (Array.isArray(people1.value)) {
-//     exists = !!people1.value.find(
-//     (item) => item.id === payload.id && item.key === payload.key
-//     );
-//     console.log("EXISTS", exists);
-
-//     if (exists === false) {
-//     people1.push(payload);
-//     }
-//   } else {
-//     console.log("people1.value is not an array");
-//   }
-//   console.log(people1);
-//   const existingItemIndex =people1.value.findIndex((item, index) => {
-//     return item.id === payload.id && item.key === payload.key;
-//    });
-//    if (existingItemIndex !== -1) {
-//       console.log("EXISTING1");
-//       console.log("INDEX", existingItemIndex);
-//       people1.value[existingItemIndex] = payload;
-//       console.log("Updated People1", people1.value[existingItemIndex]);
-//     }
-//   console.log("People1.value", people1.value);
-//   }
 
 function onSubmitChangedCells(e) {
   var sendObject = {};
