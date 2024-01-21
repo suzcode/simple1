@@ -20,6 +20,7 @@ const auth = getAuth(app);
 const user = '';
 const isSignIn = false;
 
+// Google popup initiated
 function handleSignInGoogle() {
     signInWithPopup(auth, provider)
         .then((result) => {
