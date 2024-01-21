@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, signInWithRedirect, getRedirectResult, GoogleAuthProvider } from "firebase/auth";
 import app from "@/firebase/init.js";
 
 const provider = new GoogleAuthProvider();
@@ -20,20 +20,46 @@ const auth = getAuth(app);
 const user = '';
 const isSignIn = false;
 
-// Google popup initiated
+signInWithRedirect(auth, provider);
+
 function handleSignInGoogle() {
-    signInWithPopup(auth, provider)
-        .then((result) => {
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
-            user = result.user.displayName;
-            console.log(result);
-            isSignedIn = true;
-        }).catch((error) => {
-            const errorMessage = error.message;
-            console.log(error);
-        });
+    getRedirectResult(auth)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access Google APIs.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+
+    // The signed-in user info.
+    const user = result.user;
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
 }
+
+
+// Google popup initiated
+// function handleSignInGoogle() {
+//     signInWithPopup(auth, provider)
+//         .then((result) => {
+//             const credential = GoogleAuthProvider.credentialFromResult(result);
+//             const token = credential.accessToken;
+//             user = result.user.displayName;
+//             console.log(result);
+//             isSignedIn = true;
+//         }).catch((error) => {
+//             const errorMessage = error.message;
+//             console.log(error);
+//         });
+// }
 
 function signOut() {
     signOut(auth)
