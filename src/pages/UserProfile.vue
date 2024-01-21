@@ -23,9 +23,13 @@ const isSignIn = false;
 function handleSignInGoogle() {
     signInWithPopup(auth, provider)
         .then((result) => {
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            user = result.user.displayName;
             console.log(result);
             isSignedIn = true;
         }).catch((error) => {
+            const errorMessage = error.message;
             console.log(error);
         });
 }
