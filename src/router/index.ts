@@ -15,30 +15,12 @@ const router = createRouter({
       component: () =>
         import(/*webpackChunkName:"about"*/ "@/views/AboutView.vue"),
     },
-    // {
-    //   path: "/customerdata",
-    //   name: "CustomerData",
-    //   component: () =>
-    //     import(/*webpackChunkName:"customerdata"*/ "@/pages/CustomerData.vue"),
-    // },
     {
       path: "/editabletable",
       name: "EditableTable",
       component: () =>
         import(/*webpackChunkName:"editabletable"*/ "@/pages/EditableTable.vue"),
     },
-    // {
-    //   path: "/toggleview",
-    //   name: "ToggleView",
-    //   component: () =>
-    //     import(/*webpackChunkName:"toggleview"*/ "@/pages/ToggleView.vue"),
-    // },
-    // {
-    //   path: "/filtered",
-    //   name: "Filtered",
-    //   component: () =>
-    //     import(/*webpackChunkName:"editabletable"*/ "@/pages/FilterView.vue"),
-    // },
     {
       path: "/addcustomer",
       name: "AddCustomer",
