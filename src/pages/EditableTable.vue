@@ -255,7 +255,6 @@ function onSubmitChangedCells(e) {
     });
   successMessage = "UPDATED";
   console.log(successMessage);
-  // restart(JSON.stringify(successMessage), options1);
   return cellUpdates;
 }
 
