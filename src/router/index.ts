@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from '../views/HomeView.vue'
 
+// went away from CamelCase to avoid 404 error 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -13,20 +14,20 @@ const router = createRouter({
       path: "/about",
       name: "About",
       component: () =>
-        import(/*webpackChunkName:"about"*/ "@/views/AboutView.vue"),
+        import(/*webpackChunkName:"about"*/ "@/views/aboutview.vue"),
     },
     {
       path: "/editabletable",
       name: "EditableTable",
       component: () =>
-        import(/*webpackChunkName:"editabletable"*/ "@/pages/EditableTable.vue"),
+        import(/*webpackChunkName:"editabletable"*/ "@/pages/editabletable.vue"),
     },
     {
       path: "/addcustomer",
       name: "AddCustomer",
       component: () =>
         import(
-          /*webpackChunkName:"addcustomer"*/ "@/views/AddCustomerDetails.vue"
+          /*webpackChunkName:"addcustomer"*/ "@/views/addcustomerdetails.vue"
         ),
     },
     {
@@ -34,7 +35,7 @@ const router = createRouter({
       name: "AddContract",
       component: () =>
         import(
-          /*webpackChunkName:"addcontract"*/ "@/pages/AddContract.vue"
+          /*webpackChunkName:"addcontract"*/ "@/pages/addcontract.vue"
         ),
     },
     {
@@ -42,7 +43,7 @@ const router = createRouter({
       name: "YearFilter",
       component: () =>
         import(
-          /*webpackChunkName:"yearfilter"*/ "@/pages/YearFilter.vue"
+          /*webpackChunkName:"yearfilter"*/ "@/pages/yearfilter.vue"
         ),
     },
     {
@@ -50,7 +51,7 @@ const router = createRouter({
       name: "UserProfile",
       component: () =>
         import(
-          /*webpackChunkName:"profile"*/ "@/pages/UserProfile.vue"
+          /*webpackChunkName:"profile"*/ "@/pages/userprofile.vue"
         ),
     },
   ]
