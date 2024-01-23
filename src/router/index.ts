@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/aboutview.vue'
 
-// went away from CamelCase to avoid 404 error 
+// went away from CamelCase to avoid 404 browser error
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
