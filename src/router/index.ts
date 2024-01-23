@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from '../views/HomeView.vue'
+import AboutView from '../views/aboutview.vue'
 
 // went away from CamelCase to avoid 404 error 
 const router = createRouter({
@@ -13,8 +14,7 @@ const router = createRouter({
     {
       path: "/about",
       name: "About",
-      component: () =>
-        import(/*webpackChunkName:"about"*/ "@/views/aboutview.vue"),
+      component: AboutView
     },
     {
       path: "/editabletable",
