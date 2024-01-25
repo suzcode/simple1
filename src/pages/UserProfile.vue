@@ -19,6 +19,7 @@ const provider = new GoogleAuthProvider();
 const auth = getAuth(app);
 const user = '';
 const isSignIn = false;
+const result = ref(null);
 
 signInWithRedirect(auth, provider);
 
@@ -31,6 +32,7 @@ function handleSignInGoogle() {
 
             // The signed-in user info.
             const user = result.user;
+            auth.preventDefault();
             // IdP data available using getAdditionalUserInfo(result)
             // ...
         }).catch((error) => {
