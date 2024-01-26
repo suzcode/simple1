@@ -14,7 +14,8 @@ const router = createRouter({
     {
       path: "/about",
       name: "About",
-      component: AboutView
+      component: () =>
+        import(/*webpackChunkName:"aboutview"*/ "@/views/aboutview.vue"),
     },
     {
       path: "/editabletable",
