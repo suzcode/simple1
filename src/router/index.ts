@@ -14,36 +14,34 @@ const router = createRouter({
       path: "/about",
       name: "About",
       component: () =>
-        import(/*webpackChunkName:"aboutview"*/ "@/views/aboutview.vue"),
+        import(/*webpackChunkName:"aboutview"*/ "@/views/AboutView.vue"),
     },
     {
       path: "/editabletable",
       name: "EditableTable",
       component: () =>
-        import(/*webpackChunkName:"editabletable"*/ "@/pages/editabletable.vue"),
+        import(/*webpackChunkName:"editabletable"*/ "@/pages/EditableTable.vue"),
     },
     {
       path: "/addcustomer",
       name: "AddCustomer",
       component: () =>
         import(
-          /*webpackChunkName:"addcustomer"*/ "@/views/addcustomerdetails.vue"
-        ),
+          /*webpackChunkName:"addcustomer"*/ "@/views/AddCustomerDetails.vue"),
     },
     {
       path: "/addcontract",
       name: "AddContract",
       component: () =>
         import(
-          /*webpackChunkName:"addcontract"*/ "@/pages/addcontract.vue"
-        ),
+          /*webpackChunkName:"addcontract"*/ "@/pages/AddContract.vue"),
     },
     {
       path: "/yearfilter",
       name: "YearFilter",
       component: () =>
         import(
-          /*webpackChunkName:"yearfilter"*/ "@/pages/yearfilter.vue"
+          /*webpackChunkName:"yearfilter"*/ "@/pages/YearFilter.vue"
         ),
     },
     {
@@ -51,7 +49,7 @@ const router = createRouter({
       name: "UserProfile",
       component: () =>
         import(
-          /*webpackChunkName:"profile"*/ "@/pages/userprofile.vue"
+          /*webpackChunkName:"profile"*/ "@/pages/UserProfile.vue"
         ),
     },
   ]
