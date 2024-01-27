@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: defrr-ingress
   annotations:
-    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: defrr-static-ip
 spec:
   rules:
   - host: defrr.com
