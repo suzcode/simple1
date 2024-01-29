@@ -3,25 +3,14 @@ kind: Ingress
 metadata:
   name: defrr-ingress
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: defrr-static-ip
+    kubernetes.io/ingress.global-static-ip-name: "defrr-static-ip"
 spec:
   rules:
   - host: defrr.com
     http:
       paths:
-      - pathType: ImplementationSpecific
-        path: /
-        backend:
-          service:
-            name: hello-world-service
-            port:
-              number: 80
-  # Catch-all route for redirects to index.html
-  - host: defrr.com
-    http:
-      paths:
-      - pathType: Prefix
-        path: /
+      - path: /
+        pathType: Prefix
         backend:
           service:
             name: hello-world-service
