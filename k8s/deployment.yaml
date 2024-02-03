@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: defrr-app-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: defrr-app-frontend
+  template:
+    metadata:
+      labels:
+        app: defrr-app-frontend
+    spec:
+      containers:
+      - name: defrr-app-frontend
+        image: my-app-image
+        ports:
+          - containerPort: 8080
