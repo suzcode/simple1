@@ -1,8 +1,8 @@
-apiVersion: skaffold/v2beta15
+apiVersion: skaffold/v4beta5
 kind: Config
-deploy:
-  kubectl:
-  # commented out manifests in defrr backend
-    manifests:
+manifests:
+  rawYaml:
     - k8s/deployment.yaml
     - k8s/service.yaml
+deploy:
+  kubectl: {}
