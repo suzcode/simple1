@@ -16,4 +16,4 @@ spec:
       - name: defrr-app-service
         image: my-app-image
         ports:
-          - containerPort: 8080
+          - containerPort: 80
