@@ -20,6 +20,7 @@ const auth = getAuth(app);
 const user = '';
 const isSignIn = false;
 const result = ref(null);
+const userProfile = ref(null);
 
 signInWithRedirect(auth, provider);
 
