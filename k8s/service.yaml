@@ -1,11 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: defrr-app-service
+  name: web-map-http
+  namespace: default
 spec:
-  ports:
-  - port: 80
-    targetPort: 80
-  type: NodePort
-  selector:
-    app: defrr-app-service
+  type: ExternalName
+  externnalName: 34.120.6.102
