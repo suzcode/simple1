@@ -13,6 +13,7 @@
 
 <script>
 import { getAuth, signInWithPopup, signInWithRedirect, getRedirectResult, GoogleAuthProvider } from "firebase/auth";
+import { ref } from "vue";
 import app from "@/firebase/init.js";
 
 const provider = new GoogleAuthProvider();
