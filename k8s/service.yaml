@@ -5,4 +5,4 @@ metadata:
   namespace: default
 spec:
   type: ExternalName
-  externnalName: 34.120.6.102
+  externalName: 34.120.6.102

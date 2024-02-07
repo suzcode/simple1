@@ -4,6 +4,5 @@ manifests:
   rawYaml:
     - k8s/deployment.yaml
     - k8s/service.yaml
-    - k8s/defrr-ingress-static-ip.yaml
 deploy:
   kubectl: {}
