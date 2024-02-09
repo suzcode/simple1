@@ -4,5 +4,5 @@ metadata:
   name: web-map-http
   namespace: default
 spec:
-  type: ExternalName
-  externalName: defrr.com
+  type: LoadBalancer
+  selector: defrr-app-service
