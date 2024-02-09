@@ -7,3 +7,6 @@ spec:
   type: LoadBalancer
   selector: 
     app: defrr-app-service
+  ports:
+  - port: 80
+    targetPort: 80
