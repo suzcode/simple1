@@ -13,6 +13,7 @@ spec:
         app: frontend-app
     spec:
       containers:
+      # this links to the container image that will service the frontend html files
       - name: frontend-container
         image: us-central1-docker.pkg.dev/defrr-398521/my-docker-repo/httpd-image
         ports:
