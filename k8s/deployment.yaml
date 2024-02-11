@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: defrr-app-service
+  name: defrr-deploy-front
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: defrr-app-service
+      app: defrr-deploy-front
   template:
     metadata:
       labels:
-        app: defrr-app-service
+        app: defrr-deploy-front
     spec:
       containers:
-      - name: defrr-app-service
-        image: us-central1-docker.pkg.dev/$PROJECT_ID/my-docker-repo/httpd-image
+      - name: defrr-front-container
+        image: us-central1-docker.pkg.dev/defrr-398521/my-docker-repo/httpd-image
         ports:
           - containerPort: 80

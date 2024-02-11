@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-map-http
+  name: defrr-front-service
   namespace: default
 spec:
   type: LoadBalancer
   selector: 
-    app: defrr-app-service
+    app: defrr-deploy-front
   ports:
   - port: 80
     targetPort: 80
