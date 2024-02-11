@@ -28,7 +28,7 @@ steps:
   args: ['gsutil', 'cp', '-r', 'dist/*', 'gs://gcsbucketdefrr/']
 
 # Run Skaffold in debug mode
-- name: 'gcr.io/cloud-builders/skaffold'
+- name: 'gcr.io/k8s-skaffold'
   args: ['dev', '--verbosity=debug']
 
 timeout: "1600s"
