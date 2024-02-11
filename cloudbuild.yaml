@@ -26,4 +26,14 @@ steps:
 # copy build output to the GCS buck-ets
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   args: ['gsutil', 'cp', '-r', 'dist/*', 'gs://gcsbucketdefrr/']
+
+# Apply service and deployment YAML files
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+  - apply
+  - -f
+  - service.yaml
+  - -f
+  - deployment.yaml
+
 timeout: "1600s"
