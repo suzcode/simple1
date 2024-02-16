@@ -11,5 +11,5 @@
 </IfModule>
 
 <FilesMatch "\.xml$">
-    ForceType text/xml
+    Header set Content-Type text/xml
 </FilesMatch>
