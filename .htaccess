@@ -1,5 +1,5 @@
 # Serve /about URL from /dist/assets/ directory
-RewriteRule ^about$ /assets/AboutView-804fc343.js [L]
+RewriteRule ^about$ /assets/AboutView-0db79171.js [L]
 
 # Serve other URLs normally
 RewriteCond %{REQUEST_FILENAME} !-f
