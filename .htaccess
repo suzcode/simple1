@@ -10,6 +10,18 @@
     RewriteRule ^(.*)$ /dist/$1 [L]
 </IfModule>
 
-<FilesMatch "\.xml$">
-    Header set Content-Type text/xml
+<FilesMatch "\.(xml|js|css|png|jpg|gif|svg|ico)$">
+    # Adjust the content type header for specific file types
+    Header set Content-Type "text/plain"
 </FilesMatch>
+
+<IfModule mod_mime.c>
+    # Add MIME types for specific file extensions
+    AddType application/javascript .js
+    AddType text/css .css
+    AddType image/png .png
+    AddType image/jpeg .jpg
+    AddType image/gif .gif
+    AddType image/svg+xml .svg
+    AddType image/x-icon .ico
+</IfModule>
