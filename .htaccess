@@ -7,7 +7,7 @@
     RewriteCond %{REQUEST_FILENAME} !-d
 
     # Rewrite all requests to the /dist folder
-    RewriteRule ^(.*)$ /dist/$1 [L]
+    RewriteRule ^(.*)$ /dist/assets/$1 [L]
 </IfModule>
 
 <FilesMatch "\.(xml|js|css|png|jpg|gif|svg|ico)$">
