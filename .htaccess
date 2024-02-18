@@ -1,8 +1,12 @@
-# Serve /about URL from /dist/assets/ directory
+<!-- # Serve /about URL from /dist/assets/ directory
 RewriteRule ^about$ /dist/AboutView-0db79171.js [L]
 
 # Serve other URLs normally
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /dist/index.html [L]
-
+RewriteRule ^(.*)$ /dist/index.html [L] -->
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
