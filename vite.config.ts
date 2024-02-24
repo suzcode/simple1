@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
-  base: '/', 
+  base: '/dist', 
   // Set the base URL to match your Vite build output path
   plugins: [
     vue(),
