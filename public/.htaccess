@@ -2,6 +2,7 @@ RewriteEngine On
 RewriteBase /
 RewriteRule ^index.html$ - [L]
 RewriteRule ^about$ /assets/AboutView-804fc343.js [L]
+RewriteRule ^addcustomer$ /assets/AddCustomerDetails-300ac964.js  [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
