@@ -1,7 +1,7 @@
 RewriteEngine On
 RewriteBase /
-RewriteRule ^about$ /dist/assets/AboutView-804fc343.js [L]
-RewriteRule ^addcustomer$ /dist/assets/AddCustomerDetails-300ac964.js  [L]
+RewriteRule ^about$ dist/assets/AboutView-804fc343.js [L]
+RewriteRule ^addcustomer$ dist/assets/AddCustomerDetails-300ac964.js  [L]
 RewriteRule ^index.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
