@@ -69,6 +69,7 @@ function handleSignInGooglePopup() {
         });
 }
 
+// Sign out user
 function signOut() {
     signOut(auth)
         .then(() => {

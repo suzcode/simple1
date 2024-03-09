@@ -105,7 +105,7 @@ var show = ref(false);
           </div>
 
           <!--
-            Dropdown menu, show/hide based on menu state.
+            Dropdown menu, show or hide based on menu state.
 
             Entering: "transition ease-out duration-100"
               From: "transform opacity-0 scale-95"
