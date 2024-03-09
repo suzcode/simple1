@@ -83,7 +83,7 @@ var show = ref(false);
                 to="/filtered"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                 >Filter by year</router-link
-              > --> -->
+              > -->
           </div>
         </div>
       </div>
@@ -119,7 +119,7 @@ var show = ref(false);
               <!-- Active: "bg-gray-100", Not Active: "" -->
               <router-link to="/profile" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</router-link>
               <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+              <!-- <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a> -->
             </div>
           </Transition>
         </div>
