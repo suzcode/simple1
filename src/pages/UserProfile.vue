@@ -1,10 +1,10 @@
 <template>
     <div>
         <h1>Profile</h1>
-        <div id="GoogleSignIn" v-if="!isSignedIn">
+        <!-- <div id="GoogleSignIn" v-if="!isSignedIn">
             <h3>Google Sign In</h3>
             <button @click="handleSignInGoogle">Login</button>
-        </div>
+        </div> -->
         <div id="GoogleSignInWithPopup" v-if="!isSignedIn">
             <h3>Google Sign In with Popup</h3>
             <button @click="handleSignInGooglePopup">Login with Popup</button>
