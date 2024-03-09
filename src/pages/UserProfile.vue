@@ -27,7 +27,7 @@ const isSignedIn = ref(false);
 const result = ref(null);
 const userProfile = ref(null);
 
-signInWithRedirect(auth, provider);
+// signInWithRedirect(auth, provider);
 
 function handleSignInGoogle() {
     getRedirectResult(auth)
