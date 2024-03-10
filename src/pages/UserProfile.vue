@@ -84,10 +84,11 @@ function handleSignInGooglePopup() {
 function signOut() {
     signOut(auth)
         .then(() => {
-            user = '';
+            user = null;
             isSignIn = false;
         }).catch((error) => {
             console.log(error);
         });
+        router.push("/");
 }
 </script>
