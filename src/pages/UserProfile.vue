@@ -5,10 +5,10 @@
             <h3>Google Sign In</h3>
             <button @click="handleSignInGoogle">Login</button>
         </div> -->
-        <!-- <div id="GoogleSignInWithPopup" v-if="!isSignedIn">
+        <div id="GoogleSignInWithPopup" v-if="!isSignedIn">
             <h3>Google Sign In with Popup</h3>
             <button @click="handleSignInGooglePopup">Login with Popup</button>
-        </div> -->
+        </div>
         <div id="logout" v-if="isSignedIn">
             <button @click="signOut">Logout</button>
         </div>
