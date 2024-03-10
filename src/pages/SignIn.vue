@@ -12,6 +12,10 @@
         <div id="logout" v-if="isSignedIn">
             <button @click="signOut">Logout</button>
         </div>
+        <div>
+            <h3>Signed in User {{ user }}</h3>
+            <h3>Result {{ result }}</h3>
+        </div>
     </div>
 </template>
 
