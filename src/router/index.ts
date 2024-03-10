@@ -52,6 +52,14 @@ const router = createRouter({
           /*webpackChunkName:"profile"*/ "@/pages/UserProfile.vue"
         ),
     },
+    {
+      path: "/signin",
+      name: "SignIn",
+      component: () =>
+        import(
+          /*webpackChunkName:"profile"*/ "@/pages/SignIn.vue"
+        ),
+    },
   ]
 })
 
