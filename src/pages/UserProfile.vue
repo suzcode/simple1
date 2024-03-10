@@ -6,7 +6,7 @@
             <button @click="handleSignInGoogle">Login</button>
         </div> -->
         <div id="GoogleSignInWithPopup" v-if="!isSignedIn">
-            <h3>Google Sign In with Popup 10pm</h3>
+            <h3>Google Sign In with Popup 9.59pm</h3>
             <button @click="handleSignInGooglePopup">Login with Popup</button>
         </div>
         <div id="logout" v-if="isSignedIn">
@@ -53,7 +53,7 @@ const userProfile = ref(null);
 //         });
 // }
 
-Google popup initiated
+// Google popup initiated
 function handleSignInGooglePopup() {
     signInWithPopup(auth, provider)
         .then((result) => {
