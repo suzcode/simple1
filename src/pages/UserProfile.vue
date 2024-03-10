@@ -54,31 +54,31 @@ const userProfile = ref(null);
 // }
 
 //Google popup initiated
-function handleSignInGooglePopup() {
-    signInWithPopup(auth, provider)
-        .then((result) => {
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
-            const user = result.user;
-            console.log(result);
-            isSignedIn = true;
-        }).catch((error) => {
-            const errorMessage = error.message;
-            console.log(error);
-        });
-}
+// function handleSignInGooglePopup() {
+//     signInWithPopup(auth, provider)
+//         .then((result) => {
+//             const credential = GoogleAuthProvider.credentialFromResult(result);
+//             const token = credential.accessToken;
+//             const user = result.user;
+//             console.log(result);
+//             isSignedIn = true;
+//         }).catch((error) => {
+//             const errorMessage = error.message;
+//             console.log(error);
+//         });
+// }
 
-// signInWithPopup(auth, provider)
-//     .then((result) => {
-//         const credential = GoogleAuthProvider.credentialFromResult(result);
-//         const token = credential.accessToken;
-//         const user = result.user;
-//         console.log(result);
-//         isSignedIn = true;
-//     }).catch((error) => {
-//         const errorMessage = error.message;
-//         console.log(error);
-//     });
+signInWithPopup(auth, provider)
+    .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        console.log(result);
+        isSignedIn = true;
+    }).catch((error) => {
+        const errorMessage = error.message;
+        console.log(error);
+    });
 
 // Sign out user
 function signOut() {
