@@ -14,13 +14,13 @@
         </div>
         <div>
             <h3>Signed in User {{ user }}</h3>
-            <h3>Result {{ result }}</h3>
+            <h3>uid {{ uid }}</h3>
         </div>
     </div>
 </template>
 
 <script>
-import { getAuth, signInWithPopup, signInWithRedirect, getRedirectResult, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, signInWithRedirect, getRedirectResult, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 import { ref } from "vue";
 import app from "@/firebase/init.js";
 
@@ -31,6 +31,17 @@ const isSignedIn = ref(false);
 const result = ref(null);
 const userProfile = ref(null);
 
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    const uid = user.uid;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
 
 signInWithPopup(auth, provider)
     .then((result) => {
