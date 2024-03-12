@@ -20,29 +20,26 @@
 </template>
 
 <script>
-import { getAuth, signInWithPopup, signInWithRedirect, getRedirectResult, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
+import { getAuth, signInWithPopup, signInWithRedirect, getRedirectResult, GoogleAuthProvider } from "firebase/auth";
 import { ref } from "vue";
 import app from "@/firebase/init.js";
 
 const provider = new GoogleAuthProvider();
 const auth = getAuth(app);
-const user = ref(null);
+const user = auth.currentUser;
 const isSignedIn = ref(false);
 const result = ref(null);
 const userProfile = ref(null);
 const uid = ref(null);
 
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/auth.user
-    uid = user.uid;
-    // ...
-  } else {
-    // User is signed out
-    // ...
-  }
-});
+if (user !== null) {
+  user.providerData.forEach((profile) => {
+    console.log("Sign-in provider: " + profile.providerId);
+    console.log("  Provider-specific UID: " + profile.uid);
+    console.log("  Name: " + profile.displayName);
+    console.log("  Email: " + profile.email);
+  });
+}
 
 signInWithPopup(auth, provider)
     .then((result) => {
