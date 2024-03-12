@@ -1,58 +1,60 @@
 <template>
     <div>
-        <h1>Profile</h1>
-        <!-- <div id="GoogleSignIn" v-if="!isSignedIn">
-            <h3>Google Sign In</h3>
-            <button @click="handleSignInGoogle">Login</button>
-        </div> -->
-        <div id="GoogleSignInWithPopup" v-if="!isSignedIn">
-            <h3>Google Sign In page</h3>
-            <button @click="handleSignInGooglePopup">Login with Popup placeholder</button>
-        </div>
-        <div id="logout" v-if="isSignedIn">
-            <button @click="signOut">Logout</button>
-        </div>
-        <div>
-            <h3>Signed in User {{ user }}</h3>
-            <h3>uid {{ uid }}</h3>
-        </div>
+      <h1>Sign In</h1>
+      <div id="GoogleSignInWithPopup" v-if="!isSignedIn">
+        <button @click="signIn">Sign in with Google</button>
+      </div>
+      <div>
+        <h3 v-if="user">Signed in User {{ user }}</h3>
+        <h3 v-if="uid"> uid {{ uid }}</h3>
+      </div>
     </div>
-</template>
-
-<script>
-import { getAuth, signInWithPopup, signInWithRedirect, getRedirectResult, GoogleAuthProvider } from "firebase/auth";
-import { ref } from "vue";
-import app from "@/firebase/init.js";
-
-const provider = new GoogleAuthProvider();
-const auth = getAuth(app);
-const user = auth.currentUser;
-const isSignedIn = ref(false);
-const result = ref(null);
-const userProfile = ref(null);
-const uid = ref(null);
-
-if (user !== null) {
-  user.providerData.forEach((profile) => {
-    console.log("Sign-in provider: " + profile.providerId);
-    uid = profile.uid;
-    result = profile.displayName;
-    console.log("  Name: " + profile.displayName);
-    console.log("  Email: " + profile.email);
+  </template>
+  
+  <script setup>
+  import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+  import { ref, watchEffect } from "vue";
+  import app from "@/firebase/init.js";
+  
+  const auth = getAuth(app);
+  const isSignedIn = ref(false);
+  const user = ref(null);
+  const uid = ref(null);
+  
+  const provider = new GoogleAuthProvider();
+  
+  const signIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const userCredential = result;
+        const user = userCredential.user;
+        const { displayName, uid } = user;
+  
+        console.log("Sign-in provider: Google");
+        console.log("  Name: " + displayName);
+        console.log("  UID: " + uid);
+  
+        isSignedIn.value = true;
+        user.value = displayName;
+        uid.value = uid;
+      })
+      .catch((error) => {
+        console.error("Sign-in error:", error.message);
+        // You may want to display this error message to the user
+      });
+  };
+  
+  watchEffect(() => {
+    const currentUser = auth.currentUser;
+    if (currentUser !== null) {
+      currentUser.providerData.forEach((profile) => {
+        console.log("Sign-in provider: " + profile.providerId);
+        console.log("  Name: " + profile.displayName);
+        console.log("  Email: " + profile.email);
+        user.value = profile.displayName;
+        uid.value = profile.uid;
+        isSignedIn.value = true;
+      });
+    }
   });
-}
-
-signInWithPopup(auth, provider)
-    .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        const user = result.user;
-        console.log(result);
-        isSignedIn = true;
-    }).catch((error) => {
-        const errorMessage = error.message;
-        console.log(error);
-    });
-
-
-</script>
+  </script>
