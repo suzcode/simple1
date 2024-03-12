@@ -35,7 +35,8 @@ const uid = ref(null);
 if (user !== null) {
   user.providerData.forEach((profile) => {
     console.log("Sign-in provider: " + profile.providerId);
-    console.log("  Provider-specific UID: " + profile.uid);
+    uid = profile.uid;
+    result = profile.displayName;
     console.log("  Name: " + profile.displayName);
     console.log("  Email: " + profile.email);
   });
