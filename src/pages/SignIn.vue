@@ -12,7 +12,7 @@
 </template>
   
 <script setup>
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 import { ref, watchEffect } from "vue";
 import app from "@/firebase/init.js";
 
