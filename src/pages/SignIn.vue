@@ -50,7 +50,7 @@ signInWithPopup(auth, provider)
   
 const addUserToUsersSubcollection = async (uid, user) => {
     // Check is subscriber document exists for the current user
-    const subscriberQuery = query(collection (db, "Subscribers"), where("uid", "==", uid));
+    const subscriberQuery = query(collection (db, "subscribers"), where("uid", "==", uid));
     const querySnapshot = await getDocs(subscriberQuery);
 
     if (querySnapshot.empty) {
@@ -60,11 +60,11 @@ const addUserToUsersSubcollection = async (uid, user) => {
         };
 
         try {
-            const docRef = await addDoc(collection(db, "Subscribers"), defaultSubscriberData);
+            const docRef = await addDoc(collection(db, "subscribers"), defaultSubscriberData);
             console.log("Default Subscriber document created with ID: ", docRef.id);
 
             // Now add the user to the Users subcollection under the newly created default Subscriber
-            const userRef = doc(db, "Subscribers", docRef.id, "Users", uid);
+            const userRef = doc(db, "subscribers", docRef.id, "users", uid);
             await setDoc(userRef, {
                 email: user.email,
                 name: user.displayName,
@@ -81,7 +81,7 @@ const addUserToUsersSubcollection = async (uid, user) => {
     // Subscriber document exists, add user to Users subcollection
     query.Snapshot.forEach((doc) => {
         const subscriberId = doc.id;
-        const userRef = doc(db, "Subscribers", subscriberId, "Users", uid);
+        const userRef = doc(db, "subscribers", subscriberId, "users", uid);
 
         setDoc(userRef, {
             email: user.email,
