@@ -70,7 +70,6 @@ onAuthStateChanged(auth, (currentUser) => {
         currentUser.providerData.forEach((profile) => {
         console.log("Sign-in provider: " + profile.providerId);
         console.log("  Name: " + profile.displayName);
-        console.log("  Email: " + profile.email);
         user.value = profile.displayName;
         uid.value = profile.uid;
         isSignedIn.value = true;
