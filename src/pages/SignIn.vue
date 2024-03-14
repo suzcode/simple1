@@ -19,7 +19,7 @@ const auth = getAuth(app);
 const isSignedIn = ref(false);
 const user = ref(null);
 const uid = ref(null);
-var userDetails = ref<any>(null);
+var userDetails = ref(null);
 
 const provider = new GoogleAuthProvider();
 
