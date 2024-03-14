@@ -19,6 +19,7 @@ const auth = getAuth(app);
 const isSignedIn = ref(false);
 const user = ref(null);
 const uid = ref(null);
+var userDetails = ref<any>(null);
 
 const provider = new GoogleAuthProvider();
 
@@ -27,11 +28,12 @@ signInWithPopup(auth, provider)
     .then((result) => {
         const userCredential = result;
         const user = userCredential.user;
-        const { displayName, uid } = user;
+        const { displayName, uid, email } = user;
 
         console.log("Sign-in provider: Google");
         console.log("user: ", user);
         console.log("  Name: " + displayName);
+        console.log("  Email: ", + email);
         console.log("  UID: " + uid);
 
         isSignedIn.value = true;
@@ -52,6 +54,15 @@ const addUserToUsersSubcollection = async (uid, user) => {
     console.log("User added to Users subcollection under default Subscriber as uid");
     console.log("uid: ", uid);
     console.log("user: ", user);
+    userDetails = {
+        uid: uid,
+        email: email,
+        displayName: displayName,
+    };
+    userDetailsDict["entries"] = userDetails;
+    console.log("userDetailsDict", userDetailsDict);
+    userDetailsDict_json = JSON.stringify(userDetailsDict);
+    console.log("data is as follows", userDetailsDict_json);
 };
 
 
