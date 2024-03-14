@@ -50,52 +50,11 @@ signInWithPopup(auth, provider)
   
 const addUserToUsersSubcollection = async (uid, user) => {
     // Check is subscriber document exists for the current user
-    const subscriberQuery = query(collection (db, "subscribers"), where("uid", "==", uid));
-    const querySnapshot = await getDocs(subscriberQuery);
+    console.log("User added to Users subcollection under default Subscriber as uid");
+    console.log("uid: ", uid);
+    console.log("user: ", user);
+};
 
-    if (querySnapshot.empty) {
-        // Subscriber document doesn't exist, create a default one
-        const defaultSubscriberData = {
-            name: "Default Subscriber",
-        };
-
-        try {
-            const docRef = await addDoc(collection(db, "subscribers"), defaultSubscriberData);
-            console.log("Default Subscriber document created with ID: ", docRef.id);
-
-            // Now add the user to the Users subcollection under the newly created default Subscriber
-            const userRef = doc(db, "subscribers", docRef.id, "users", uid);
-            await setDoc(userRef, {
-                email: user.email,
-                name: user.displayName,
-                status: "user",
-            });
-
-            console.log("User added to Users subcollection under default Subscriber");
-        } catch (error) {
-            console.error("Error creating default Subscriber document:", error);
-        }
-    }
-
-} else {
-    // Subscriber document exists, add user to Users subcollection
-    query.Snapshot.forEach((doc) => {
-        const subscriberId = doc.id;
-        const userRef = doc(db, "subscribers", subscriberId, "users", uid);
-
-        setDoc(userRef, {
-            email: user.email,
-            name: user.displayName,
-            status: "user", // default status
-        })
-            .then(() => {
-                console.log("User added to Users subcollection");
-            })
-            .catch((error) => {
-                console.error("Error adding user to Users subcollection:", error);
-            });
-    });
-}
 
 onAuthStateChanged(auth, (currentUser) => {
     if (currentUser) {
