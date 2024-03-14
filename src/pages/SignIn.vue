@@ -49,7 +49,7 @@ signInWithPopup(auth, provider)
     });
 };
   
-const addUserToUsersSubcollection = async (uid, user) => {
+const addUserToUsersSubcollection = async (uid, user, email) => {
     // Check is subscriber document exists for the current user
     console.log("User added to Users subcollection under default Subscriber as uid");
     console.log("uid: ", uid);
