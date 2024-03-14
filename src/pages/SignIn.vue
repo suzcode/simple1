@@ -41,7 +41,7 @@ signInWithPopup(auth, provider)
         // uid.value = uid;
 
         // Add user o Users subcollection
-        addUserToUsersSubcollection(uid, user, displayName, email);
+        addUserToUsersSubcollection(uid, user, displayName);
     })
     .catch((error) => {
     console.error("Sign-in error:", error.message);
@@ -49,7 +49,7 @@ signInWithPopup(auth, provider)
     });
 };
   
-const addUserToUsersSubcollection = async (uid, user, displayName, email) => {
+const addUserToUsersSubcollection = async (uid, user, displayName) => {
     // Check is subscriber document exists for the current user
     console.log("User added to Users subcollection under default Subscriber as uid");
     console.log("uid: ", uid);
@@ -58,7 +58,6 @@ const addUserToUsersSubcollection = async (uid, user, displayName, email) => {
     console.log("email: ", email);
     userDetails = {
         uid: uid,
-        emailAddress: email,
         displayName: displayName,
     };
     userDetailsDict["entries"] = userDetails;
