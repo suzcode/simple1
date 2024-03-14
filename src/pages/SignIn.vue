@@ -14,7 +14,6 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 import { ref } from "vue";
 import app from "@/firebase/init.js";
-import { getFirestore, collection, doc, setDoc, addDoc, query, where, getDocs } from "firebase/firestore";
 
 const auth = getAuth(app);
 const isSignedIn = ref(false);
@@ -22,7 +21,6 @@ const user = ref(null);
 const uid = ref(null);
 
 const provider = new GoogleAuthProvider();
-const db = getFirestore();
 
 const signIn = () => {
 signInWithPopup(auth, provider)
@@ -36,8 +34,8 @@ signInWithPopup(auth, provider)
         console.log("  UID: " + uid);
 
         isSignedIn.value = true;
-        user.value = displayName;
-        uid.value = uid;
+        // user.value = displayName;
+        // uid.value = uid;
 
         // Add user o Users subcollection
         addUserToUsersSubcollection(uid, user);
