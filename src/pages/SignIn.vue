@@ -53,11 +53,12 @@ const addUserToUsersSubcollection = async (uid, user, displayName, email) => {
     // Check is subscriber document exists for the current user
     console.log("User added to Users subcollection under default Subscriber as uid");
     console.log("uid: ", uid);
-    console.log("displayName: ", displayNane);
+    console.log("displayName: ", displayName);
     console.log("user: ", user);
+    console.log("email: ", email);
     userDetails = {
         uid: uid,
-        email: email,
+        emailAddress: email,
         displayName: displayName,
     };
     userDetailsDict["entries"] = userDetails;
