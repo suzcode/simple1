@@ -55,7 +55,6 @@ const addUserToUsersSubcollection = async (uid, user, displayName) => {
     console.log("uid: ", uid);
     console.log("displayName: ", displayName);
     console.log("user: ", user);
-    console.log("email: ", email);
     userDetails = {
         uid: uid,
         displayName: displayName,
