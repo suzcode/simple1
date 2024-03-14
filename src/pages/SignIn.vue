@@ -30,6 +30,7 @@ signInWithPopup(auth, provider)
         const { displayName, uid } = user;
 
         console.log("Sign-in provider: Google");
+        console.log("user: ", user);
         console.log("  Name: " + displayName);
         console.log("  UID: " + uid);
 
