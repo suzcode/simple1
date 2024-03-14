@@ -28,12 +28,11 @@ signInWithPopup(auth, provider)
     .then((result) => {
         const userCredential = result;
         const user = userCredential.user;
-        const { displayName, uid, email } = user;
+        const { displayName, uid } = user;
 
         console.log("Sign-in provider: Google");
         console.log("user: ", user);
         console.log("  Name: " + displayName);
-        console.log("  Email: ", + email);
         console.log("  UID: " + uid);
 
         isSignedIn.value = true;
