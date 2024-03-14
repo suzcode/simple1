@@ -41,7 +41,7 @@ signInWithPopup(auth, provider)
         // uid.value = uid;
 
         // Add user o Users subcollection
-        addUserToUsersSubcollection(uid, user);
+        addUserToUsersSubcollection(uid, user, email);
     })
     .catch((error) => {
     console.error("Sign-in error:", error.message);
