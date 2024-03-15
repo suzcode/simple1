@@ -48,7 +48,7 @@ signInWithPopup(auth, provider)
     });
 };
   
-const addUserToUsersSubcollection = async (uid, user, displayName) => {
+function addUserToUsersSubcollection(uid, user, displayName) {
     var userDetails = ref(null);
     var userDetailsDict_json = ref(null);
     var userDetailsDict = {};
@@ -61,14 +61,14 @@ const addUserToUsersSubcollection = async (uid, user, displayName) => {
         uid: uid,
         displayName: displayName,
     };
-    userDetailsDict["entries"] = userDetails.value;
+    userDetailsDict["entries"] = userDetails;
     console.log("userDetailsDict", userDetailsDict);
-    userDetailsDict_json.value = JSON.stringify(userDetailsDict);
-    console.log("data is as follows", userDetailsDict_json.value);
+    userDetailsDict_json = JSON.stringify(userDetailsDict);
+    console.log("data is as follows", userDetailsDict_json);
 };
 
 
-onAuthStateChanged(auth, (currentUser) => {
+function onAuthStateChanged(currentUser)  {
     if (currentUser) {
         currentUser.providerData.forEach((profile) => {
         console.log("Sign-in provider: " + profile.providerId);
@@ -82,6 +82,8 @@ onAuthStateChanged(auth, (currentUser) => {
         uid.value = null;
         isSignedIn.value = false;
     }
-});
+};
+
+onAuthStateChanged(auth);
 
 </script>
