@@ -20,7 +20,7 @@ const isSignedIn = ref(false);
 const user = ref(null);
 const uid = ref(null);
 const userDetails = ref(null);
-const userDetailsDict_json = ref(null);
+let userDetailsDict_json = ref(null);
 
 const provider = new GoogleAuthProvider();
 
