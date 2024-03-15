@@ -62,8 +62,8 @@ const addUserToUsersSubcollection = async (uid, user, displayName) => {
     userDetailsDict = {};
     userDetailsDict["entries"] = userDetails;
     console.log("userDetailsDict", userDetailsDict);
-    userDetailsDict_json = JSON.stringify(userDetailsDict);
-    console.log("data is as follows", userDetailsDict_json);
+    userDetailsDict_json.value = JSON.stringify(userDetailsDict);
+    console.log("data is as follows", userDetailsDict_json.value);
 };
 
 
