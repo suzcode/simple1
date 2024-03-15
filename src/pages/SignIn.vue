@@ -19,8 +19,7 @@ const auth = getAuth(app);
 const isSignedIn = ref(false);
 const user = ref(null);
 const uid = ref(null);
-const userDetails = ref(null);
-let userDetailsDict_json = ref(null);
+
 
 const provider = new GoogleAuthProvider();
 
@@ -50,6 +49,9 @@ signInWithPopup(auth, provider)
 };
   
 const addUserToUsersSubcollection = async (uid, user, displayName) => {
+    var userDetails = ref(null);
+    var userDetailsDict_json = ref(null);
+    var userDetailsDict = {};
     // Check is subscriber document exists for the current user
     console.log("User added to Users subcollection under default Subscriber as uid");
     console.log("uid: ", uid);
@@ -59,7 +61,6 @@ const addUserToUsersSubcollection = async (uid, user, displayName) => {
         uid: uid,
         displayName: displayName,
     };
-    userDetailsDict = {};
     userDetailsDict["entries"] = userDetails.value;
     console.log("userDetailsDict", userDetailsDict);
     userDetailsDict_json.value = JSON.stringify(userDetailsDict);
