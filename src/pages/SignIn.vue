@@ -20,6 +20,8 @@ const isSignedIn = ref(false);
 const user = ref(null);
 const uid = ref(null);
 
+// url for kubernetes backend
+const url = "http://34.31.236.147/updateusers";
 
 const provider = new GoogleAuthProvider();
 
@@ -66,8 +68,31 @@ function addUserToUsersSubcollection(uid, user, displayName) {
     console.log("userDetailsDict", userDetailsDict);
     userDetailsDict_json = JSON.stringify(userDetailsDict);
     console.log("data is as follows", userDetailsDict_json);
+    sendUser(userDetailsDict_json);
 };
 
+// This function posts the logged in user info to the python backend
+function sendUser(userDetailsDict_json) {
+  axios
+    .post(url, userDetailsDict_json, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then((response) => {
+      console.log("OK", response.data);
+      responseData.value = response.data;
+      return responseData;
+    })
+    .catch((error) => {
+      console.log("ERROR", error);
+      if (error.response) {
+        console.log("Server responded with a non-2xx status", error.response.data);
+      }
+      console.log('response is ', responseData);
+      throw error;  // Re-throw the error to propagate it to the calling code
+    });
+}
 
 function handleAuthStateChanged(currentUser)  {
     if (currentUser) {
