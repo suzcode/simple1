@@ -118,7 +118,8 @@ onAuthStateChanged(auth, handleAuthStateChanged);
 function signOut() {
     signOut(auth)
         .then(() => {
-            user = null;
+            user.value = null;
+            uid.value = null;
             isSignedIn.value = false;
         }).catch((error) => {
             console.log(error);
