@@ -117,14 +117,9 @@ onAuthStateChanged(auth, handleAuthStateChanged);
 
 function signOut() {
     signOut(auth)
-        .then(() => {
-            user.value = null;
-            uid.value = null;
-            isSignedIn.value = false;
-        }).catch((error) => {
+        .catch((error) => {
             console.log(error);
         });
-        router.push("/");
 }
 
 </script>
