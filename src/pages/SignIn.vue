@@ -61,6 +61,7 @@ function addUserToUsersSubcollection(uid, user, displayName) {
         uid: uid,
         displayName: displayName,
     };
+    console.log("Hello");
     console.log("userDetails: ", userDetails);
     userDetailsDict["entries"] = userDetails;
     console.log("userDetailsDict", userDetailsDict);
