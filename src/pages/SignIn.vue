@@ -42,7 +42,7 @@ signInWithPopup(auth, provider)
         // user.value = displayName;
         // uid.value = uid;
 
-        // Add user o Users subcollection
+        // Add user to Users subcollection
         addUserToUsersSubcollection(uid, user, displayName);
     })
     .catch((error) => {
