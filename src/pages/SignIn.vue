@@ -61,7 +61,6 @@ function addUserToUsersSubcollection(uid, user, displayName) {
         uid: uid,
         displayName: displayName,
     };
-    console.log("Hello");
     console.log("userDetails: ", userDetails);
     userDetailsDict["entries"] = userDetails;
     console.log("userDetailsDict", userDetailsDict);
@@ -70,7 +69,7 @@ function addUserToUsersSubcollection(uid, user, displayName) {
 };
 
 
-function onAuthStateChanged(currentUser)  {
+function handleAuthStateChanged(currentUser)  {
     if (currentUser) {
         currentUser.providerData.forEach((profile) => {
         console.log("Sign-in provider: " + profile.providerId);
@@ -86,6 +85,6 @@ function onAuthStateChanged(currentUser)  {
     }
 };
 
-onAuthStateChanged(auth);
+onAuthStateChanged(auth, handleAuthStateChanged);
 
 </script>
