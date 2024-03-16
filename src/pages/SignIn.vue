@@ -8,6 +8,9 @@
         <h3 v-if="uid"> uid {{ uid }}</h3>
       </div>
     </div>
+    <div id="logout" v-if="isSignedIn">
+            <button @click="signOut">Logout</button>
+    </div>
 </template>
   
 <script setup>
