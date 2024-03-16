@@ -119,7 +119,7 @@ function signOut() {
     signOut(auth)
         .then(() => {
             user = null;
-            isSignIn = false;
+            isSignedIn.value = false;
         }).catch((error) => {
             console.log(error);
         });
