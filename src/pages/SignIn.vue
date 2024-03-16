@@ -20,6 +20,7 @@ const auth = getAuth(app);
 const isSignedIn = ref(false);
 const user = ref(null);
 const uid = ref(null);
+const responseData = ref(null);
 
 // url for kubernetes backend
 const url = "http://34.31.236.147/updateusers";
