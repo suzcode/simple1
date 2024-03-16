@@ -115,4 +115,15 @@ function handleAuthStateChanged(currentUser)  {
 
 onAuthStateChanged(auth, handleAuthStateChanged);
 
+function signOut() {
+    signOut(auth)
+        .then(() => {
+            user = null;
+            isSignIn = false;
+        }).catch((error) => {
+            console.log(error);
+        });
+        router.push("/");
+}
+
 </script>
