@@ -49,7 +49,7 @@ signInWithPopup(auth, provider)
 };
   
 function addUserToUsersSubcollection(uid, user, displayName) {
-    var userDetails = ref(null);
+    var userDetails = {};
     var userDetailsDict_json = ref(null);
     var userDetailsDict = {};
     // Check is subscriber document exists for the current user
