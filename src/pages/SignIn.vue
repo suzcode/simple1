@@ -43,8 +43,6 @@ signInWithPopup(auth, provider)
         console.log("  UID: " + uid);
 
         isSignedIn.value = true;
-        // user.value = displayName;
-        // uid.value = uid;
 
         // Add user to Users subcollection
         addUserToUsersSubcollection(uid, user, displayName);
