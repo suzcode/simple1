@@ -99,17 +99,15 @@ function sendUser(userDetailsDict_json) {
 
 function handleAuthStateChanged(currentUser)  {
     if (currentUser) {
-        currentUser.providerData.forEach((profile) => {
-        console.log("Sign-in provider: " + profile.providerId);
-        console.log("  Name: " + profile.displayName);
-        user.value = profile.displayName;
-        uid.value = profile.uid;
+        // user is signed in
+        user.value = currentUser.displayName;
+        uid.value = currentUser.uid;
         isSignedIn.value = true;
-        });
     } else {
         user.value = null;
         uid.value = null;
         isSignedIn.value = false;
+        router.push("/");
     }
 };
 
