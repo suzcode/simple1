@@ -9,12 +9,12 @@
       </div>
     </div>
     <div id="logout" v-if="isSignedIn">
-            <button @click="signOut">Logout</button>
+            <button @click="logout">Logout</button>
     </div>
 </template>
   
 <script setup>
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
 import { ref } from "vue";
 import app from "@/firebase/init.js";
 import axios from "axios";
@@ -113,7 +113,7 @@ function handleAuthStateChanged(currentUser)  {
 
 onAuthStateChanged(auth, handleAuthStateChanged);
 
-function signOut() {
+function logout() {
     signOut(auth)
         .catch((error) => {
             console.log(error);
