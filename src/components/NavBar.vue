@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeMount } from "vue";
-var show = ref(false);
 
-var photoURL = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+const show = ref(false);
+var photoURL = ref("https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80");
+
+const emit = props.emit;
 
 // Listen for userSignedIn event emitted from SignIn.vue
 const handleUserSignedIn = (user) => {
-  photoURL = user.photoURL;
+  photoURLvalue = user.photoURL;
 }
 
 onMounted(() => {
-  appContext.on('userSignedIn', handleUserSignedIn);
+  emit('userSignedIn', user);
 });
 
 onBeforeMount(() => {
