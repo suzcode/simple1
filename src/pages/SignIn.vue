@@ -20,7 +20,7 @@ import app from "@/firebase/init.js";
 import axios from "axios";
 
 const props = defineProps({
-  userProfileString: [String]
+  userProfileString: String
 });
 
 const emit = defineEmits(['update:userProfileString']);
