@@ -15,7 +15,7 @@
   
 <script setup>
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
-import { ref } from "vue";
+import { ref, router } from "vue";
 import app from "@/firebase/init.js";
 import axios from "axios";
 
