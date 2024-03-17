@@ -18,7 +18,6 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from
 import { ref } from "vue";
 import app from "@/firebase/init.js";
 import axios from "axios";
-import router from "@/router/index.ts";
 
 const auth = getAuth(app);
 const isSignedIn = ref(false);
@@ -105,10 +104,10 @@ function handleAuthStateChanged(currentUser)  {
         uid.value = currentUser.uid;
         isSignedIn.value = true;
     } else {
+        // not signed in
         user.value = null;
         uid.value = null;
         isSignedIn.value = false;
-        router.push("/");
     }
 };
 
