@@ -1,6 +1,23 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted, onBeforeMount } from "vue";
 var show = ref(false);
+
+var photoURL = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+
+// Listen for userSignedIn event emitted from SignIn.vue
+const handleUserSignedIn = (user) => {
+  photoURL = user.photoURL;
+}
+
+onMounted(() => {
+  appContext.on('userSignedIn', handleUserSignedIn);
+});
+
+onBeforeMount(() => {
+  // Clean up the event listener when the component is unmounted
+  appContext.off('userSignedIn', handleUserSignedIn);
+});
+
 </script>
 
 <template>
@@ -100,7 +117,7 @@ var show = ref(false);
           <div>
             <button @click="show = !show" type="button" class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
               <span class="sr-only">Open user menu</span>
-              <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+              <img class="h-8 w-8 rounded-full" :src="photoURL" alt="Profile Picture" v-if="photoURL" />
             </button>
           </div>
 

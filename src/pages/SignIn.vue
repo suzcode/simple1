@@ -15,9 +15,11 @@
   
 <script setup>
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
-import { ref } from "vue";
+import { ref, defineEmits } from "vue";
 import app from "@/firebase/init.js";
 import axios from "axios";
+
+defineEmits(['userSignedIn']);
 
 const auth = getAuth(app);
 const isSignedIn = ref(false);
@@ -43,6 +45,10 @@ signInWithPopup(auth, provider)
         console.log("  UID: " + uid);
 
         isSignedIn.value = true;
+
+        // Emit user data to parent component
+        emit('userSignedIn', user);
+
 
         // Add user to Users subcollection
         addUserToUsersSubcollection(uid, user, displayName);
