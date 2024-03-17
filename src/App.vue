@@ -16,10 +16,6 @@ appContext.on('update:userProfileString', (data) => {
   userProfileString.value = data;
 });
 
-// Function to update the user data
-const updateUser = (newUser) => {
-  user.value = newUser;
-};
 </script>
 
 <!-- <style scoped>
