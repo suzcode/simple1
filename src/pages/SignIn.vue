@@ -15,16 +15,21 @@
   
 <script setup>
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
-import { ref, defineEmits } from "vue";
+import { ref, defineProps, defineEmits } from "vue";
 import app from "@/firebase/init.js";
 import axios from "axios";
 
-defineEmits(['userSignedIn']);
+const props = defineProps({
+  userProfileString: [String]
+});
+
+const emit = defineEmits(['update:userProfileString']);
 
 const auth = getAuth(app);
 const isSignedIn = ref(false);
 const user = ref(null);
 const uid = ref(null);
+const photoURL = ref(null);
 const responseData = ref(null);
 
 // url for kubernetes backend
@@ -108,11 +113,14 @@ function handleAuthStateChanged(currentUser)  {
         // user is signed in
         user.value = currentUser.displayName;
         uid.value = currentUser.uid;
+        photoURL.value = currentUser.photoURL;
+        emit('update:userProfileString', photoURL.value);
         isSignedIn.value = true;
     } else {
         // not signed in
         user.value = null;
         uid.value = null;
+        photoURL.value = null;
         isSignedIn.value = false;
     }
 };

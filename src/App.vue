@@ -1,5 +1,5 @@
 <template>
-  <NavBar :user="user" />
+  <NavBar :userProfileString="userProfileString" />
   <router-view />
 </template>
 
@@ -9,11 +9,11 @@ import '../public/styles.css';
 import NavBar from "@/components/NavBar.vue";
 import { ref } from 'vue';
 
-const user = ref(null);
+const userProfileString = ref(null);
 
 // Listen for the userSignedIn event emitted from signIn.vue
-appContext.on('userSignedIn', (newUser) => {
-  updateUser(newUser);
+appContext.on('update:userProfileString', (data) => {
+  userProfileString.value = data;
 });
 
 // Function to update the user data
