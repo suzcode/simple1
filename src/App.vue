@@ -11,7 +11,7 @@ import { ref } from 'vue';
 
 const userProfileString = ref(null);
 
-// Listen for the userSignedIn event emitted from signIn.vue
+// Listen for the userProfileString event emitted from signIn.vue
 appContext.on('update:userProfileString', (data) => {
   userProfileString.value = data;
 });
