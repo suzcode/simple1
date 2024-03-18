@@ -3,7 +3,7 @@ import { ref, defineProps } from "vue";
 
 const show = ref(false);
 
-const props = defineProps({
+defineProps({
   userProfileString: String
 });
 

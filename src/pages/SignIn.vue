@@ -15,7 +15,8 @@
   
 <script setup>
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
-import { ref, defineProps, defineEmits } from "vue";
+import { ref, defineProps } from "vue";
+import { useRouter } from 'vue-router';
 import app from "@/firebase/init.js";
 import axios from "axios";
 
@@ -23,7 +24,7 @@ defineProps({
   userProfileString: String
 });
 
-const emit = defineEmits(['update:userProfileString']);
+const userProfileString = "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg"
 
 const auth = getAuth(app);
 const isSignedIn = ref(false);
@@ -50,7 +51,7 @@ signInWithPopup(auth, provider)
         console.log("  UID: " + uid);
 
         isSignedIn.value = true;
-        
+
         // Add user to Users subcollection
         addUserToUsersSubcollection(uid, user, displayName);
     })
@@ -129,5 +130,9 @@ function logout() {
             console.log(error);
         });
 }
+
+// Navigate to App.vue with userProfileString as query parameter
+const router = useRouter();
+router.push({ name: 'app', query: { userProfileString } });
 
 </script>

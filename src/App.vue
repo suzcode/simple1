@@ -7,10 +7,12 @@
 import './assets/tailwind.css';
 import '../public/styles.css';
 import NavBar from "@/components/NavBar.vue";
-import { ref } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute()
 
 // define userProfileString which is a prop
-const userProfileString = ref(null);
+const userProfileString = route.query.userProfileString as string;
 
 
 </script>
