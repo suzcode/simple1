@@ -10,11 +10,11 @@ defineProps({
 // Define computed property to determine if you use the default profile pic or the specific user one
 const displayedProfilePic = computed(() => {
   // If userProfileString is not provided or empty, use the default profile picture
-  if (!props.userProfileString || props.userProfileString === '') {
+  if (!userProfileString || userProfileString === '') {
     return 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg'; // Replace 'default-profile-pic-url' with the URL of your default profile picture
   }
   // Otherwise, use the provided userProfileString
-  return props.userProfileString;
+  return userProfileString;
 });
 
 </script>
