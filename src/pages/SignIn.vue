@@ -25,8 +25,6 @@ defineProps({
   userProfileString: String
 });
 
-const userProfileString = "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg"
-
 const auth = getAuth(app);
 const isSignedIn = ref(false);
 const user = ref(null);
@@ -112,7 +110,6 @@ function handleAuthStateChanged(currentUser)  {
         user.value = currentUser.displayName;
         uid.value = currentUser.uid;
         photoURL.value = currentUser.photoURL;
-        emit('update:userProfileString', photoURL.value);
         isSignedIn.value = true;
     } else {
         // not signed in

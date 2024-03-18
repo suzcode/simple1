@@ -7,6 +7,16 @@ defineProps({
   userProfileString: String
 });
 
+// Define computed property to determine the displayed profile picture
+const displayedProfilePic = computed(() => {
+  // If userProfileString is not provided or empty, use the default profile picture
+  if (!props.userProfileString || props.userProfileString === '') {
+    return 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg'; // Replace 'default-profile-pic-url' with the URL of your default profile picture
+  }
+  // Otherwise, use the provided userProfileString
+  return props.userProfileString;
+});
+
 </script>
 
 <template>
@@ -106,7 +116,7 @@ defineProps({
           <div>
             <button @click="show = !show" type="button" class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
               <span class="sr-only">Open user menu</span>
-              <img class="h-8 w-8 rounded-full" :src="userProfileString" alt="Profile Picture" v-if="userProfileString" />
+              <img class="h-8 w-8 rounded-full" :src="displayedProfilePic" alt="Profile Picture" />
             </button>
           </div>
 
