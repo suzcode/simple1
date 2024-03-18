@@ -20,6 +20,7 @@ import { useRouter } from 'vue-router';
 import app from "@/firebase/init.js";
 import axios from "axios";
 
+// define Prop for profile pic used in NavBar.vue
 defineProps({
   userProfileString: String
 });
