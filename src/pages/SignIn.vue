@@ -19,7 +19,7 @@ import { ref, defineProps, defineEmits } from "vue";
 import app from "@/firebase/init.js";
 import axios from "axios";
 
-const props = defineProps({
+defineProps({
   userProfileString: String
 });
 
@@ -50,11 +50,7 @@ signInWithPopup(auth, provider)
         console.log("  UID: " + uid);
 
         isSignedIn.value = true;
-
-        // Emit user data to parent component
-        emit('userSignedIn', user);
-
-
+        
         // Add user to Users subcollection
         addUserToUsersSubcollection(uid, user, displayName);
     })
