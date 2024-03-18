@@ -9,6 +9,7 @@ import '../public/styles.css';
 import NavBar from "@/components/NavBar.vue";
 import { ref } from 'vue';
 
+// define userProfileString which is a prop
 const userProfileString = ref(null);
 
 
