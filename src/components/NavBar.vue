@@ -7,7 +7,7 @@ defineProps({
   userProfileString: String
 });
 
-// Define computed property to determine if you use the default profile pic or the specific user pic
+// Define computed property to determine if you use the default profile pic or the specific user picture
 const displayedProfilePic = computed(() => {
   // If userProfileString is not provided or empty, use the default profile picture
   if (!userProfileString || userProfileString === '') {
