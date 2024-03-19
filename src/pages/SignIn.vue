@@ -25,6 +25,7 @@ defineProps({
   userProfileString: String
 });
 
+const userProfileString = ref(null);
 const auth = getAuth(app);
 const isSignedIn = ref(false);
 const user = ref(null);
@@ -109,13 +110,13 @@ function handleAuthStateChanged(currentUser)  {
         // user is signed in
         user.value = currentUser.displayName;
         uid.value = currentUser.uid;
-        photoURL.value = currentUser.photoURL;
+        userProfileString.value = currentUser.photoURL;
         isSignedIn.value = true;
     } else {
         // not signed in
         user.value = null;
         uid.value = null;
-        photoURL.value = null;
+        userProfileString.value = null;
         isSignedIn.value = false;
     }
 };
