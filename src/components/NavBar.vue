@@ -3,15 +3,17 @@ import { ref, defineProps, computed } from "vue";
 
 const show = ref(false);
 
-defineProps({
-  userProfileString: String
-});
+// Define the URL of the default profile picture
+const defaultProfilePicUrl = "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg";
+
+// Define userProfileString as a ref
+const userProfileString = ref("");
 
 // Define computed property to determine if you use the default profile pic or the specific user picture
 const displayedProfilePic = computed(() => {
   // If userProfileString is not provided or empty, use the default profile picture
   if (!userProfileString || userProfileString === '') {
-    return 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg'; // Replace 'default-profile-pic-url' with the URL of your default profile picture
+    return defaultProfilePicUrl; // Replace 'default-profile-pic-url' with the URL of your default profile picture
   }
   // Otherwise, use the provided userProfileString
   return userProfileString;
