@@ -25,7 +25,6 @@ defineProps({
   userProfileString: String
 });
 
-const userProfileString = ref(null);
 const auth = getAuth(app);
 const isSignedIn = ref(false);
 const user = ref(null);
