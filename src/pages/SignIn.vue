@@ -104,6 +104,7 @@ function handleAuthStateChanged(currentUser)  {
         // user is signed in
         user.value = currentUser.displayName;
         uid.value = currentUser.uid;
+        // assign userProfileString with the URL of the user profile pic
         userProfileString.value = currentUser.photoURL;
         isSignedIn.value = true;
     } else {
