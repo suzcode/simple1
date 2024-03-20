@@ -38,7 +38,7 @@ signInWithPopup(auth, provider)
         const userCredential = result;
         const user = userCredential.user;
         const { displayName, uid } = user;
-
+        console.log("userProfileString ", userProfileString);
         console.log("Sign-in provider: Google");
         console.log("user: ", user);
         console.log("  Name: " + displayName);
@@ -106,6 +106,7 @@ function handleAuthStateChanged(currentUser)  {
         uid.value = currentUser.uid;
         // assign userProfileString with the URL of the user profile pic
         userProfileString.value = currentUser.photoURL;
+        console.log("userProfileString: ", userProfileString);
         isSignedIn.value = true;
     } else {
         // not signed in
