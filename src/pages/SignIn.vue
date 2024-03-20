@@ -73,6 +73,7 @@ function addUserToUsersSubcollection(uid, user, photoURL, displayName) {
     userDetailsDict_json = JSON.stringify(userDetailsDict);
     console.log("data is as follows", userDetailsDict_json);
     sendUser(userDetailsDict_json);
+    // asign URL for user
     userProfileString.value = photoURL;
     console.log("userProfileString.value", userProfileString.value);
     router.push({ name: 'app', query: { userProfileString } });
