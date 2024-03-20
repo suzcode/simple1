@@ -45,7 +45,7 @@ signInWithPopup(auth, provider)
         console.log("  UID: " + uid);
 
         isSignedIn.value = true;
-
+        router.push({ name: 'app', query: { userProfileString } });
         // Add user to Users subcollection
         addUserToUsersSubcollection(uid, user, displayName);
     })
@@ -127,6 +127,6 @@ function logout() {
 
 // Navigate to App.vue with userProfileString as query parameter
 const router = useRouter();
-router.push({ name: 'app', query: { userProfileString } });
+
 
 </script>
