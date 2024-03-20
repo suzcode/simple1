@@ -37,17 +37,15 @@ signInWithPopup(auth, provider)
     .then((result) => {
         const userCredential = result;
         const user = userCredential.user;
-        const { displayName, uid } = user;
-        console.log("userProfileString ", userProfileString);
+        const { displayName, photoURL, uid } = user;
+        console.log("photo ", photoURL);
         console.log("Sign-in provider: Google");
         console.log("user: ", user);
         console.log("  Name: " + displayName);
         console.log("  UID: " + uid);
 
         isSignedIn.value = true;
-        router.push({ name: 'app', query: { userProfileString } });
-        // Add user to Users subcollection
-        addUserToUsersSubcollection(uid, user, displayName);
+        addUserToUsersSubcollection(uid, user, photoURL, displayName);
     })
     .catch((error) => {
     console.error("Sign-in error:", error.message);
@@ -55,7 +53,7 @@ signInWithPopup(auth, provider)
     });
 };
   
-function addUserToUsersSubcollection(uid, user, displayName) {
+function addUserToUsersSubcollection(uid, user, photoURL, displayName) {
     var userDetails = {};
     var userDetailsDict_json = ref(null);
     var userDetailsDict = {};
@@ -63,6 +61,7 @@ function addUserToUsersSubcollection(uid, user, displayName) {
     console.log("User added to Users subcollection under default Subscriber as uid");
     console.log("uid: ", uid);
     console.log("displayName: ", displayName);
+    console.log("photo ", photoURL);
     console.log("user: ", user);
     userDetails = {
         uid: uid,
@@ -74,6 +73,10 @@ function addUserToUsersSubcollection(uid, user, displayName) {
     userDetailsDict_json = JSON.stringify(userDetailsDict);
     console.log("data is as follows", userDetailsDict_json);
     sendUser(userDetailsDict_json);
+    userProfileString.value = photoURL.value;
+    console.log("userProfileString.value", userProfileString.value);
+    router.push({ name: 'app', query: { userProfileString } });
+        // Add user to Users subcollection
 };
 
 // This function posts the logged in user info to the python backend
@@ -105,7 +108,7 @@ function handleAuthStateChanged(currentUser)  {
         user.value = currentUser.displayName;
         uid.value = currentUser.uid;
         // assign userProfileString with the URL of the user profile pic
-        userProfileString.value = currentUser.photoURL;
+        //userProfileString.value = currentUser.photoURL;
         console.log("userProfileString: ", userProfileString);
         isSignedIn.value = true;
     } else {
