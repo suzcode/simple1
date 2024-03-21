@@ -113,7 +113,7 @@ const displayedProfilePic = computed(() => {
           </svg>
         </button>
 
-        <!-- Profile dropdown -->
+        <!-- Profile dropdown at right of navbar -->
         <div class="relative ml-3">
           <div>
             <button @click="show = !show" type="button" class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
