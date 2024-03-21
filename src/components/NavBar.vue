@@ -4,7 +4,7 @@ import { ref, computed } from "vue";
 const show = ref(false);
 
 // Define the URL of the default profile picture
-const defaultProfilePicUrl = "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg";
+const defaultProfilePicUrl = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
 
 // Define userProfileString as a ref
 const userProfileString = ref("");
