@@ -11,6 +11,10 @@ steps:
   entrypoint: npm
   args: ['install', 'axios']
 
+- name: node
+  entrypoint: npm
+  args: ['install', 'pinia']
+
   # Debugging step to print current directory and list files
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: bash

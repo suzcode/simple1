@@ -10,14 +10,7 @@ const defaultProfilePicUrl = "https://images.unsplash.com/photo-1472099645785-56
 const userProfileString = ref("");
 
 // Define computed property to determine if you use the default profile pic or the specific user picture
-const displayedProfilePic = computed(() => {
-  // If userProfileString is not provided or empty, use the default profile picture
-  if (!userProfileString || userProfileString === '') {
-    return defaultProfilePicUrl; // Replace 'default-profile-pic-url' with the URL of your default profile picture
-  }
-  // Otherwise, use the provided userProfileString
-  return userProfileString;
-});
+const displayedProfilePic = defaultProfilePicUrl;
 
 </script>
 
