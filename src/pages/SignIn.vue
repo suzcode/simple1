@@ -15,11 +15,13 @@
   
 <script setup>
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
-import { ref, defineProps } from "vue";
+import { ref } from "vue";
 import { useRouter } from 'vue-router';
 import app from "@/firebase/init.js";
 import axios from "axios";
+import { useUserStore } from "@/stores/UserStore";
 
+const userStore = useUserStore();
 const auth = getAuth(app);
 const isSignedIn = ref(false);
 const user = ref(null);
@@ -46,6 +48,8 @@ signInWithPopup(auth, provider)
 
         isSignedIn.value = true;
         addUserToUsersSubcollection(uid, user, photoURL, displayName);
+        // Update userProfilePicUrl in the Pinia store
+        userStore.updateUserProfilePicUrl(photoUrl);
     })
     .catch((error) => {
     console.error("Sign-in error:", error.message);
@@ -73,11 +77,6 @@ function addUserToUsersSubcollection(uid, user, photoURL, displayName) {
     userDetailsDict_json = JSON.stringify(userDetailsDict);
     console.log("data is as follows", userDetailsDict_json);
     sendUser(userDetailsDict_json);
-    // asign URL for user
-    userProfileString.value = photoURL;
-    console.log("userProfileString.value", userProfileString.value);
-    router.push({ name: 'app', query: { userProfileString } });
-        // Add user to Users subcollection
 };
 
 // This function posts the logged in user info to the python backend
@@ -108,9 +107,6 @@ function handleAuthStateChanged(currentUser)  {
         // user is signed in
         user.value = currentUser.displayName;
         uid.value = currentUser.uid;
-        // assign userProfileString with the URL of the user profile pic
-        //userProfileString.value = currentUser.photoURL;
-        console.log("userProfileString: ", userProfileString);
         isSignedIn.value = true;
     } else {
         // not signed in
@@ -129,9 +125,5 @@ function logout() {
             console.log(error);
         });
 }
-
-// Navigate to App.vue with userProfileString as query parameter
-const router = useRouter();
-
 
 </script>

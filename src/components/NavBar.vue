@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
+import { useUserStore } from "@/stores/UserStore";
+
+const UserStore = useUserstore();
 
 const show = ref(false);
 
