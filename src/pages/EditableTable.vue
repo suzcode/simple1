@@ -84,11 +84,11 @@
 import { defineAsyncComponent, onBeforeMount, ref } from "vue";
 import { EmittedValue, Person } from "@/types/interfaces";
 import axios from "axios";
-import {
-  conditionalExpression,
-  isTemplateElement,
-  METHOD_TYPES,
-} from "@babel/types";
+// import {
+//   conditionalExpression,
+//   isTemplateElement,
+//   METHOD_TYPES,
+// } from "@babel/types";
 
 const Table = defineAsyncComponent(
   () => import(/*webpackChunkName:"table"*/ "@/components/table/TableView.vue")
