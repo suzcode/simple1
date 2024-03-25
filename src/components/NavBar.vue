@@ -2,7 +2,7 @@
 import { ref, computed } from "vue";
 import { useUserStore } from "@/stores/UserStore"
 
-const UserStore = useUserStore();
+// const UserStore = useUserStore();
 
 const show = ref(false);
 
