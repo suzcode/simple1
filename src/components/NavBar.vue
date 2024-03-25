@@ -7,12 +7,12 @@ const UserStore = useUserStore();
 const show = ref(false);
 
 // Define the URL of the default profile picture
-const defaultProfilePicUrl = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
-console.log("pic", defaultProfilePicUrl);
+// const defaultProfilePicUrl = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
+// console.log("pic", defaultProfilePicUrl);
 
 // Define computed property to retrieve userProfilePicUrl from the store
-console.log("state from store", UserStore.userProfilePicUrl);
-const displayedProfilePic = computed(() => UserStore.userProfilePicUrl || defaultProfilePicUrl);
+// console.log("state from store", UserStore.userProfilePicUrl);
+// const displayedProfilePic = computed(() => UserStore.userProfilePicUrl || defaultProfilePicUrl);
 
 </script>
 
