@@ -1,5 +1,5 @@
 <template>
-  <NavBar :userProfileString="userProfileString" />
+  <NavBar />
   <router-view />
 </template>
 
