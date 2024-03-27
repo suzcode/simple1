@@ -1,6 +1,6 @@
 <template>
-  <NavBar />
-  <router-view />
+  <!-- <NavBar />
+  <router-view /> -->
   <div>
     <SetDemoVariable />
     <DisplayDemoVariable />
@@ -13,7 +13,6 @@ import '../public/styles.css';
 import NavBar from "@/components/NavBar.vue";
 import SetDemoVariable from "@/components/SetDemoVariable.vue";
 import DisplayDemoVariable from "@/components/ShowDemoVariable.vue";
-
 
 </script>
 
