@@ -10,7 +10,7 @@
 import './assets/tailwind.css';
 import '../public/styles.css';
 import NavBar from "@/components/NavBar.vue";
-import ShowDemoVariable from "@/components/ShowDemoVariable.vue";
+import ShowDemoVariable from '@/components/stores/ShowDemoVariable.vue';
 
 </script>
 
