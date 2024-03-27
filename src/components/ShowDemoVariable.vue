@@ -10,4 +10,5 @@
   
   const UserStore = useUserStore();
   const demoVariable = UserStore.demoVariable;
+
   </script>
