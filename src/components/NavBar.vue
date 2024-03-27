@@ -3,13 +3,12 @@ import { ref, computed } from "vue";
 import { useUserStore } from "@/stores/UserStore"
 import { onMounted } from 'vue';
 
-const UserStore = useUserStore();
-
-onMounted(() => {
-  console.log('UserStore:', UserStore);
-});
-
 // const UserStore = useUserStore();
+
+// onMounted(() => {
+//   console.log('UserStore:', UserStore);
+// });
+
 
 const show = ref(false);
 
