@@ -2,8 +2,7 @@
   <!-- <NavBar />
   <router-view /> -->
   <div>
-    <SetDemoVariable />
-    <DisplayDemoVariable />
+    <ShowDemoVariable />
   </div>
 </template>
 
@@ -11,8 +10,7 @@
 import './assets/tailwind.css';
 import '../public/styles.css';
 import NavBar from "@/components/NavBar.vue";
-import SetDemoVariable from "@/components/SetDemoVariable.vue";
-import DisplayDemoVariable from "@/components/ShowDemoVariable.vue";
+import ShowDemoVariable from "@/components/ShowDemoVariable.vue";
 
 </script>
 
